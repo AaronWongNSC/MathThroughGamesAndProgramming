@@ -4,19 +4,67 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+  <book xml:id="main">
+    <title>College Mathematics Through Games and Programming</title>
+    <subtitle>Mathematical Decision-Making</subtitle>
 
-    <!-- Include frontmatter -->
-    <xi:include href="./frontmatter.ptx" />
+    <xi:include href="./frontmatter.ptx" /> 
 
-    <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+      <part xml:id="part-intro">
+      <title>A Brief Introduction</title>
 
+      <chapter xml:id="chapter-game" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>What is a Game?</title>
+        <xi:include href="p1s1-01-Games.xml" />
+        <xi:include href="p1s1-02-Categories.xml" />
+      </chapter>
+    </part>
 
-    <!-- Include backmatter -->
-    <xi:include href="./backmatter.ptx" />
+    <part xml:id="part-perfect">
+      <title>Games with Perfect Information</title>
+
+      <chapter xml:id="chapter-two-perfect" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Two Player Games of Perfect Information</title>
+        <xi:include href="p2s1-01-Countdown.xml" />
+        <xi:include href="p2s1-02-PN-Positions.xml" />
+        <xi:include href="p2s1-03-More-Games.xml" />
+        <xi:include href="p2s1-04-Flowcharts.xml" />
+        <xi:include href="p2s1-05-Intro-Programming.xml" />
+      </chapter>
+
+      <chapter xml:id="chapter-logic" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Logical Deduction Puzzles</title>
+        <xi:include href="p2s2-01-Sudoku-intro.xml" />
+      </chapter>
+
+    </part>
+
+    <part xml:id="part-chance">
+      <title>One-Player Games of Chance</title>
+
+      <chapter xml:id="chapter-gambling" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Gambling Games</title>
+        <!-- <xi:include href="placeholder.xml" /> -->
+      </chapter>
+
+    </part>
+
+    <part xml:id="part-two-players">
+      <title>Two-Player Games</title>
+
+      <chapter xml:id="chapter-zero-sum" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Zero-Sum Games</title>
+        <!-- <xi:include href="placeholder.xml" /> -->
+      </chapter>
+
+      <chapter xml:id="chapter-nonzero-sum" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Nonzero-Sum Games</title>
+        <!-- <xi:include href="placeholder.xml" /> -->
+      </chapter>
+
+    </part>
+
+    <xi:include href="./backmatter.ptx" /> 
 
   </book>
 </pretext>
