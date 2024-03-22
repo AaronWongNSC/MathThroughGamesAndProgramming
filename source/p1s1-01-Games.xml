@@ -1,0 +1,249 @@
+<section xml:id="game-intro">
+    <title>A Simple Question with a Complicated Answer</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn to defininition of a game for the purposes of this course.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn how to determine whether an activity is a game for the purposes of this course.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        Make a list of games that you've played. Are there any common features about the items in your list? Do these
+        features apply to all games? If not, what features do you believe are shared by all games?
+    </observation>
+
+    <p>
+        What is a game? Since everyone has some experience playing games, it's not hard to think of examples of games.
+        Some people might think of board games (chess, Monopoly, and Settler's of Catan are just a few examples). Some
+        people might think of first-person shooters like Call of Duty, or any number of console games that can be found
+        on the Nintendo Switch or XBox. There are also games involving cards like poker and Blackjack.
+    </p>
+    <p>
+        But then there's also a gray area. Is a jigsaw puzzle a game? What about logic puzzles and Sudoku? Or what about
+        playing "Peek-A-Boo" with a baby? As you think about it longer, the boundary between what is a game and what is
+        not a game starts to get fuzzy.
+    </p>
+    <p>
+        And this leads us back to the question: What is a game? We're not going to try to come up with a definition that
+        defines all possible games. That type of categorization can be interesting, but it can also lead to endless
+        debates that distract from the larger ideas. The real purpose of this definition is to set the stage for this
+        course. When we talk about a game in this course, we are only talking about certain types of games and not all
+        possible games. So with that in mind, here is the definition. 
+    </p>
+    <aside>
+        <p>
+            Trying to make universal definitions can lead to debates such as whether a hot dog is a sandwich or whether
+            cereal is a soup.
+        </p>
+    </aside>
+
+    <definition xml:id="def-game">
+        <title>Game</title>
+        <idx><h>game</h></idx>
+        <statement>
+            <p>
+                A <term>game</term> is an activity with a set of well-defined rules, well-defined decision points, and
+                well-defined outcomes.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Mathematicians use the term "well-defined" in formal mathematical contexts to mean that the idea or object can
+        be determined unambiguously. In other words, it can be determined in a manner that everyone can look at it and
+        agree on what it is. The use of that term here is (unfortunately) not quite as precise, as there is still some
+        wiggle room for the concepts. However, for this course, it's close enough. We will elaborate on the ideas and
+        then just leave the gray areas as gray areas.
+    </p>
+    <ul>
+        <li>
+            <p>
+                <em>Well-defined rules:</em> The rules are written in a way that makes it absolutely clear how to play
+                the game. Everyone who carefully reads and follows the rules will end up playing the same game.
+            </p>
+        </li>
+        <li>
+            <p>
+                <em>Well-defined decision points:</em> The types of games we will be analyzing need to be clear about
+                when decisions need to be made and what the possible decisions are at any moment. A simple way to think
+                about this is that at any point in the game, it makes sense to ask the questions "Whose turn is it?" and
+                "What are the valid moves?"
+            </p>
+        </li>
+        <li>
+            <p>
+                <em>Well-defined outcomes:</em> After a decision has been made, it must be clear what happens next, and
+                it must be the same thing would happen to any other player that makes the same decision in an identical
+                situation. This part of the definition is a bit tricky to interpret, and leaves a little bit of room
+                for ambiguity. One thing we want to avoid is the outcome being dependent upon the individual and not the
+                structure of the game. For example, in a game like darts, the outcome of a throw is not a random event
+                like throwing a die. The outcome is not driven by the rules of the game, but by the skill of the
+                individual, which means that the outcomes are not well-defined.
+            </p>
+        </li>
+    </ul>
+    <p>
+        With this in place we can look at a number of games and see whether they meet our definition. Again, things that
+        fall outside of the definition can still be games in the general sense. It's just that they aren't the types of
+        games we will be analyzing.
+    </p>
+    <ul>
+        <li>
+            <p>Chess:</p>
+            <ul>
+                <li>
+                    Well-defined rules: There is a clear set of rules for how every piece moves and how they interact
+                    with each other. There are a few special moves (castling and en passant) that violate the basic
+                    pattern of movement, but these special situations are clearly laid out in an unambiguous manner.
+                </li>
+                <li>
+                    Well-defined decision points: This is a two=player game where the players take turns, and there is a
+                    clear set of valid moves for each turn.
+                </li>
+                <li>
+                    Well-defined outcomes: When a piece is moved to a new position, the game's structure defines the
+                    outcome.
+                </li>
+                <li>
+                    From this, we conclude that chess is a gmae.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>
+                Monopoly:
+            </p>
+            <ul>
+                <li>
+                    Well-defined rules: The game comes with instructions that clearly describe how the game is to be
+                    played. However, a lot of people play with various "house rules" (such as collecting money on Free
+                    Parking) that deviate from the official rules. As long as everyone can understand and agree with how
+                    the rule is meant to be implemented, it continues to have well-defined rules. (On a technical note,
+                    we would probably say that they are playing a variant of Monopoly instead of just Monopoly.)
+                </li>
+                <li>
+                    Well-defined decision points: If we ignore the auction phase of the game, the game proceeds in an
+                    organized manner, with players taking their turns in a specific order, and having a clear set of
+                    options in front of them at any moment. But the existence of the auction potentially violates this.
+                    If the auction requires players to bid with no specific order (first to call out a number owns the
+                    bid), the auction phase lacks clear decision points. If the auction is run by taking turns bidding,
+                    then there are clear decision points.
+                </li>
+                <li>
+                    Well-defined outcomes: When a player lands on a space, there is a clear outcome based on the rules
+                    of the game.
+                </li>
+                <li>
+                    From this, we conclude that Monopoly is a gmae if the auction is run in a particular manner.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>
+                Sudoku: This one is a bit tricky. In this course, we will consider certain types of logic puzzles to be
+                games, so we have to be a little bit flexible in how we interpret the conditions.
+            </p>
+            <ul>
+                <li>
+                    Well-defined rules: The game is played by a person writing numbers into the squares of the puzzle.
+                    There is a clear set of rules for what those numbers could be.
+                </li>
+                <li>
+                    Well-defined decision points: The decision points for a Sudoku are when the player commits a certain
+                    value to a certain position on the grid. In this sense, the game is played by a clear sequence of
+                    moves as the player slowly fills out the grid.
+                </li>
+                <li>
+                    Well-defined outcomes: A particular entry may be valid or invalid, depending on whether the player
+                    has made a mistake. The player's lack of knowledge of their move is part of the game. As the grid
+                    is filled out more completely, the player "loses" if they find that they cannot legally write a
+                    digit into some position of the grid. But the player "wins" if they fill out the entire grid and all
+                    the rules are satisfied.
+                </li>
+                <li>
+                    From this, we can see that a Sudoku can be considered to be a game for this course. Whether one
+                    ultimately decides to consider puzzles as games is a decision that is left to the individual.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        As we explore the topic more deeply, we will develop specific tools for analyze games, and this will bring
+        these ideas more clearly into focus.
+    </p>
+
+    <worksheet xml:id="game-intro-wksht">
+		<title>Exercises</title>
+		<exercisegroup>
+            <title>The Definition of a Game</title>
+            <p>
+                For each of the following activities, determine whether it is a game based on our definition. If it is not
+                a game, describe which of the properties it violates. Note that some of these may be debatable. Discussion
+                about disagreements with others is encouraged.
+            </p>
+            <exercise>
+                <p>
+                    Checkers
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Billiards
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Poker
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    A slot machine
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Scrabble
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    A game of tag
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Jigsaw puzzles
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Fortnight
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Make a list of 3-5 games (in the casual sense) that you've played in your life. Which of them would be
+                    classified as a game (in the formal sense of this class)?
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Try to identify a game that is in a gray area based on the definition provided. Which of the three
+                    conditions leads to an unclear result? Explain your answer.
+                </p>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+
+</section>

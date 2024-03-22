@@ -1,0 +1,1017 @@
+<section xml:id="Flowcharts">
+    <title>Flowcharts</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn how to read and follow flowcharts.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn how to create flowcharts that reflect decision-making.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        <p>
+            Review the image found at this link: <url href="https://www.silveroakcasino.com/images/blog/2012/02/boardgames.jpg">How to Choose the Perfect Board Game</url>.
+            (You will probably need to zoom into the image to read it.) Use it to determine what games you might want to
+            play. Do you recognize the games that they are suggesting? Do you think the guidance is accurate? Are there
+            parts that you disagree with?
+        </p>
+    </observation>
+
+    <subsection>
+        <title>Introduction to Flowcharts</title>
+        <p>
+            <idx><h>flowchart</h></idx>
+            The image in the discussion is an example of a <term>flowchart</term>. A flowchart is a diagram that represents
+            some sort of process. It turns out that there are many types of flowcharts, and in different context they can
+            have different levels of specificity in their structures. We are going to be somewhat loose in our applications
+            of flowcharts, and so we will avoid unnecessary detail and trust that the ideas are sufficiently intuitive.
+        </p>
+        <p>
+            It is often the case that a flowchart will use different shapes to represent different ideas. We will only
+            consider three shapes:
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Oval: Only used for START and STOP.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Rectangle: Used for instructions or behaviors.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Diamond: Used for decisions.
+                </p>
+            </li>
+        </ul>
+        <p>
+            The main idea of a flowchart is that you start from the beginning and "flow" from one point to the next,
+            performing actions and making decisions based on information until you reach the end. And if you execute all of
+            the steps correctly, you will have accomplished some sort of task or made a decision.
+        </p>
+        <p>
+            Let's take another look at the <url href="https://www.silveroakcasino.com/images/blog/2012/02/boardgames.jpg">flowchart</url>
+            in the opening discussion. In this case, there's no START oval, but they do clearly indicate where you should
+            begin the process. From there, you follow a series of questions and based on your answers you travel down
+            different paths until you reach a stopping point, which will always be an oval. This chart uses the symbols in
+            a nonstandard way. They use rectangles for questions and then they put the answer inside of diamonds. In spite
+            of this, you can still figure out how everything flows, and that's part of the magic of these charts. They don't
+            need to follow the strictest of rules in order to be understood.
+        </p>
+        <p>
+            It's worth looking at the precise way that they deviate from the norm. Take a look at the two diagrams below:
+        </p>
+        <image xml:id="Flowcharts-decision" width="75%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \begin{scope}
+                        \draw (0,0) node[anchor = south, draw, text width = 3cm, align = center] {Are you playing with children?};
+                        \draw[-latex] (0,0) -- (0,-0.25) -- ++ (-1,0) -- ++ (0,-0.2);
+                        \draw[-latex] (0,-0.25) -- ++ (1,0) -- ++ (0,-0.2);
+                        \draw (-1,-0.4) -- ++ (0.5, -0.5) -- ++ (-0.5, -0.5) -- ++ (-0.5, 0.5) -- ++ (0.5, 0.5) ++ (0, -0.5) node {No};
+                        \draw (1,-0.4) -- ++ (0.5, -0.5) -- ++ (-0.5, -0.5) -- ++ (-0.5, 0.5) -- ++ (0.5, 0.5) ++ (0, -0.5) node {Yes};
+                    \end{scope}
+                    \begin{scope}[shift={(6,-1)}]
+                        \draw (0,0) -- ++ (1.75,1.25) -- ++ (-1.75,1.25) -- ++ (-1.75,-1.25) -- ++ (1.75,-1.25);
+                        \draw (0,1.25) node[text width = 3cm, align = center] {\small Are you playing with children?};
+                        \draw[-latex] (-1.75,1.25) -- ++ (-0.5,0) node[anchor=south] {No} -- ++ (0,-1.25);
+                        \draw[-latex] (1.75,1.25) -- ++ (0.5,0) node[anchor=south] {Yes} -- ++ (0,-1.25);
+                    \end{scope}
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            The image on the left is how the linked flowchart looks. The image on the right is the more conventional way of
+            displaying a decision. Ultimately, it doesn't really matter (at least at this level) as long as the underlying
+            communication is clear.
+        </p>
+        <p>
+            Following a flowchart is an exercise in simply following instructions. This is one of the reasons why flowcharts
+            are useful in business. Organizations establish a process, and as long as everyone is following the process,
+            they are in position to get consistent results. But the processes don't need to be business processes. We can
+            also use flowcharts to perform other tasks like sorting objects and identifying P-positions and N-positions from
+            a graph.
+        </p>
+    </subsection>
+    <subsection>
+        <title>A Simple Sorting Algorithm</title>
+        <p>
+            We are going to start by investigating a simple sorting algorithm. Imagine that we have a collection of cards
+            with numbers on them laid out on a table from left to right. Now imagine that we have a robot that sits at the
+            table whose job it is to sort the cards so that they are in increasing order from left to right. This robot can
+            do three things: (1) Move left and right, (2) Compare the values of two adjacent cards, and (3) Swap two
+            adjacent cards. The diagram below summarizes this information.
+        </p>
+        <image xml:id="RobotMoves" width="50%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \begin{scope}
+                        \draw (1.85,1) node[anchor=south] {Cards on Table};
+                        \draw (0,0) rectangle (3.7,1);
+                        \draw (0.2,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {5};
+                        \draw (0.9,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {1};
+                        \draw (1.6,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {8};
+                        \draw (2.3,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {4};
+                        \draw (3.0,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {3};
+                
+                        \begin{scope}[shift={(0.2,-0.5)}]
+                            \draw (0,0) rectangle ++ (1.2,-0.5) ++ (-0.6, 0.25) node[anchor=center] {Robot};
+                            \draw (0.1, 0) rectangle ++ (0.3,0.2);
+                            \draw (0.25, 0) ++ (110:0.3) arc(110:70:0.3);
+                            \draw (0.25, 0) ++ (110:0.4) arc(110:70:0.4);
+                            \draw (0.8, 0) rectangle ++ (0.3,0.2);
+                            \draw (0.95, 0) ++ (110:0.3) arc(110:70:0.3);
+                            \draw (0.95, 0) ++ (110:0.4) arc(110:70:0.4);
+                            \draw[latex-] (1.3,0.2) -- ++ (0.5,0) node[anchor=west] {Sensors};
+                        \end{scope}
+                    \end{scope}
+                
+                    \begin{scope}[shift={(5,0)}]
+                        \draw (1.85,1) node[anchor=south] {Robot Moves Left/Right};
+                        \draw (0,0) rectangle (3.7,1);
+                        \draw (0.2,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {5};
+                        \draw (0.9,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {1};
+                        \draw (1.6,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {8};
+                        \draw (2.3,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {4};
+                        \draw (3.0,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {3};
+                
+                        \begin{scope}[shift={(1.6,-0.5)}]
+                            \draw (0,0) rectangle ++ (1.2,-0.5) ++ (-0.6, 0.25) node[anchor=center] {Robot};
+                            \draw (0.1, 0) rectangle ++ (0.3,0.2);
+                            \draw (0.8, 0) rectangle ++ (0.3,0.2);
+                
+                            \draw[-latex] (-0.2,-0.25) -- ++ (-0.5,0);
+                            \draw[-latex] (1.4,-0.25) -- ++ (0.5,0);
+                        \end{scope}
+                    \end{scope}
+                
+                    \begin{scope}[shift={(0,-3.5)}]
+                        \draw (1.85,1) node[anchor=south] {Robot Compares Cards};
+                        \draw (0,0) rectangle (3.7,1);
+                        \draw (0.2,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {5};
+                        \draw (0.9,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {1};
+                        \draw (1.6,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {8};
+                        \draw (2.3,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {4};
+                        \draw (3.0,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {3};
+                
+                        \begin{scope}[shift={(1.6,-0.5)}]
+                            \draw (0,0) rectangle ++ (1.2,-0.5) ++ (-0.6, 0.25) node[anchor=center] {Robot};
+                            \draw (0.1, 0) rectangle ++ (0.3,0.2);
+                            \draw (0.25, 0) ++ (110:0.3) arc(110:70:0.3);
+                            \draw (0.25, 0) ++ (110:0.4) arc(110:70:0.4);
+                            \draw (0.8, 0) rectangle ++ (0.3,0.2);
+                            \draw (0.95, 0) ++ (110:0.3) arc(110:70:0.3);
+                            \draw (0.95, 0) ++ (110:0.4) arc(110:70:0.4);
+                
+                            \draw (0.6,-0.5) node[anchor=north] {``Left card is bigger''};
+                
+                        \end{scope}
+                    \end{scope}
+                
+                    \begin{scope}[shift={(5,-3.5)}]
+                        \draw (1.85,1) node[anchor=south] {Robot Swaps Cards};
+                        \draw (0,0) rectangle (3.7,1);
+                        \draw (0.2,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {5};
+                        \draw (0.9,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {1};
+                        \draw (1.6,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {4};
+                        \draw (2.3,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {8};
+                        \draw (3.0,0.2) rectangle ++ (0.5,0.6) ++ (-0.25, -0.3) node[anchor=center] {3};
+                
+                        \begin{scope}[shift={(1.6,-0.5)}]
+                            \draw (0,0) rectangle ++ (1.2,-0.5) ++ (-0.6, 0.25) node[anchor=center] {Robot};
+                            \draw (0.1, 0) rectangle ++ (0.3,0.2);
+                            \draw (0.8, 0) rectangle ++ (0.3,0.2);
+                            \draw[latex-latex] (0.25,0.7) -- ++ (0,-0.4) -- ++ (0.7,0) -- ++ (0,0.4);
+                
+                            \draw (0.6,-0.5) node[anchor=north] {``Swap!''};
+                
+                        \end{scope}
+                    \end{scope}
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            Before trying to make a flowchart, let's think about how we might try to get this robot to sort the cards. Since
+            we want larger numbers on the right, it makes sense that if we compare two cards and the larger one is on the
+            left, then we should swap the cards and get the larger one on the right. And the simplest thing to do is to just
+            start from the left and move to the right, comparing at each step. And when the robot reaches the end, just
+            return to the far left and do it again. (We would also need to figure out a way to check if everything is done,
+            but we're just going to pretend that we do that for the robot.) Here is how that flowchart might look:
+        </p>
+        <image xml:id="sorting" width="80%">
+            <latex-image>
+                \begin{tikzpicture}[node distance=1cm]
+
+                    \node (start) [startstop] {Start};
+                    \node (left) [process, below of=start,yshift=-1cm] {Move to the far left};
+                    \node (compare) [process, right of=left,xshift=3.5cm] {Compare the cards};
+                    \node (bigleft) [decision, right of=compare,xshift=4cm] {Is the bigger card on the left?};
+                    \node (swap) [process, below of=bigleft,yshift=-1.5cm] {Swap the cards};
+                    \node (canmove) [decision, below of=swap,yshift=-1.5cm] {Can the robot move right?};
+                    \node (moveright) [process, left of=canmove,xshift=-4cm] {Move one space right};
+
+                    \node (donecheck) [decision, below of=canmove,yshift=-2.5cm] {Are the cards in order?};
+
+                    \node (stop) [startstop, below of=donecheck, yshift=-1.5cm] {Stop};
+
+
+                    \draw[-latex] (start) -- (left);
+                    \draw[-latex] (left) -- (compare);
+                    \draw[-latex] (compare) -- (bigleft);
+                    \draw[-latex] (bigleft) -- (swap) node[midway,anchor=west] {Yes};
+                    \draw[-latex] (bigleft) -- ++ (3.5,0) node[midway,anchor=south] {No} -- ++ (0,-5) -- (canmove);
+                    \draw[-latex] (swap) -- (canmove);
+                    \draw[-latex] (canmove) -- (moveright) node[midway,anchor=south] {Yes};
+                    \draw[-latex] (moveright) -- (compare);
+                    \draw[-latex] (canmove) -- (donecheck) node[midway,anchor=west] {No};
+                    \draw[-latex] (donecheck) -- ++ (-3.5,0) node[midway,anchor=south] {No} -- ++ (-6,0) -- (left);
+                    \draw[-latex] (donecheck) -- (stop) node[midway,anchor=west] {Yes};
+
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            Take a moment and try to execute this flowchart on the cards 51846 (in that order). Here are some checkpoints
+            for you to compare with to see that you're doing it correctly:
+            <ul>
+                <li>After the first time reaching the far right, the cards are in this order: 15438</li>
+                <li>After the second time reaching the far right, the cards are in this order: 14358</li>
+                <li>After the third time reaching the far right, the cards are in this order: 13458</li>
+            </ul>
+            At this point, we can begin to ask questions of our sorting algorithm. Does it always work? How efficient is it?
+            Is there a better method? If this were a course on algorithms, we would take a look at a few others and see how
+            they compare with each other. There are some exercises in this section that will give you some places to explore
+            further, if this interests you.
+        </p>
+    </subsection>
+    <subsection>
+        <title>Labeling Game Trees</title>
+        <p>
+            In the last couple sections, we have looked at various games and analyzed them to determine whether various
+            positions are P-positions or N-positions. We're going to take a deeper look at this and discover some
+            general approaches to understanding and analyzing game trees.
+        </p>
+        <p>
+            We will base our process on <xref ref="thm-PN-positions"/>. This is the result that tells us that the game
+            is in an N-position if there's a move that takes things to a P-position. If no such moves exist, then it's
+            a P-position. This simple rule lets us categorize any position as long as we know the labels of all of the
+            positions that stem from it. (And sometimes, we don't even need to know all of the labels. Can you figure
+            out when this happens?) We can take this idea and turn it into a flowchart that will allow us to label all
+            of the nodes in any game tree.
+        </p>
+        <image xml:id="label-trees" width="60%">
+            <latex-image>
+                \begin{tikzpicture}[node distance=1cm]
+
+                    \node (start) [startstop] {Start};
+                    \node (terminal) [process, below of=start,yshift=-1cm] {Label all terminal nodes as P-positions};
+
+                    \node (find) [process, right of=terminal,xshift=3cm] {Find a node whose moves are all labeled};
+
+                    \node (check) [decision, below of=find,yshift=-2cm] {Can you move to a P-position from that node?};
+
+                    \node (p) [process, below of=check,yshift=-2cm] {Label the node a P-position};
+
+                    \node (n) [process, left of=p,xshift=-3cm] {Label the node an N-position};
+
+                    \node (done) [decision, below of=p,yshift=-2cm] {Are all the nodes labeled?};
+
+                    \node (stop) [startstop, below of=done,yshift=-1.5cm] {Stop};
+
+                    \draw[-latex] (start) -- (terminal);
+                    \draw[-latex] (terminal) -- (find);
+                    \draw[-latex] (find) -- (check);
+                    \draw[-latex] (check) -- (p) node[midway,anchor=west] {No};
+                    \draw[-latex] (check) -- ++ (-4,0) node[midway,anchor=south] {Yes} -- (n);
+                    \draw[-latex] (p) -- (done);
+                    \draw(n) -- ++ (0,-1) -- ++ (4,0);
+                    \draw[-latex] (done) -- (stop) node[midway,anchor=west] {Yes};
+                    \draw[-latex] (done) -- ++ (4,0) node[midway,anchor=south] {No} -- ++ (0,9) -- (find);
+
+
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            We're going to use this flowchart to analyze Wythoff's Game (<xref ref="game-wythoff" />) starting with
+            heaps of 2 and 3. We can take inspiration from the isomorphic queen movement game to help us organize the
+            game states into a grid. To make the image less crowded, we've removed the arrowheads and will rely on the
+            fact that all movements must be left, down, or down-left to understand the direction of the moves.
+        </p>
+        <image xml:id="wythoff-tree-1" width="60%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \draw[fill=black] (0,0) circle (0.05) node[anchor=north east] {$(0,0)$};
+                    \draw[fill=black] (2,0) circle (0.05) node[anchor=north] {$(1,0)$};
+                    \draw[fill=black] (4,0) circle (0.05) node[anchor=north] {$(2,0)$};
+                    \draw[fill=black] (6,0) circle (0.05) node[anchor=north west] {$(3,0)$};
+                    \draw[fill=black] (0,2) circle (0.05) node[anchor=east] {$(0,1)$};
+                    \draw[fill=black] (2,2) circle (0.05) node[anchor=north west] {$(1,1)$};
+                    \draw[fill=black] (4,2) circle (0.05) node[anchor=north west] {$(2,1)$};
+                    \draw[fill=black] (6,2) circle (0.05) node[anchor=west] {$(3,1)$};
+                    \draw[fill=black] (0,4) circle (0.05) node[anchor=south east] {$(0,2)$};
+                    \draw[fill=black] (2,4) circle (0.05) node[anchor=south] {$(1,2)$};
+                    \draw[fill=black] (4,4) circle (0.05) node[anchor=south] {$(2,2)$};
+                    \draw[fill=black] (6,4) circle (0.05) node[anchor=south west] {$(3,2)$};
+
+                    \foreach \x in {0,2,4} {
+                        \foreach \y in {0,2,4} {
+                            \draw (\x + 2, \y) -- (\x, \y);
+                        }
+                    };
+                    \foreach \x in {0,2,4,6} {
+                        \foreach \y in {0,2} {
+                            \draw (\x, \y + 2) -- (\x, \y);
+                        }
+                    };
+                    \foreach \x in {0,2} {
+                        \draw (\x + 2, \x + 2) -- (\x, \x);
+                        \draw (\x + 4, \x + 2) -- (\x + 2, \x);
+                    };
+
+                    \draw (2,4) -- (0,2);
+                    \draw (6,2) -- (4,0);
+
+                    \draw (4,0) to[out=165, in=15] (0,0);
+                    \draw (6,0) to[out=160, in=20] (0,0);
+                    \draw (4,2) to[out=165, in=15] (0,2);
+                    \draw (6,2) to[out=160, in=20] (0,2);
+                    \draw (4,4) to[out=-165, in=-15] (0,4);
+                    \draw (6,4) to[out=-160, in=-20] (0,4);
+
+                    \draw (0,4) to[out=-65, in=65] (0,0);
+                    \draw (2,4) to[out=-115, in=115] (2,0);
+                    \draw (4,4) to[out=-115, in=115] (4,0);
+                    \draw (6,4) to[out=-115, in=115] (6,0);
+
+                    \draw (4,4) to[out=210, in=55] (0,0);
+                    \draw (6,4) to[out=210, in=55] (2,0);
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            This game only has one termninal node, which is at <m>(0,0)</m>. Therefore, at the first step of the
+            flowchart, we will label that position a P-position.
+        </p>
+        <image xml:id="wythoff-tree-2" width="60%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \draw (0,0) node[circle, draw] (00) {\small P};
+                    \draw[fill=black] (2,0) circle (0.05) node[anchor=north] {$(1,0)$};
+                    \draw[fill=black] (4,0) circle (0.05) node[anchor=north] {$(2,0)$};
+                    \draw[fill=black] (6,0) circle (0.05) node[anchor=north west] {$(3,0)$};
+                    \draw[fill=black] (0,2) circle (0.05) node[anchor=east] {$(0,1)$};
+                    \draw[fill=black] (2,2) circle (0.05) node[anchor=north west] {$(1,1)$};
+                    \draw[fill=black] (4,2) circle (0.05) node[anchor=north west] {$(2,1)$};
+                    \draw[fill=black] (6,2) circle (0.05) node[anchor=west] {$(3,1)$};
+                    \draw[fill=black] (0,4) circle (0.05) node[anchor=south east] {$(0,2)$};
+                    \draw[fill=black] (2,4) circle (0.05) node[anchor=south] {$(1,2)$};
+                    \draw[fill=black] (4,4) circle (0.05) node[anchor=south] {$(2,2)$};
+                    \draw[fill=black] (6,4) circle (0.05) node[anchor=south west] {$(3,2)$};
+
+                    \foreach \x in {2,4} {
+                        \foreach \y in {0,2,4} {
+                            \draw (\x + 2, \y) -- (\x, \y);
+                        }
+                    };
+                    \foreach \x in {2,4,6} {
+                        \foreach \y in {0,2} {
+                            \draw (\x, \y + 2) -- (\x, \y);
+                        }
+                    };
+                    \foreach \x in {2} {
+                        \draw (\x + 2, \x + 2) -- (\x, \x);
+                        \draw (\x + 4, \x + 2) -- (\x + 2, \x);
+                    };
+
+                    \draw (2,2) -- (00);
+
+                    \draw (0,4) -- (0,2);
+                    \draw (2,2) -- (0,2);
+                    \draw (2,4) -- (0,4);
+
+                    \draw (2,0) -- (00);
+                    \draw (0,2) -- (00);
+
+                    \draw (2,4) -- (0,2);
+                    \draw (6,2) -- (4,0);
+
+                    \draw (4,0) to[out=165, in=15] (00);
+                    \draw (6,0) to[out=160, in=20] (00);
+                    \draw (4,2) to[out=165, in=15] (0,2);
+                    \draw (6,2) to[out=160, in=20] (0,2);
+                    \draw (4,4) to[out=-165, in=-15] (0,4);
+                    \draw (6,4) to[out=-160, in=-20] (0,4);
+
+                    \draw (0,4) to[out=-65, in=65] (00);
+                    \draw (2,4) to[out=-115, in=115] (2,0);
+                    \draw (4,4) to[out=-115, in=115] (4,0);
+                    \draw (6,4) to[out=-115, in=115] (6,0);
+
+                    \draw (4,4) to[out=210, in=55] (00);
+                    \draw (6,4) to[out=210, in=55] (2,0);
+
+                    \draw (4,2) -- (2,0);
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            We can now see that the positions <m>(1,0)</m> and <m>(0,1)</m> have all their moves labeled, so we will
+            analyze those next. Since it is possible to get to a P-position from those nodes (in fact, you can only get
+            to a P-position), these are N-positions.
+        </p>
+        <image xml:id="wythoff-tree-3" width="60%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \draw (0,0) node[circle, draw] (00) {\small P};
+                    \draw (0,2) node[circle, draw] (02) {\small N};
+                    \draw (2,0) node[circle, draw] (20) {\small N};
+                    \draw[fill=black] (4,0) circle (0.05) node[anchor=north] {$(2,0)$};
+                    \draw[fill=black] (6,0) circle (0.05) node[anchor=north west] {$(3,0)$};
+                    \draw[fill=black] (2,2) circle (0.05) node[anchor=north west] {$(1,1)$};
+                    \draw[fill=black] (4,2) circle (0.05) node[anchor=north west] {$(2,1)$};
+                    \draw[fill=black] (6,2) circle (0.05) node[anchor=west] {$(3,1)$};
+                    \draw[fill=black] (0,4) circle (0.05) node[anchor=south east] {$(0,2)$};
+                    \draw[fill=black] (2,4) circle (0.05) node[anchor=south] {$(1,2)$};
+                    \draw[fill=black] (4,4) circle (0.05) node[anchor=south] {$(2,2)$};
+                    \draw[fill=black] (6,4) circle (0.05) node[anchor=south west] {$(3,2)$};
+
+                    \foreach \x in {4} {
+                        \foreach \y in {0,2,4} {
+                            \draw (\x + 2, \y) -- (\x, \y);
+                        }
+                    };
+                    \foreach \x in {2,4,6} {
+                        \foreach \y in {2} {
+                            \draw (\x, \y + 2) -- (\x, \y);
+                        }
+                    };
+                    \foreach \x in {2} {
+                        \draw (\x + 2, \x + 2) -- (\x, \x);
+                        \draw (\x + 4, \x + 2) -- (\x + 2, \x);
+                    };
+
+                    \draw (2,2) -- (20);
+                    \draw (4,2) -- (4,0);
+                    \draw (6,2) -- (6,0);
+
+                    \draw (4,4) -- (2,4);
+                    \draw (4,2) -- (2,2);
+                    \draw (4,0) -- (20);
+
+                    
+                    \draw (2,2) -- (00);
+
+                    \draw (0,4) -- (02);
+                    \draw (2,2) -- (02);
+                    \draw (2,4) -- (0,4);
+
+                    \draw (20) -- (00);
+                    \draw (02) -- (00);
+
+                    \draw (2,4) -- (02);
+                    \draw (6,2) -- (4,0);
+
+                    \draw (4,0) to[out=165, in=15] (00);
+                    \draw (6,0) to[out=160, in=20] (00);
+                    \draw (4,2) to[out=165, in=15] (02);
+                    \draw (6,2) to[out=160, in=20] (02);
+                    \draw (4,4) to[out=-165, in=-15] (0,4);
+                    \draw (6,4) to[out=-160, in=-20] (0,4);
+
+                    \draw (0,4) to[out=-65, in=65] (00);
+                    \draw (2,4) to[out=-115, in=115] (20);
+                    \draw (4,4) to[out=-115, in=115] (4,0);
+                    \draw (6,4) to[out=-115, in=115] (6,0);
+
+                    \draw (4,4) to[out=210, in=55] (00);
+                    \draw (6,4) to[out=210, in=55] (20);
+
+                    \draw (4,2) -- (20);
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            At this point, we can see that the positions <m>(2,0)</m>, <m>(1,1)</m>, and <m>(0,2)</m> have all their
+            moves labeled. Notice that all of these positions can reach the P-position at <m>(0,0)</m>, so these are
+            also P-positions.
+        </p>
+        <image xml:id="wythoff-tree-4" width="60%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \draw (0,0) node[circle, draw] (00) {\small P};
+                    \draw (0,2) node[circle, draw] (02) {\small N};
+                    \draw (2,0) node[circle, draw] (20) {\small N};
+                    \draw (4,0) node[circle, draw] (40) {\small N};
+                    \draw (2,2) node[circle, draw] (22) {\small N};
+                    \draw (0,4) node[circle, draw] (04) {\small N};
+                    \draw[fill=black] (6,0) circle (0.05) node[anchor=north west] {$(3,0)$};
+                    \draw[fill=black] (4,2) circle (0.05) node[anchor=north west] {$(2,1)$};
+                    \draw[fill=black] (6,2) circle (0.05) node[anchor=west] {$(3,1)$};
+                    \draw[fill=black] (2,4) circle (0.05) node[anchor=south] {$(1,2)$};
+                    \draw[fill=black] (4,4) circle (0.05) node[anchor=south] {$(2,2)$};
+                    \draw[fill=black] (6,4) circle (0.05) node[anchor=south west] {$(3,2)$};
+
+                    \draw (4,4) -- (22);
+                    \draw (6,4) -- (4,2);
+                    
+                    \draw (2,4) -- (22);
+                    \draw (4,4) -- (4,2);
+                    \draw (6,4) -- (6,2);
+
+                    \draw (6,0) -- (40);
+                    \draw (6,2) -- (4,2);
+                    \draw (6,4) -- (4,4);
+
+                    \draw (22) -- (20);
+                    \draw (4,2) -- (40);
+                    \draw (6,2) -- (6,0);
+
+                    \draw (4,4) -- (2,4);
+                    \draw (4,2) -- (22);
+                    \draw (40) -- (20);
+
+                    
+                    \draw (22) -- (00);
+
+                    \draw (04) -- (02);
+                    \draw (22) -- (02);
+                    \draw (2,4) -- (04);
+
+                    \draw (20) -- (00);
+                    \draw (02) -- (00);
+
+                    \draw (2,4) -- (02);
+                    \draw (6,2) -- (40);
+
+                    \draw (40) to[out=165, in=15] (00);
+                    \draw (6,0) to[out=160, in=20] (00);
+                    \draw (4,2) to[out=165, in=15] (02);
+                    \draw (6,2) to[out=160, in=20] (02);
+                    \draw (4,4) to[out=-165, in=-15] (04);
+                    \draw (6,4) to[out=-160, in=-20] (04);
+
+                    \draw (04) to[out=-65, in=65] (00);
+                    \draw (2,4) to[out=-115, in=115] (20);
+                    \draw (4,4) to[out=-115, in=115] (40);
+                    \draw (6,4) to[out=-115, in=115] (6,0);
+
+                    \draw (4,4) to[out=210, in=55] (00);
+                    \draw (6,4) to[out=210, in=55] (20);
+
+                    \draw (4,2) -- (20);
+
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            The next set of nodes that we can analyze are <m>(1,2)</m>, <m>(2,1)</m>, and <m>(3,0)</m>. We can see that
+            <m>(1,2)</m> and <m>(2,1)</m> can only reach N-positions, so these must be P-positions. And we can also see
+            that <m>(3,0)</m> reaches the P-position at <m>(0,0)</m>, so this is an N-position.
+        </p>
+        <image xml:id="wythoff-tree-5" width="60%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \draw (0,0) node[circle, draw] (00) {\small P};
+                    \draw (0,2) node[circle, draw] (02) {\small N};
+                    \draw (2,0) node[circle, draw] (20) {\small N};
+                    \draw (4,0) node[circle, draw] (40) {\small N};
+                    \draw (2,2) node[circle, draw] (22) {\small N};
+                    \draw (0,4) node[circle, draw] (04) {\small N};
+                    \draw (2,4) node[circle, draw] (24) {\small P};
+                    \draw (4,2) node[circle, draw] (42) {\small P};
+                    \draw (6,0) node[circle, draw] (60) {\small N};
+                    \draw[fill=black] (6,2) circle (0.05) node[anchor=west] {$(3,1)$};
+                    \draw[fill=black] (4,4) circle (0.05) node[anchor=south] {$(2,2)$};
+                    \draw[fill=black] (6,4) circle (0.05) node[anchor=south west] {$(3,2)$};
+
+                    \draw (4,4) -- (22);
+                    \draw (6,4) -- (42);
+                    
+                    \draw (24) -- (22);
+                    \draw (4,4) -- (42);
+                    \draw (6,4) -- (6,2);
+
+                    \draw (60) -- (40);
+                    \draw (6,2) -- (42);
+                    \draw (6,4) -- (4,4);
+
+                    \draw (22) -- (20);
+                    \draw (42) -- (40);
+                    \draw (6,2) -- (60);
+
+                    \draw (4,4) -- (24);
+                    \draw (42) -- (22);
+                    \draw (40) -- (20);
+
+                    
+                    \draw (22) -- (00);
+
+                    \draw (04) -- (02);
+                    \draw (22) -- (02);
+                    \draw (24) -- (04);
+
+                    \draw (20) -- (00);
+                    \draw (02) -- (00);
+
+                    \draw (24) -- (02);
+                    \draw (6,2) -- (40);
+
+                    \draw (40) to[out=165, in=15] (00);
+                    \draw (60) to[out=160, in=20] (00);
+                    \draw (42) to[out=165, in=15] (02);
+                    \draw (6,2) to[out=160, in=20] (02);
+                    \draw (4,4) to[out=-165, in=-15] (04);
+                    \draw (6,4) to[out=-160, in=-20] (04);
+
+                    \draw (04) to[out=-65, in=65] (00);
+                    \draw (24) to[out=-115, in=115] (20);
+                    \draw (4,4) to[out=-115, in=115] (40);
+                    \draw (6,4) to[out=-115, in=115] (60);
+
+                    \draw (4,4) to[out=210, in=55] (00);
+                    \draw (6,4) to[out=210, in=55] (20);
+
+                    \draw (42) -- (20);
+
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            This pattern will continue for two more cycles. The next time will analyze <m>(2,2)</m> and <m>(3,1)</m>,
+            both of which are N-positions because they can reach the P-position at <m>(2,1)</m>. And then the last time
+            through will analyze <m>(3,2)</m>, which is also an N-position for the same reason the other two were. This
+            gives us the completed analysis of the game tree.
+        </p>
+        <image xml:id="wythoff-tree-6" width="60%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \draw (0,0) node[circle, draw] (00) {\small P};
+                    \draw (0,2) node[circle, draw] (02) {\small N};
+                    \draw (2,0) node[circle, draw] (20) {\small N};
+                    \draw (4,0) node[circle, draw] (40) {\small N};
+                    \draw (2,2) node[circle, draw] (22) {\small N};
+                    \draw (0,4) node[circle, draw] (04) {\small N};
+                    \draw (2,4) node[circle, draw] (24) {\small P};
+                    \draw (4,2) node[circle, draw] (42) {\small P};
+                    \draw (6,0) node[circle, draw] (60) {\small N};
+                    \draw (6,2) node[circle, draw] (62) {\small N};
+                    \draw (4,4) node[circle, draw] (44) {\small N};
+                    \draw (6,4) node[circle, draw] (64) {\small N};
+
+                    \draw (44) -- (22);
+                    \draw (64) -- (42);
+                    
+                    \draw (24) -- (22);
+                    \draw (44) -- (42);
+                    \draw (64) -- (62);
+
+                    \draw (60) -- (40);
+                    \draw (62) -- (42);
+                    \draw (64) -- (44);
+
+                    \draw (22) -- (20);
+                    \draw (42) -- (40);
+                    \draw (62) -- (60);
+
+                    \draw (44) -- (24);
+                    \draw (42) -- (22);
+                    \draw (40) -- (20);
+
+                    
+                    \draw (22) -- (00);
+
+                    \draw (04) -- (02);
+                    \draw (22) -- (02);
+                    \draw (24) -- (04);
+
+                    \draw (20) -- (00);
+                    \draw (02) -- (00);
+
+                    \draw (24) -- (02);
+                    \draw (62) -- (40);
+
+                    \draw (40) to[out=165, in=15] (00);
+                    \draw (60) to[out=160, in=20] (00);
+                    \draw (42) to[out=165, in=15] (02);
+                    \draw (62) to[out=160, in=20] (02);
+                    \draw (44) to[out=-165, in=-15] (04);
+                    \draw (64) to[out=-160, in=-20] (04);
+
+                    \draw (04) to[out=-65, in=65] (00);
+                    \draw (24) to[out=-115, in=115] (20);
+                    \draw (44) to[out=-115, in=115] (40);
+                    \draw (64) to[out=-115, in=115] (60);
+
+                    \draw (44) to[out=210, in=55] (00);
+                    \draw (64) to[out=210, in=55] (20);
+
+                    \draw (42) -- (20);
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            At this point, we can think about how we might present this tree in a way that is easier to read. A common
+            way to "prune" the game tree is to simply eliminate the losing moves. This way, when you're looking at the
+            game tree, you don't need to search for the winning moves. This also means that when you are at a P-position
+            there will be no moves shown, and this indicates that any legal move you make is going to be a losing move.
+        </p>
+        <p>
+            Notice that some positions have multiple winning moves. In these situations, it doesn't matter which winning
+            move you pick since they're all winning moves. In practice, some of these moves may lead to more complex
+            situations, which may lead you to pick the move that creates the simplest pathway to victory as possible.
+            For example, from <m>(2,2)</m> you can win the game immediately, but you could also move to <m>(1,2)</m> or
+            <m>(2,1)</m>. From those positions, it's possible for your opponent to make a move that gives you the chance
+            to make a mistake and lose. And so you might decide it's best to just win outright. But this decision has
+            less to do with the formal logic of the situation and more to do with human error.
+        </p>
+        <p>
+            Because everything fits nicely on a grid where the moves are all straight lines, we could actually go
+            further with this diagram and eliminate all of the edges completely. We can trust the player to know how the
+            game is played, and it is not difficult to scan the grid for winning moves when you're on a P-position. But
+            it is not typically the case that you can go this far.
+        </p>
+        <image xml:id="wythoff-tree-7" width="60%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \draw (0,0) node[circle, draw] (00) {\small P};
+                    \draw (0,2) node[circle, draw] (02) {\small N};
+                    \draw (2,0) node[circle, draw] (20) {\small N};
+                    \draw (4,0) node[circle, draw] (40) {\small N};
+                    \draw (2,2) node[circle, draw] (22) {\small N};
+                    \draw (0,4) node[circle, draw] (04) {\small N};
+                    \draw (2,4) node[circle, draw] (24) {\small P};
+                    \draw (4,2) node[circle, draw] (42) {\small P};
+                    \draw (6,0) node[circle, draw] (60) {\small N};
+                    \draw (6,2) node[circle, draw] (62) {\small N};
+                    \draw (4,4) node[circle, draw] (44) {\small N};
+                    \draw (6,4) node[circle, draw] (64) {\small N};
+
+                    \draw (64) -- (42);
+
+                    \draw (44) -- (24);
+                    \draw (44) -- (42);
+                    
+                    \draw (62) -- (42);
+                    
+                    \draw (22) -- (00);
+
+                    \draw (20) -- (00);
+                    \draw (02) -- (00);
+
+                    \draw (64) to[out=165, in=15] (24);
+
+                    \draw (40) to[out=165, in=15] (00);
+                    \draw (60) to[out=160, in=20] (00);
+
+                    \draw (04) to[out=-65, in=65] (00);
+
+                    \draw (44) to[out=210, in=55] (00);
+
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            Although this process is quite simple, it turns out that this is the key to analyzing any two-player perfect
+            information game (under the normal play condition) assuming that you're able to construct the game tree. The
+            assumption of being able to generate the game tree is where the real challenge lies. The game we just
+            analyzed only has 12 nodes and 38 edges. But it doesn't take much to find games that are significantly more
+            complex. Here are some examples:
+        </p>
+        <ul>
+            <li>Connect 4: This game has 4,531,985,219,092 nodes and was first solved in 1988.</li>
+            <li>Checkers: This game has approximately 500 quadrillion <m>(5 \cdot 10^{20})</m> nodes and was first
+                solved in 2007.</li>
+            <li>Chess: This has an estimated <m>10^{120}</m> game states and has not yet been solved.</li>
+        </ul>
+    </subsection>
+
+    <worksheet xml:id="Flowcharts-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>The Game Tree Analysis Algorithm</title>
+            <exercise>
+                <p>
+                    The analysis algorithm we used in this chapter required us to identify nodes for which all of its
+                    moves have been analyzed. However, this is slightly inefficient because we can know that a node is
+                    an N-position by knowing that it connects to at least one P-position. Rewrite the flowchart so that
+                    it incorporates this observation.
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Using the game tree analysis algorithm, analyze 15-Countdown (<xref ref="game-15-countdown" />).
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Pick parameters for the Generalized Countdown game (<xref ref="game-generalized-countdown" />. Then
+                    analyze it using the game tree analysis algorithm.
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Using the game tree analysis algorithm, analyze Nim (<xref ref="game-nim" />) with starting heaps
+                    of your choice.
+                </p>
+            </exercise>
+        </exercisegroup>
+        <exercisegroup>
+            <title>15-Countdown</title>
+            <introduction>
+                <p>
+                    This is a decision-making flowchart for 15-Countdown.
+                </p>
+                <image xml:id="Fifteen-Countdown" width="80%">
+                    <latex-image>
+                        \begin{tikzpicture}[node distance=1cm]
+
+                            \node (start) [startstop] {Start};
+                            \node (count) [process, right of=start,xshift=3cm] {Count the remaining tokens};
+                            \node (evenodd) [decision, below of=count,yshift=-1.5cm] {Is the number even or odd?};
+                            \node (even) [process, below of=evenodd, yshift=-1.5cm] {Take 2 tokens};
+                            \node (odd) [process, right of=evenodd, xshift=5cm] {Take 1 token};
+                            \node (stop) [startstop, right of=even, xshift=5cm] {Stop};
+                            
+                            \draw[-latex] (start) -- (count);
+                            \draw[-latex] (count) -- (evenodd);
+                            \draw[-latex] (evenodd) -- (even) node[midway, anchor=west] {Even};
+                            \draw[-latex] (evenodd) -- (odd) node[midway, anchor=south] {Odd};
+                            
+                            \draw[-latex] (odd) -- (stop);
+                            \draw[-latex] (even) -- (stop);
+                        
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>    
+            </introduction>
+            <exercise>
+                <p>
+                    Suppose you are playing according to this flowchart and there are 13 tokens left. Does the flowchart
+                    lead to a winning move? Does this mean that the strategy is good?
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    In what situations will this flowchart lead to a winning move?
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    In what situations will this flowchart lead to a losing move?
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Create a flowchart that has a winning strategy for this game.
+                </p>
+            </exercise>
+        </exercisegroup>
+        <exercisegroup>
+            <title>Tic-Tac-Toe</title>
+            <introduction>
+                <p>
+                    This is a decision-making flowchart for Tic-Tac-Toe.
+                </p>
+                <image xml:id="TTT-flowchart" width="60%">
+                    <latex-image>
+                        \begin{tikzpicture}[node distance=1cm]
+
+                            \node (start) [startstop] {Start};
+                            \node (wincheck) [decision, below of=start,yshift=-1.5cm] {Is there a winning move?};
+                            \node (win) [process, right of=wincheck,xshift=4.5cm] {Play to win};
+                            
+                            \node (blockcheck) [decision, below of=wincheck,yshift=-2.5cm] {Is there a win-blocking move?};
+                            \node (block) [process, right of=blockcheck,xshift=4.5cm] {Block the win};
+                            
+                            \node (centercheck) [decision, below of=blockcheck,yshift=-2.5cm] {Is the center open?};
+                            \node (center) [process, right of=centercheck,xshift=4.5cm] {Play the center};
+                            
+                            \node (cornercheck) [decision, below of=centercheck,yshift=-2.5cm] {Is there an open corner?};
+                            \node (corner) [process, right of=cornercheck,xshift=4.5cm] {Play an open corner};
+                            \node (edge) [process, below of=cornercheck,yshift=-2cm] {Play an open edge};
+                            
+                            \node (stop) [startstop, right of=edge, xshift=4.5cm] {Stop};
+                            
+                            \draw [-latex] (start) -- (wincheck);
+                            
+                            \draw [-latex] (wincheck) -- (win) node[midway, anchor=south] {Yes};
+                            \draw [-latex] (wincheck) -- (blockcheck) node[midway, anchor=east] {No};
+                            
+                            \draw [-latex] (blockcheck) -- (block) node[midway, anchor=south] {Yes};
+                            \draw [-latex] (blockcheck) -- (centercheck) node[midway, anchor=east] {No};
+                            
+                            \draw [-latex] (centercheck) -- (center) node[midway, anchor=south] {Yes};
+                            \draw [-latex] (centercheck) -- (cornercheck) node[midway, anchor=east] {No};
+                            
+                            \draw [-latex] (cornercheck) -- (corner) node[midway, anchor=south] {Yes};
+                            \draw [-latex] (cornercheck) -- (edge) node[midway, anchor=east] {No};
+                            
+                            \draw [-latex] (edge) -- (stop);
+                            \draw [-latex] (corner) -- (stop);
+                            \draw [-latex] (win) -- ++ (2.5,0) -- ++ (0,-13.5) -- (stop);
+                            \draw (block) -- ++ (2.5,0);
+                            \draw (center) -- ++ (2.5,0);
+                        
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>    
+            </introduction>
+            <exercise>
+                <p>
+                    This is an example of a flowchart that is not fully deterministic. That means it is possible for two
+                    people to follow the flowchart, but end up with a different move. Explain how this can happen.
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Play several games against an opponent who makes the first move and follows this flowchart. Do you
+                    think it's possible to beat your opponent? Explain your reasoning.
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Play several games against an opponent who makes the second move and follows this flowchart. Do you
+                    think it's possible to beat your opponent? Explain your reasoning.
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    How might you update this flowchart so that it is fully deterministic?
+                </p>
+            </exercise>
+        </exercisegroup>
+        <exercisegroup>
+            <title>Collatz Conjecture</title>
+            <introduction>
+                <image xml:id="Collatz-flowchart" width="90%">
+                    <latex-image>
+                        \begin{tikzpicture}[node distance=1cm]
+                            \node (start) [startstop] {Start};
+                            \node (pick) [process, below of=start,yshift=-1cm] {Pick a positive integer};
+                            \node (switch1) [decision, below of=pick, yshift=-1.5cm] {Is it even?};
+                            \node (iseven) [process, right of=switch1, xshift=4cm] {Divide by 2};
+                            \node (isodd) [process, below of=switch1,yshift=-1.5cm] {Multiply by 3 and add 1};
+                            \node (switch2) [decision, right of=isodd, xshift=4cm] {Is the result 1?};
+                            \node (stop) [startstop, right of=switch2, xshift=4cm] {Stop};
+                            
+                            \draw [-latex] (start) -- (pick);
+                            \draw [-latex] (pick) -- (switch1);
+                            \draw [-latex] (switch1) -- (iseven) node[midway, anchor=south] {Yes};
+                            \draw [-latex] (switch1) -- (isodd) node[midway, anchor=east] {No};
+                            \draw [-latex] (isodd) -- (switch2);
+                            \draw [-latex] (iseven) -- (switch2);
+                            \draw [-latex] (switch2) -- (stop) node[midway, anchor=south] {Yes};
+                            \draw [-latex] (switch2) -- ++ (0,-2)  node[midway, anchor=east] {No} -- ++ (-8,0) -- ++ (0,4.5) -- (switch1);
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>    
+            </introduction>
+            <exercise>
+                <p>
+                    Follow the algorithm starting from the number 3. Write down all the values that you work through
+                    in the process. How many numbers did you see?
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Follow the algorithm starting from the number 13. Write down all the values that you work through
+                    in the process. How many numbers did you see?
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Pick another 2-digit number and follow the algorithm. Write down all the values that you work
+                    through in the process. How many numbers did you see? (Note: You may get unlucky and end up with a
+                    very long sequence. If you go more than 50 numbers, just stop.)
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Find a Collatz conjecture calculator online and check to see if the values you obtained are correct.
+                </p>
+            </exercise>
+            <conclusion>
+                <p>
+                    This algorithm is connected to a mathematical idea called the Collatz conjecture. The conjecture
+                    states that this algorithm must always eventually stop, regardless of the starting value. It's not
+                    obvious that this must happen. For example, you might think that you have to use large numbers to
+                    get long sequences. However, if you start with 27, it turns out to take 111 steps to get all the way
+                    down to 1. Yet the number 1024 only takes 10 steps!
+                </p>
+            </conclusion>
+        </exercisegroup>
+    </worksheet>
+
+</section>

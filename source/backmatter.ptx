@@ -8,16 +8,34 @@
 <backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
   <title>Backmatter</title>
 
-  <!-- <solutions divisional="hint"> <title>Selected Hints</title> </solutions> -->
+  <appendix xml:id="appendix-definitions">
+    <title>Definitions</title>
+    <list-of elements="definition" divisions="chapter" empty="no"/>
+  </appendix>
 
-  <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->
+  <appendix xml:id="appendix-theorems">
+    <title>Theorems</title>
+    <list-of elements="theorem" divisions="chapter" empty="no"/>
+  </appendix>
 
-  <!-- <appendix> <title>List of Symbols</title> <notation-list/> </appendix> -->
+  <appendix xml:id="appendix-games">
+    <title>Games</title>
+    <list-of elements="fact" divisions="chapter" empty="no"/>
+  </appendix>
 
-  <!-- <index> <title>Index</title> <index-list/> </index> -->
+  <index>
+    <title>Index</title>
+    <index-list />
+  </index>
 
   <colophon>
     <p> This book was authored in <pretext />. </p>
   </colophon>
+
+  <!-- <solutions divisional="hint"> <title>Selected Hints</title> </solutions> -->
+  <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->
+  <!-- <appendix> <title>List of Symbols</title> <notation-list/> </appendix> -->
+  <!-- <index> <title>Index</title> <index-list/> </index> -->
+
 </backmatter>
 

@@ -1,0 +1,276 @@
+<section xml:id="PN-Position">
+    <title>P-Positions and N-Positions</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn what P-positions and N-positions are.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn how the knowledge of P-positions and N-positions improves your strategic play.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        Consider the following statements:
+        <ul>
+            <li>
+                <p>
+                    I try to make good decisions.
+                </p>
+            </li>
+            <li>
+                <p>
+                    I try to avoid bad decisions.
+                </p>
+            </li>
+        </ul>
+        Do you think these are the same idea? Why or why not?
+    </observation>
+
+    <p>
+        We are going to start off this section by introducing some vocabulary to describe game states.
+    </p>
+    <definition xml:id="def-PN-Position">
+        <title>P-Position and N-Position</title>
+        <idx><h>N-Position</h></idx>
+        <idx><h>P-Position</h></idx>
+        <statement>
+            <p>
+                A <term>P-position</term> in a game is a game state where the player who just played (the previous
+                player) can guarantee a win if they make the right decisions. An <term>N-position</term> in a game is a
+                game state where the next player to play can guarantee a win if they make the right decisions.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        In our analysis of 15-Countdown, we saw that if there are one, two, or three tokens and it's your turn, you
+        should just take all of them and win. Since the next player to play has a guaranteed win (if they make the right
+        decisions), this is an N-position.
+    </p>
+    <p>
+        We also saw that if there are four tokens remaining and it's your turn, that there's nothing you can do to stop
+        your opponent from winning. If you take one, they will take three and win. If you take two, they will take two
+        and win. If you take three, they will take one and win. So if your opponent doesn't make any mistakes, they're
+        going to win. This means the game is in a P-position since the previous player who played has the guaranteed
+        win. Also, notice that the game state of zero tokens is also P-position because the previous player has already
+        won the game, and so they are guaranteed the win.
+    </p>
+    <p>
+        We can include the labels of P and N in our game trees. Here is how it will look for the endgame of
+        15-Countdown.
+    </p>
+	<image xml:id="PN-Position-4-labeled" width="50%">
+		<latex-image>
+			\begin{tikzpicture}
+                \foreach \x in {0,1,...,4}
+                    \draw (-\x,0) node[circle, draw] (\x) {\small \x};
+    
+                \draw[-latex] (4) to (3);
+                \draw[-latex] (3) to (2);
+                \draw[-latex] (2) to (1);
+                \draw[-latex] (1) to (0);
+            
+                \draw[-latex] (4) to[out=35, in=145] (2);
+                \draw[-latex] (3) to[out=35, in=145] (1);
+                \draw[-latex] (2) to[out=35, in=145] (0);
+            
+                \draw[-latex] (4) to[out=45, in=135] (1);
+                \draw[-latex] (3) to[out=45, in=135] (0);            
+
+                \draw (-4,-0.75) node[anchor=center] {P};
+                \draw (-3,-0.75) node[anchor=center] {N};
+                \draw (-2,-0.75) node[anchor=center] {N};
+                \draw (-1,-0.75) node[anchor=center] {N};
+                \draw (0,-0.75) node[anchor=center] {P};
+            \end{tikzpicture} 
+		</latex-image>
+	</image>
+    <p>
+        We want to take a moment and think about how these positions interact with each other. Consider the following
+        game tree. The current game state is denoted with an X, and the other nodes are labeled as either a P-position
+        or an N-position.
+    </p>
+	<image xml:id="PN-Position-decision" width="50%">
+		<latex-image>
+			\begin{tikzpicture}
+                \draw (0,0) node[circle, draw] (0) {\small X};
+                \draw (-2,-1.5) node[circle, draw] (1) {\small N};
+                \draw (-1,-1.5) node[circle, draw] (2) {\small N};
+                \draw (0,-1.5) node[circle, draw] (3) {\small P};
+                \draw (1,-1.5) node[circle, draw] (4) {\small N};
+                \draw (2,-1.5) node[circle, draw] (5) {\small P};
+            
+                \draw[-latex] (0) to (1);
+                \draw[-latex] (0) to (2);
+                \draw[-latex] (0) to (3);
+                \draw[-latex] (0) to (4);
+                \draw[-latex] (0) to (5);
+            \end{tikzpicture} 
+		</latex-image>
+	</image>
+    <p>
+        Let's say that it's your turn. How would you want to play? All we need to do is think about the meaning of the
+        positions. Remember that P-position is a gamestate where the previous player can guarantee a win. Since it's
+        currently your turn, you would want to end your turn on a P-position because that would make you the previous
+        player and the person who is on a path to victory. In theory, it makes no difference which P-position we move to
+        because both of them have a guaranteed win. However, in practice there might be situations where the strategy
+        may be more complicated in one position than the other, and that might lead you to favor the one that's simpler
+        so that you avoid making mistakes.
+    </p>
+    <p>
+        This analysis shows us something very important and useful about our decisions. If it is our turn to make a
+        move, then we should be looking to move the game to a P-position. In fact, if you are able to make a move from
+        the current position to a P-position, then that would make the current position a N-position since the next
+        player (you) are able to make a move that guarantees a win.
+    </p>
+    <p>
+        If we are unable to move the game to a P-position, then all the edges must point to N-positions. This means that
+        no matter what move you make, you'll leave the game in a position where your opponent has a move that can
+        guarantee a win. Since we are analyzing two-player games, your opponent is the previous player, and they have
+        the winning move, so that makes this a P-position.
+    </p>
+    <p>
+        These two observations give us our first theorem. (A theorem is a fancy mathematical term for a result that we
+        know is true.)
+    </p>
+    <theorem xml:id="thm-PN-positions">
+        <title>Characterizing P-Positions and N-Positions</title>
+        <statement>
+            <p>
+                A node in a game tree is an N-position if one of the edges points to a P-position. If there are no edges
+                that point from a particular node to an P-position (that is, all of the edges point to N-positions),
+                then that node must be an P-position.
+            </p>
+        </statement>
+    </theorem>
+    <p>
+        We can confirm this result by looking at the 15-Countdown endgame tree. If we look at the N-positions, we can
+        see that each of them has an edge that points to a P-position. And if we look at the P-positions, we can see
+        that all the edges point to N-positions, if there even any edges at all.
+    </p>
+    <p>
+        In the previous section, there were some exercises that had you analyze 15-Countdown when there are 5 and 6
+        tokens remaining. You should have found that if there are 5 tokens, the optimal play is to take one token so
+        that there would be 4 remaining. And if there are 6 tokens, then you should take two. Both of these analyses
+        reflect the idea that you're trying to move the game to a P-position.
+    </p>
+    <p>
+        Let's do a more methodical analysis for 7 tokens. We know that the available moves are to bring the total number
+        of tokens to 6, 5, or 4. We saw that both 6 tokens and 5 tokens are N-positions, and we know from earlier that 4
+        tokens is a P-position. Since there is a pathway to a P-position, the 7 token position is an N-position and the
+        winning move is to remove three tokens to leave 4. (In the image below, the bad moves have been grayed out for
+        emphasis.)
+    </p>
+	<image xml:id="PN-Position-7-labeled" width="50%">
+		<latex-image>
+			\begin{tikzpicture}
+                \draw (0,0) node[circle, draw] (7) {\small 7};
+                \draw[gray] (1,0) node[circle, draw] (6) {\small 6};
+                \draw[gray] (2,0) node[circle, draw] (5) {\small 5};
+                \draw (3,0) node[circle, draw] (4) {\small 4};
+    
+                \draw[gray, -latex] (7) to (6);
+                \draw[gray, -latex] (7) to[out=35, in=145] (5);
+                \draw[-latex] (7) to[out=45, in=135] (4);
+
+                \draw[gray] (1,-0.75) node[anchor=center] {N};
+                \draw[gray] (2,-0.75) node[anchor=center] {N};
+                \draw (3,-0.75) node[anchor=center] {P};
+            \end{tikzpicture} 
+		</latex-image>
+	</image>
+    <p>
+        Now we will analyze the 8 token scenario. We can see that the 7, 6, and 5 scenarios are all N-positions. This
+        means that when there are 8 tokens remaining, there are no winning moves. Since there are no winning moves, the
+        position is not an N-position (the next player cannot win) and so it is a P-position.
+    </p>
+	<image xml:id="PN-Position-8-labeled" width="50%">
+		<latex-image>
+			\begin{tikzpicture}
+                \draw (0,0) node[circle, draw] (8) {\small 8};
+                \draw[gray] (1,0) node[circle, draw] (7) {\small 7};
+                \draw[gray] (2,0) node[circle, draw] (6) {\small 6};
+                \draw[gray] (3,0) node[circle, draw] (5) {\small 5};
+    
+                \draw[gray, -latex] (8) to (7);
+                \draw[gray, -latex] (8) to[out=35, in=145] (6);
+                \draw[gray, -latex] (8) to[out=45, in=135] (5);
+
+                \draw[gray] (1,-0.75) node[anchor=center] {N};
+                \draw[gray] (2,-0.75) node[anchor=center] {N};
+                \draw[gray] (3,-0.75) node[anchor=center] {N};
+            \end{tikzpicture} 
+		</latex-image>
+	</image>
+    <p>
+        In fact, we can push this idea further to analyze the entire game! The key is that we are working backwards,
+        starting from the end of the game and moving towards the beginning. The reason this is helpful is because as we
+        analyze those late game positions, we have more known labels with which to analyze earlier positions.
+    </p>
+
+    <worksheet xml:id="PN-Position-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>15-Countdown</title>
+            <exercise>
+                <p>
+                    Complete the analysis of 15-Countdown by continuing to work backwards. Is the initial position a 
+                    P-position or an N-position? Does that mean that you would want to go first or second? Explain your
+                    reasoning.
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Make a list of the P-positions you found in your analysis. What is the pattern?
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    It's one thing to say that X is the right move because that's what the game tree says is the right
+                    move, and it's another to be able to describe the strategy based on logic or reasoning applied to
+                    the game itself. Can you explain the pattern for winning plays while only referring to the game
+                    structures and not the game tree?
+                </p>
+            </exercise>
+        </exercisegroup>
+        <exercisegroup>
+            <title>The Genearlized Countdown Game</title>
+            <exercise>
+                <p>
+                    Choose your own Generalized Countdown game and determine all of the P-positions and N-positions.
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    What patterns (if any) do you observe in the winning moves of this game?
+                </p>
+            </exercise>
+        </exercisegroup>
+        <exercisegroup>
+            <title>Exploring Nim</title>
+            <p> 
+                For each of the problems in this section, assume you're playing a game of Nim where you start with three
+                heaps whose sizes are 4, 2, and 1.
+            </p>
+            <exercise>
+                <p>
+                    Identify all of the P-positions and N-positions.
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    What patterns (if any) do you observe in the winning moves of this game? (Note: You may find
+                    patterns that only apply to some of the winning moves. Feel free to present those as an answer to
+                    this question.)
+                </p>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>

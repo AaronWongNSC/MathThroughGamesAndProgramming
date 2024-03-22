@@ -1,0 +1,99 @@
+<section xml:id="Intro-Programming">
+    <title>An Introduction to Programming</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn the basics of computer programming.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will access program on Replit.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        <p>
+            The following video is from the first lecture of a course in computer programming (CS 50) at Harvard from
+            2018. Watch the whole thing. (6 minutes, 17 seconds)
+        </p>
+        <figure>
+            <title>peanut-butter-jelly</title>
+            <video youtube="okkIyWhN0iQ">
+            </video>
+            <caption>CS50 2018 - Lecture 1 - Peanut Butter and Jelly</caption>
+        </figure>
+        <p>
+            What was the point of the demonstration?
+        </p>
+    </observation>
+
+    <p>
+        Computer programming is basically the process of giving the computer instructions to follow in order to
+        complete a specific task. People can spend multiple years trying to become proficient at programming, and so it
+        is far beyond the scope of this class to teach you how to program. That said, the underlying logic of computer
+        programming is within reach, and it's something that we have already started to investigate in the previous
+        section.
+    </p>
+    <p>
+        <idx><h>programming language</h></idx>
+        <idx><h>Python</h></idx>
+        Each of the flowcharts we created is a set of instructions to be followed in odrer to complete a specific task.
+        The only gap between understanding those flowcharts and computer programming is understanding how to get the
+        computer to follow the flowchart. The specific way that this is done is through something called a
+        <term>programming language</term>, which is basically a translation tool that runs between humans and computers.
+        While there are many languages that are available, we will use <term>Python</term> because it is among the
+        easier languages to use when getting started in programming.
+    </p>
+    <p>
+        There are a number of ways to get access to Python. If you wanted to download a version of it to your computer,
+        you can find a number of packages that will do it for you (for example, Anaconda Python is popular for data
+        science). If you do this, you will need to understand enough about your computer to navigate the process. 
+        Alternatively, you can use a online Python interpreter, which handles all of that for you. And this is the route
+        that we will recommend.
+    </p>
+    <p>
+        <idx><h>Replit</h></idx>
+        Alternatively, you can use a online Python interpreter, which handles all of that for you. This is the path that
+        this textbook uses in order to make all of the programs more easily accessible. Specifically, the materials will
+        be housed at <url href="https://replit.com">Replit</url>. Viewing the files will not require an account, but
+        running them will. (Basic accounts are free.)
+    </p>
+    <p>
+        This is not a course in programming, so there will be many topics and ideas that will be glossed over. The
+        primary goal is for you to understand the large-scale structures of programming without getting lost in the
+        details. If you already have programming experience, you may find it interesting to look through the files to
+        get a deeper understanding of how things are set up, but this is not necessary to be successful in the course.
+        (One of the goals was to make the high level code as human-readable as possible, so you will find that there
+        are a lot of unnecessary functions that clutter things up. None of the code is meant to be taken as an example
+        of coding best practices!)
+    </p>
+    <p>
+        We are going to use a treasure-hunting robot as our model for thinking about programming. Imagine a rectangular
+        grid on which we have a robot, a treasure, and some obstructions (like large rocks). The idea is that we want to
+        program the robot so that it can find the treasure. The diagram below gives an example of a sample arrangement.
+        The robot is indicated by an arrow, and forward for the robot is the direction of the arrow. The boxes with an X
+        in them represent an obstruction. And the diamond is the treasure.
+    </p>
+    <p>
+        The robot only understands a very limited set of commands: look_left, look_right, look_forward, turn_left,
+        turn_right, and move_forward. 
+    </p>
+
+    <worksheet xml:id="Intro-Programming-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>STUFF</title>
+            <exercise>
+                <p>
+                    BALH
+                </p>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>

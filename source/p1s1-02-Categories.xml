@@ -1,0 +1,255 @@
+<section xml:id="game-categories">
+    <title>Organizing the World of Games</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn that games can be organized into many different groups based on how the games are
+                    played.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn the difference between games of perfect and imperfect information.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn the difference between symmetric and asymmetric games.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn how to play Nim.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        What types of genres of games do you enjoy? What do you enjoy about them?
+    </observation>
+
+    <p>
+        One of the major goals of mathematical thinking is the ability to organize objects into groups based on their
+        properties. The first layer of this is determine whether something is a game. But once we have a game, there
+        are many additional ways to continue to try to categorize it.
+    </p>
+    <p>
+        One of the first ways you might think of organizing a game is based on the number of players. Chess is a game
+        played by two players. Board games commonly accommodate two to four players. And a game like Sudoku is a
+        single player game. 
+    </p>
+    <p>
+        We can also consider whether a game includes an element of chance or does not. Chance is introduced into a game
+        any time there is some type of randomizing element. This can be in the form of rolling dice, spinning a wheel,
+        or drawing cards. In some contexts, it can be helpful to imagine that chance is just another player in the game.
+        For example, instead of rolling a die, you can imagine that the player "chance" is simply selecting a number
+        from 1 to 6. But for our purposes, we will hold the view that is part of the game and not a player.
+    </p>
+    <p>
+        Another property of a game is whether the there is information that is hidden from some or all of the players.
+        For example, one of the reasons poker is interesting is because the each player has their own cards that nobody
+        else can see, and one of the challenges is to try to figure out what cards the other players might be holding
+        based on how they are behaving. In a game like Monopoly, there is a stack of cards (Chance or Community Chest)
+        and the players aren't allowed to peek at them in advance. This means that when a player lands on one of those
+        positions, information that was hidden becomes revealed to all of the players. Another way that information can
+        be hidden is when there is an element of chance. An outcome may depend on which number is rolled, and none of
+        the players have access to that information. The opposite of this is a gmae where all the information is in
+        front of the players from the very beginning. The games of chess and checker are examples of this. There is no
+        part of the game that his hidden from the players. We have special terms for these game types.
+    </p>
+    <definition xml:id="def-perfect-imperfect">
+        <title>Games with Perfect and Imperfect Information</title>
+        <idx><h>perfect</h></idx>
+        <idx><h>imperfect</h></idx>
+        <idx><h>incomplete</h></idx>
+        <idx><h>complete</h></idx>
+        <statement>
+            <p>
+                A game with <term>perfect</term> information is a game in which all the players have access to all of
+                the information in a game. A game with <term>imperfect</term> information is a game in which at least
+                one of the players does not have access to all of the information in a game. This includes players not
+                knowing the outcome of future chance events. Some people use the terms <term>complete</term> and
+                <term>incomplete</term> information instead of perfect and imperfect information, respectively.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        Most people are familiar with games in each of the above categories, as the typical types of games that people
+        play include games on both sides of the line for each of the divisions. But there are still more ways to
+        categorize games. These categories are generally intuitive to understand, but it may be harder to think of
+        examples.
+    </p>
+    <p>
+        Games can be either competitive or cooperative. A cooperative game is one where all of the players win or lose
+        as a single team. There are plenty of examples of these types of games, but they are likely less familiar to
+        the average person. Instead, most people are able to think of competitive games. These are games where, at the
+        end of the game, some players win and some players lose. It's important to note that competitive games may
+        involve some elements of cooperation, where you might develop temporary alliances because you can attain some
+        sort of benefit from it.
+    </p>
+    <p>
+        A more abstract way of looking at games is to consider the possible moves for each player. In some games, each
+        player has their own pieces that they control, and so each player has a different set of possible moves at any
+        given moment in the game. But there are some games in which all players have the exact same possible decisions
+        all the time. We will start with the formal definition.
+    </p>
+    <definition xml:id="def-symmetric-asymmetric">
+        <title>Symmetric and Asymmetric Games</title>
+        <idx><h>symmetric (game)</h></idx>
+        <idx><h>asymmetric (game)</h></idx>
+        <statement>
+            <p>
+                A <term>symmetric</term> game is a game for which both players have identical options at any decision
+                point during the game. An <term>asymmetric</term> game is a game where one player has an option
+                available to them that the other player (or players) do not.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        Any game where each player has their own pieces to move is an asymmetric game. For example, chess is an
+        asymmetric game. The word "identical" in this definition is a key point to focus on. Even though chess starts
+        off with the pieces in a mirror image of each other, and both players move their corresponding pieces in the
+        same way, that's not what is meant by identical. When it's white's turn, they can move a white pawn in a certain
+        way. But if it were black's turn, they would not be able to move that same white pawn in the same way. They are
+        forbidden from moving any of white's pieces at all! So when you think about identical moves, you want to think
+        of it as literally being able to do the exact same thing in the exact same way.
+    </p>
+    <p>    
+        A symmetric game that you might know is called "Nim." This is an example of a heap game, which is just a general
+        term for games that are played with tokens that are put into piles (heaps), and the gmae is played by
+        manipulating those heaps. These games are convenient because they can be played with objects that are just lying
+        around. Examples of convenient tokens are coins, beans, or small stones. We will explain the rules of the game
+        and then discuss why it's a symmetric game.
+    </p>
+
+    <fact xml:id="game-nim">
+        <title>Nim</title>
+        <idx><h>nim</h></idx>
+        <statement>
+            <p>
+                Nim is two-player heap game. Players take turns selecting a heap and removing any number of tokens from
+                it. The player who takes the last token from the last remaining heap is the winner.
+            </p>
+            <p>
+                A common starting arrangement is to have one heap of size three, one heap of size five, and one heap of
+                size seven. However, the game can start with any number of heaps with any number of tokens in them.
+            </p>
+        </statement>
+        <figure xml:id="video-nim">
+            <title>Nim Video Instructions</title>
+            <video youtube="eM3S74kchoM">
+            </video>
+            <caption>Video instructions for Nim</caption>
+        </figure>
+    </fact>
+
+    <p>
+        This is a symmetric game because both players have access to the exact same moves from any position. There is no
+        sense in which one player has their own heaps that the other player can't take from. All the heaps are neutral
+        and when it's each player's turn they have the same rules for how they can make their next move.
+    </p>
+
+    <p>
+        We will close this section by introducting a useful concept for talking about games.
+    </p>
+    <definition xml:id="def-game-state">
+        <title>Game State</title>
+        <idx><h>game state</h></idx>
+        <statement>
+            <p>
+                At any instant for any game, the <term>game state</term> is the collection of all of the information
+                necessary to describe the current game decision point.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        For Nim, the game state is the list of all of the heaps with the number of tokens in each heap. We do not need
+        to know whose turn it is because the game is symmetric. The available decisions for either player is the same.
+        For checkers, the game state is the position of every checker on the board and which color is next to move. We
+        need to know whose turn it is because that tells us which pieces are available to be moved.
+    </p>
+    <p>
+        Thinking about game states will be useful for us as we start to analyze games. It's important to note that the
+        game state does not necessarily contain the information about how you got to that point. For example, the game
+        state for Nim might be that there is only one heap with three tokens in it. We have no idea what combination of
+        moves actually got us to this position. It turns out that (at least for this game) how you got to a position is
+        irrelevant for how you strategize moving forward.
+    </p>
+
+    <worksheet xml:id="game-categories-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>Identifying Features of Games</title>
+            <p>
+                For each of the following games, identify the following features:
+                <ul>
+                    <li>
+                        <p>The number of players (it may be a range of numbers)</p>
+                    </li>
+                    <li>
+                        <p>Whether it is a game with or without chance</p>
+                    </li>
+                    <li>
+                        <p>Whether it is a game with complete or incomplete information</p>
+                    </li>
+                    <li>
+                        <p>Whether it is a cooperative or competitive game</p>
+                    </li>
+                    <li>
+                        <p>Whether it is a symmetric or asymmetric game</p>
+                    </li>
+                </ul>
+            </p>
+            <exercise>
+                <p>
+                    Chess
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Poker
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Scrabble
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Nim
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Monopoly
+                </p>
+            </exercise>
+        </exercisegroup>
+        <exercisegroup>
+            <title>Exploring Nim</title>
+            <p>
+                Later in the course, we are going to learn some formal techniques for analyzing games. But for now, we
+                will simply use intuition and experience to analyze the game (tools that everyone has access to).
+            </p>
+            <exercise>
+                <p>
+                    Suppose that it's your turn, and there is only one heap with four tokens in it. What is your best
+                    play and why? Can you generalize from this situation and come up with a strategy for similar
+                    sitations?
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Suppose that it's your turn, and there are two heaps remaining. One heap has 4 tokens and the other
+                    heap has just 1 token. What is your play and why? Can you generalize from this situation and come
+                    up with a strategy for similar situations? 
+                </p>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>

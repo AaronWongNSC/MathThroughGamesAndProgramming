@@ -1,0 +1,388 @@
+<section xml:id="countdown">
+    <title>Countdown Games</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn how to play 15-Countdown.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn how to represent the game state of 15-Countdown using a graph.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        Have you ever tried to analyze a game to figure out how to play it better? What sorts of things did you do to
+        perform your analyses? Were you able to improve? For the purposes of this discussion, you can use a more
+        expansive concept of a game to include all forms of games rather than the narrow definition we use throughout
+        the course.
+    </observation>
+
+    <p>
+        This chapter is a study of two-player games with perfect information. This means that both players have all of
+        the information about the game (no hidden information) and that there is no element of chance. The most classic
+        game of this type is probaby chess. Unfortunately, chess is far too complex of a gmae for us to analyze, and
+        most modern analyses of the game rely on sophisticated computer programs to assist them.
+    </p>
+    <p>
+        In order for us to begin our journey of learning how to analyze these types of games, we are going to need to
+        start with something much more simple. The game we will start with is called the 15-Countdown game.
+    </p>
+    <aside>
+        <p>
+            The names of many of the games in this course are arbitrary, and you may find that other people call them
+            by other names or play with slightly different rules. These materials will always provide the rules for a
+            game that is used any type of analysis in order to ensure that everyone is on the same page.
+        </p>
+    </aside>
+
+    <fact xml:id="game-15-countdown">
+        <title>15-Countdown</title>
+        <idx><h>15-countdown</h></idx>
+        <statement>
+            <p>
+                15-Countdown is two-player heap game. The game starts with one heap of 15 tokens. Players take turns
+                removing either one, two, or three tokens from the heap. The player who takes the last token in the heap
+                is the winner.
+            </p>
+        </statement>
+        <figure xml:id="video-15-countdown">
+            <title>15-Countdown Video Instructions</title>
+            <video youtube="eM3S74kchoM">
+            </video>
+            <caption>Video instructions for 15-Countdown</caption>
+        </figure>
+    </fact>
+
+    <p>
+        Whenever you are introduced to a new game, it will be good to play it a few times to help you understand the
+        rules of the game and start to build some intuition. This is best done with a friend, but it's also possible
+        for you to play against yourself.
+    </p>
+    <p>
+        One of the first strategic observations of this game is that if there are three or fewer tokens left, then the
+        next player should win the game by taking all of the tokens. This is a rather trivial observation, as it
+        merely represents that you understand the goal of the game and the rules for taking tokens.
+    </p>
+    <p>
+        But it turns out that this observation helps to lead us to our first non-trivial strategic insight. When there
+        are exactly four tokens left, the next player is guaranteed to lose if their opponent does not make a mistake.
+        (Before reading further, you should see if you can justify this statement for yourself!) We will demonstrate
+        that this is the case by looking at all of the possible decisions that the next player can make, and show that
+        the other player always has a pathway to victory.
+    </p>
+    <ul>
+        <li>
+            <p>
+                If the next player takes one token, then there will be three tokens remaining. The other player can take
+                all three tokens to win the game.
+            </p>
+        </li>
+        <li>
+            <p>
+                If the next player takes two tokens, then there will be two tokens remaining. The other player can take
+                both tokens to win the game.
+            </p>
+        </li>
+        <li>
+            <p>
+                If the next player takes three tokens, then there will be one token remaining. The other player can take
+                it to win the game.
+            </p>
+        </li>
+    </ul>
+    <p>
+        It will be helpful for us to develop some tools to help us to visualize and analyze the games that we're
+        discussing.
+    </p>
+    <definition xml:id="def-graph">
+        <title>Graph</title>
+        <idx><h>graph</h></idx>
+        <idx><h>node</h></idx>
+        <idx><h>directed edge</h></idx>
+        <statement>
+            <p>
+                A <term>graph</term> is a collection of <term>nodes</term> (which are typically represented by a dot,
+                an open circle, or a box) and a collection of <term>directed edges</term> (which are typically
+                represented as an arrow) that point from one node to another.
+            </p>
+        </statement>
+    </definition>
+    <aside>
+        Technically, this is known as a <em>directed</em> graph because all of the edges have a direction. A general
+        graph simply has edges with no direction to them. We are not going to make a big deal about this distinction
+        because all of the graphs we will encounter in this course are directed graphs and there is little value in
+        concerning ourselves with the more general case.
+    </aside>
+    <p>
+        In our context, each node represents a particular game state, and the edges represent the ways that the game can
+        progress from one state to the next by the player's actions. Here is a graph that represents the next move when
+        there are just four tokens remaining.
+    </p>
+	<image xml:id="countdown-4" width="50%">
+		<latex-image>
+			\begin{tikzpicture}
+                \draw (0,0) node[circle, draw] (4) {\small 4};
+                \draw (1,0) node[circle, draw] (3) {\small 3};
+                \draw (2,0) node[circle, draw] (2) {\small 2};
+                \draw (3,0) node[circle, draw] (1) {\small 1};
+            
+                \draw[-latex] (4) to (3);
+                \draw[-latex] (4) to[out=40, in=140] (2);
+                \draw[-latex] (4) to[out=60, in=120] (1);
+            \end{tikzpicture} 
+		</latex-image>
+	</image>
+    <p>
+        The number inside the circle represents the number of tokens remaining, which is enough to define the game state
+        for this analysis. The edges represent different moves we can make. In this case they are unlabeled because it's
+        easy enough to figure out how many tokens are being taken to get to the other nodes, but in some cases it may be
+        helpful to label the edges with additional information.
+    </p>
+    <p>
+        From this image, we can easily see that when there are four tokens left, it is possible to get down to one, two,
+        or three tokens remaining. But this graph is incomplete in the sense that it only gives us information for one
+        move. Let's see what this looks like if we include all the things that can happen next.
+    </p>
+	<image xml:id="countdown-4-full" width="50%">
+		<latex-image>
+			\begin{tikzpicture}
+                \foreach \x in {0,1,...,4}
+                    \draw (-\x,0) node[circle, draw] (\x) {\small \x};
+    
+                \draw[-latex] (4) to (3);
+                \draw[-latex] (3) to (2);
+                \draw[-latex] (2) to (1);
+                \draw[-latex] (1) to (0);
+            
+                \draw[-latex] (4) to[out=35, in=145] (2);
+                \draw[-latex] (3) to[out=35, in=145] (1);
+                \draw[-latex] (2) to[out=35, in=145] (0);
+            
+                \draw[-latex] (4) to[out=45, in=135] (1);
+                \draw[-latex] (3) to[out=45, in=135] (0);            
+            \end{tikzpicture} 
+		</latex-image>
+	</image>
+    <p>
+        While this is an accurate picture of all of the ways that the game can play out, it's not a very good picture
+        of how the game would play out between two people who were playing to win. If there are only three tokens left,
+        nobody that is playing well would ever just take two tokens to give their opponent the victory. So instead of
+        building out a full tree, it will be better to draw out a simplified tree where we leave out the moves that are
+        bad. If we simplified this graph and changed the positions of the arrows to make it more legible, it would look
+        like this.
+    </p>
+	<image xml:id="countdown-4-simple" width="50%">
+		<latex-image>
+			\begin{tikzpicture}
+                \foreach \x in {0,1,...,4}
+                    \draw (-\x,0) node[circle, draw] (\x) {\small \x};
+    
+                \draw[-latex] (4) to (3);
+                \draw[-latex] (1) to (0);
+            
+                \draw[-latex] (4) to[out=35, in=145] (2);
+                \draw[-latex] (2) to[out=-35, in=-145] (0);
+            
+                \draw[-latex] (4) to[out=45, in=135] (1);
+                \draw[-latex] (3) to[out=-45, in=-135] (0);            
+            \end{tikzpicture} 
+		</latex-image>
+	</image>
+    <p>
+        Instead of representing how the game might play out, we've now got a picture that shows how the game ought to
+        play out (as long as both players are smart and are playing to win). This shows us that if there are only one,
+        two, or three tokens remaining, that the next player should take all of the tokens to leave zero (and win).
+    </p>
+    <p>
+        The zero node is important to us in our analysis because it represents that the game has ended. We can see this
+        in the graph because there are no arrows that leave it to move us to another game state. Once this state has
+        been reached, there is no more game left to play. We have a special name for these nodes.
+    </p>
+    <definition xml:id="def-terminal-node">
+        <title>Terminal Node</title>
+        <idx><h>terminal node</h></idx>
+        <statement>
+            <p>
+                A <term>terminal node</term> is a node in a graph that has no edges leaving it.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        <idx><h>normal play condition</h></idx>
+        <idx><h>misère condition</h></idx>
+        If the gmae state has reached a terminal node, the game is over. In 15-Countdown, the player who takes the last
+        token is the winner, which means that the player that moved the game to the terminal node is the winner. Another
+        way to think about this is that is supposed to move next has no legal moves (since there are no edges leaving
+        the terminal node), and that is what makes them lose. This is known as the "normal play condition" and stands in
+        contrast to the "misère condition" in which the player who cannot move is the winner. 
+    </p>
+    <p>
+        Let's take the idea of representing the game using a graph to its most extreme end. Here is the graph that
+        represents a full game of 15-Countdown.
+    </p>
+	<image xml:id="countdown-full" width="100%">
+		<latex-image>
+			\begin{tikzpicture}
+                \foreach \x in {0,1,...,15}
+                    \draw (-\x,0) node[circle, draw] (\x) {\small \x};
+    
+                \draw[-latex] (15) to (14);
+                \draw[-latex] (14) to (13);
+                \draw[-latex] (13) to (12);
+                \draw[-latex] (12) to (11);
+                \draw[-latex] (11) to (10);
+                \draw[-latex] (10) to (9);
+                \draw[-latex] (9) to (8);
+                \draw[-latex] (8) to (7);
+                \draw[-latex] (7) to (6);
+                \draw[-latex] (6) to (5);
+                \draw[-latex] (5) to (4);
+                \draw[-latex] (4) to (3);
+                \draw[-latex] (3) to (2);
+                \draw[-latex] (2) to (1);
+                \draw[-latex] (1) to (0);
+            
+                \draw[-latex] (15) to[out=35, in=145] (13);
+                \draw[-latex] (14) to[out=35, in=145] (12);
+                \draw[-latex] (13) to[out=35, in=145] (11);
+                \draw[-latex] (12) to[out=35, in=145] (10);
+                \draw[-latex] (11) to[out=35, in=145] (9);
+                \draw[-latex] (10) to[out=35, in=145] (8);
+                \draw[-latex] (9) to[out=35, in=145] (7);
+                \draw[-latex] (8) to[out=35, in=145] (6);
+                \draw[-latex] (7) to[out=35, in=145] (5);
+                \draw[-latex] (6) to[out=35, in=145] (4);
+                \draw[-latex] (5) to[out=35, in=145] (3);
+                \draw[-latex] (4) to[out=35, in=145] (2);
+                \draw[-latex] (3) to[out=35, in=145] (1);
+                \draw[-latex] (2) to[out=35, in=145] (0);
+            
+                \draw[-latex] (15) to[out=45, in=135] (12);
+                \draw[-latex] (14) to[out=45, in=135] (11);
+                \draw[-latex] (13) to[out=45, in=135] (10);
+                \draw[-latex] (12) to[out=45, in=135] (9);
+                \draw[-latex] (11) to[out=45, in=135] (8);
+                \draw[-latex] (10) to[out=45, in=135] (7);
+                \draw[-latex] (9) to[out=45, in=135] (6);
+                \draw[-latex] (8) to[out=45, in=135] (5);
+                \draw[-latex] (7) to[out=45, in=135] (4);
+                \draw[-latex] (6) to[out=45, in=135] (3);
+                \draw[-latex] (5) to[out=45, in=135] (2);
+                \draw[-latex] (4) to[out=45, in=135] (1);
+                \draw[-latex] (3) to[out=45, in=135] (0);
+            \end{tikzpicture} 
+		</latex-image>
+	</image>
+    <p>
+        Our goal would be to do some sort of analysis to this to find winning moves similar to what happened with the
+        graph representing just 4 or fewer tokens remaining. The rest of this chapter will investigate different ways
+        of trying to identify winning moves in a game.
+    </p>
+    <p>
+        It shouldn't be too much of a surprise that 15-Countdown is just one of many possible games of that type. For
+        example, it's not hard to imagine starting with 17 tokens instead of just 15. And we can also imagine that
+        the rules may allow you to take away different numbers of tokens. There are infinite numbers of these variants.
+        In order to put them all under one umbrella, we're going to introduce a game to capture all of them.
+    </p>
+    <fact xml:id="game-generalized-countdown">
+        <title>Generalized Countdown</title>
+        <idx><h>generalized-countdown</h></idx>
+        <statement>
+            <p>
+                The Generalized Countdown game is a generalization of 15-Countdown. Instead of starting with 15 tokens
+                in a single heap, you can start with any number of tokens in a single heap. And instead of being able to
+                take just 1, 2, or 3 tokens, you can pick any numbers of tokens as the legal moves. The winner is the
+                player who takes the last token.
+            </p>
+            <p>
+                Note: In order to guarantee that a player can always take the last token, you need to include the option
+                of taking 1 token. If you do not want to allow a player to take 1 token, then the end game condition can
+                be altered to be that the player who makes the last legal move is the winner.
+            </p>
+            <p>
+                For example, you might start with 18 tokens and players can only remove 1, 3, or 6 tokens on their turn.
+            </p>
+            <figure xml:id="video-generalized-countdown">
+                <title>Generalized Countdown Video Instructions</title>
+                <video youtube="eM3S74kchoM">
+                </video>
+                <caption>Video instructions for 15-Countdown</caption>
+            </figure>
+        </statement>
+    </fact>
+    <worksheet xml:id="countdown-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>15-Countdown Scenarios</title>
+            <exercise>
+                <p>
+                    Suppose it is your turn and there are 5 tokens remaining. What move would you make and why? (Hint:
+                    list your possible moves and then think about how your opponent might respond to each of those
+                    situations.)
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Suppose it is your turn and there are 6 tokens remaining. What move would you make and why? (Hint:
+                    You might find it helpful to use your analysis of the 5 token scenario in your analysis.)
+                </p>
+            </exercise>
+        </exercisegroup>
+        <exercisegroup>
+            <title>The Genearlized Countdown Game</title>
+            <exercise>
+                <p>
+                    Choose your own Generalized Countdown game and draw a graph to represent all possible games.
+                </p>
+            </exercise>
+        </exercisegroup>
+        <exercisegroup>
+            <title>Exploring Nim</title>
+            <p> 
+                For each of the problems in this section, assume you're playing a game of Nim where you start with three
+                heaps whose sizes are 4, 2, and 1.
+            </p>
+            <exercise>
+                <p>
+                    We can represent the initial game state of this game as (4, 2, 1). This tells us that the first heap
+                    has 4 tokens in it, the second heap has 3 tokens, and the third heap has 1. Using this format, make
+                    a list of all possible game states. (Hint: You should have 30 total states.)
+                </p>
+                <aside>
+                    <p>
+                        In math terms, we would call the object (a, b, c) a 3-tuple.
+                    </p>
+                </aside>
+            </exercise>
+            <exercise>
+                <p>
+                    Although we might technically think of the game states (1, 2, 1) and (2, 1, 1) as being different,
+                    they are strategically the same scenario. Using this symmetry to shorten your list of game states.
+                    You may find it helpful to list the heaps in order of decreasing size. (Hint: There should only be
+                    19 game states now.)
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Draw a graph that represents all possible games of Nim with the given setup. You may find it helpful
+                    to organize your game states so that the total number of tokens decreases as you move in one
+                    direction across your page. (Note: No matter how well you organize things, there will be a very
+                    large number of arrows and they will cross over each other a lot.)
+                </p>
+            </exercise>
+            <exercise>
+                <p>
+                    Make a list of all of the game states in the Nim game from the previous problem that are one move
+                    away from winning. Use this information to draw a simplified graph of this game.
+                </p>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>

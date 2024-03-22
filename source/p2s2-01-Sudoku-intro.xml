@@ -1,0 +1,37 @@
+<section xml:id="sudoku-intro">
+    <title>Introduction to Sudoku</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn how to play Sudoku.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        What is your experience with logic puzzles?
+    </observation>
+
+    <p>
+        TEXT
+    </p>
+
+    <worksheet xml:id="sudoku-intro-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>TITLE</title>
+            <p>
+                TEXT
+            </p>
+            <exercise>
+                <p>
+                    Exercise
+                </p>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>
