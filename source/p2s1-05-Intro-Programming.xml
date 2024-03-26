@@ -5,12 +5,12 @@
         <ul>
             <li>
                 <p>
-                    You will learn the basics of computer programming.
+                    You will learn that programming is getting a computer to follow a flowchart.
                 </p>
             </li>
             <li>
                 <p>
-                    You will access program on Replit.
+                    You will access and run a program on Replit.
                 </p>
             </li>
         </ul>
@@ -73,16 +73,32 @@
         of coding best practices!)
     </p>
     <p>
-        We are going to use a treasure-hunting robot as our model for thinking about programming. Imagine a rectangular
-        grid on which we have a robot, a treasure, and some obstructions (like large rocks). The idea is that we want to
-        program the robot so that it can find the treasure. The diagram below gives an example of a sample arrangement.
-        The robot is indicated by an arrow, and forward for the robot is the direction of the arrow. The boxes with an X
-        in them represent an obstruction. And the diamond is the treasure.
+        We are going to use a game-playing bot as our basic programming model. In order to do this, we need to introduce
+        the game that our bot is going to play.
     </p>
-    <p>
-        The robot only understands a very limited set of commands: look_left, look_right, look_forward, turn_left,
-        turn_right, and move_forward. 
-    </p>
+    <fact xml:id="game-outside-in">
+        <title>Outside-In</title>
+        <idx><h>Outside-In</h></idx>
+        <statement>
+            <p>
+                Outside-In is a two-player game. The game is played with with a standard deck of cards. The cards are shuffled
+                and an even number of cards are laid out in a row. Players take turns drawing a single card from either end of
+                the row. The player's score is the sum of the values of all the cards they collect during the game, where aces
+                are worth 1, number cards are worth the number, jacks are worth 11, queens are worth 12, and kings are worth 13.
+                The player with the most points wins the game.
+            </p>
+            <p>
+                Note that this game can also be played with domino tiles (with value equal to the number of dots) or any other
+                objects that can be given a definite value.
+            </p>
+        </statement>
+        <figure xml:id="video-outside-in">
+            <title>Outside-In Video Instructions</title>
+            <video youtube="eM3S74kchoM">
+            </video>
+            <caption>Video instructions for Outside-In</caption>
+        </figure>
+    </fact>
 
     <worksheet xml:id="Intro-Programming-wksht">
 		<title>Exercises</title>
