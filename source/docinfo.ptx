@@ -60,8 +60,6 @@
       text width=3cm, 
       draw=black]
 
-    #\usepackage{chessfss}
-
   </latex-image-preamble>
 
   <!-- It is possible to rename elements: -->
