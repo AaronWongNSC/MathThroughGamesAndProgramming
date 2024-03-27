@@ -32,73 +32,144 @@
         </p>
     </observation>
 
-    <p>
-        Computer programming is basically the process of giving the computer instructions to follow in order to
-        complete a specific task. People can spend multiple years trying to become proficient at programming, and so it
-        is far beyond the scope of this class to teach you how to program. That said, the underlying logic of computer
-        programming is within reach, and it's something that we have already started to investigate in the previous
-        section.
-    </p>
-    <p>
-        <idx><h>programming language</h></idx>
-        <idx><h>Python</h></idx>
-        Each of the flowcharts we created is a set of instructions to be followed in odrer to complete a specific task.
-        The only gap between understanding those flowcharts and computer programming is understanding how to get the
-        computer to follow the flowchart. The specific way that this is done is through something called a
-        <term>programming language</term>, which is basically a translation tool that runs between humans and computers.
-        While there are many languages that are available, we will use <term>Python</term> because it is among the
-        easier languages to use when getting started in programming.
-    </p>
-    <p>
-        There are a number of ways to get access to Python. If you wanted to download a version of it to your computer,
-        you can find a number of packages that will do it for you (for example, Anaconda Python is popular for data
-        science). If you do this, you will need to understand enough about your computer to navigate the process. 
-        Alternatively, you can use a online Python interpreter, which handles all of that for you. And this is the route
-        that we will recommend.
-    </p>
-    <p>
-        <idx><h>Replit</h></idx>
-        Alternatively, you can use a online Python interpreter, which handles all of that for you. This is the path that
-        this textbook uses in order to make all of the programs more easily accessible. Specifically, the materials will
-        be housed at <url href="https://replit.com">Replit</url>. Viewing the files will not require an account, but
-        running them will. (Basic accounts are free.)
-    </p>
-    <p>
-        This is not a course in programming, so there will be many topics and ideas that will be glossed over. The
-        primary goal is for you to understand the large-scale structures of programming without getting lost in the
-        details. If you already have programming experience, you may find it interesting to look through the files to
-        get a deeper understanding of how things are set up, but this is not necessary to be successful in the course.
-        (One of the goals was to make the high level code as human-readable as possible, so you will find that there
-        are a lot of unnecessary functions that clutter things up. None of the code is meant to be taken as an example
-        of coding best practices!)
-    </p>
-    <p>
-        We are going to use a game-playing bot as our basic programming model. In order to do this, we need to introduce
-        the game that our bot is going to play.
-    </p>
-    <fact xml:id="game-outside-in">
+    <subsection>
+        <title>What is Compupter Programming?</title>
+        <p>
+            Computer programming is basically the process of giving the computer instructions to follow in order to
+            complete a specific task. People can spend multiple years trying to become proficient at programming, and so it
+            is far beyond the scope of this class to teach you how to program. That said, the underlying logic of computer
+            programming is within reach, and it's something that we have already started to investigate in the previous
+            section.
+        </p>
+        <p>
+            <idx><h>programming language</h></idx>
+            <idx><h>Python</h></idx>
+            Each of the flowcharts we created is a set of instructions to be followed in odrer to complete a specific task.
+            The only gap between understanding those flowcharts and computer programming is understanding how to get the
+            computer to follow the flowchart. The specific way that this is done is through something called a
+            <term>programming language</term>, which is basically a translation tool that runs between humans and computers.
+            While there are many languages that are available, we will use <term>Python</term> because it is among the
+            easier languages to use when getting started in programming.
+        </p>
+        <p>
+            There are a number of ways to get access to Python. If you wanted to download a version of it to your computer,
+            you can find a number of packages that will do it for you (for example, Anaconda Python is popular for data
+            science). If you do this, you will need to understand enough about your computer to navigate the process. 
+            Alternatively, you can use a online Python interpreter, which handles all of that for you. And this is the route
+            that we will recommend.
+        </p>
+        <p>
+            <idx><h>Replit</h></idx>
+            The materials for this course will be housed at <url href="https://replit.com">Replit</url>. Viewing the files
+            will not require an account, but running them will. (Basic accounts are free at the time of writing.) This will
+            make them accessible to everyone with access to the internet without the hassle of needing to install programs
+            onto their computer.
+        </p>
+        <p>
+            This is not a course in programming, so there will be many topics and ideas that will be glossed over. The
+            primary goal is for you to understand the large-scale structures of programming without getting lost in the
+            details. If you already have programming experience, you may find it interesting to look through the files to
+            get a deeper understanding of how things are set up, but this is not necessary to be successful in the course.
+            (One of the goals was to make the high level code as human-readable as possible, so you will find that there
+            are a lot of unnecessary functions that clutter things up. None of the code is meant to be taken as an example
+            of coding best practices!)
+        </p>
+    </subsection>
+    <subsection>
         <title>Outside-In</title>
-        <idx><h>Outside-In</h></idx>
-        <statement>
-            <p>
-                Outside-In is a two-player game. The game is played with with a standard deck of cards. The cards are shuffled
-                and an even number of cards are laid out in a row. Players take turns drawing a single card from either end of
-                the row. The player's score is the sum of the values of all the cards they collect during the game, where aces
-                are worth 1, number cards are worth the number, jacks are worth 11, queens are worth 12, and kings are worth 13.
-                The player with the most points wins the game.
-            </p>
-            <p>
-                Note that this game can also be played with domino tiles (with value equal to the number of dots) or any other
-                objects that can be given a definite value.
-            </p>
-        </statement>
-        <figure xml:id="video-outside-in">
-            <title>Outside-In Video Instructions</title>
-            <video youtube="eM3S74kchoM">
-            </video>
-            <caption>Video instructions for Outside-In</caption>
-        </figure>
-    </fact>
+        <p>
+            We are going to use a game-playing bot as our basic programming model. In order to do this, we need to introduce
+            the game that our bot is going to play.
+        </p>
+        <fact xml:id="game-outside-in">
+            <title>Outside-In</title>
+            <idx><h>Outside-In</h></idx>
+            <statement>
+                <p>
+                    Outside-In is a two-player game. The game is played with with a standard deck of cards. The cards are shuffled
+                    and an even number of cards are laid out in a row. (A recommended number of cards is 10.) Players take turns
+                    drawing a single card from either end of the row. The player's score is the sum of the values of all the cards
+                    they collect during the game, where aces are worth 1, number cards are worth the number, jacks are worth 11,
+                    queens are worth 12, and kings are worth 13. The player with the most points wins the game.
+                </p>
+                <p>
+                    Note that this game can also be played with domino tiles (with value equal to the number of dots) or any other
+                    objects that can be given a definite value.
+                </p>
+            </statement>
+            <figure xml:id="video-outside-in">
+                <title>Outside-In Video Instructions</title>
+                <video youtube="eM3S74kchoM">
+                </video>
+                <caption>Video instructions for Outside-In</caption>
+            </figure>
+        </fact>
+        <p>
+            After the cards are dealt, this is a game of complete information. Both players can see exactly what options are available
+            at any given moment, and a game tree can be drawn out to analyze the game. That analysis would be slightly different than
+            what we've done previously, as this game is not symmetric and the outcome depends on past decisions. But the idea of mapping
+            out the possible decisions and seeing which ones lead to winning positions can still be applied. The problem is that every
+            new combination and arrangement of cards will require a new game tree analysis, and there are too many possible games for
+            us to analyze them all.
+        </p>
+        <p>
+            Instead of using a game tree to make decisions, we're going to use a decision-making flowchart. The idea is to try to
+            think strategically about the decisions you're going to make. And the way to start understanding this is to think about
+            what you're thinking about when it's your turn.
+        </p>
+        <p>
+            Suppose you are playing a game with 10 cards and you are the first player. Here is what you see:
+        </p>
+        <image xml:id="outside-in-game1" width="75%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \foreach \x in {0,...,9}
+                    {
+                        \draw (\x, 0) ++ (-0.35,-0.5) rectangle ++ (0.7,1);
+                    }
+                    \draw (0,0) node[anchor=center] {4};
+                    \draw (1,0) node[anchor=center] {8};
+                    \draw (2,0) node[anchor=center] {3};
+                    \draw (3,0) node[anchor=center] {5};
+                    \draw (4,0) node[anchor=center] {2};
+                    \draw (5,0) node[anchor=center] {4};
+                    \draw (6,0) node[anchor=center] {7};
+                    \draw (7,0) node[anchor=center] {K};
+                    \draw (8,0) node[anchor=center] {Q};
+                    \draw (9,0) node[anchor=center] {5};            
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            You must either take the 4 on the left or the 5 on the right. But which one will you take? More importantly,
+            what are you thinking about as you try to make your decision? There is no single answer to this question, and here
+            are some possibilities:
+            <ul>
+                <li>
+                    <p>
+                        You might notice that the 5 on the right is better than the 4 on the left, so that might lead you to
+                        take the 5.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        However, you might also notice that by taking the 5, you open up the Queen for your opponent to take,
+                        and so maybe it's better to play defensively and take the 4 to prevent them from getting the 5.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        But you might further recognize that if you take the 5, your opponent might take the Queen, giving you
+                        access to take the King. (But they may not take the queen, in which case your scheme doesn't work.)
+                    </p>
+                </li>
+            </ul>
+        </p>
+        <p>
+            As you can see, there are lots of layers of thinking that can happen in this game, especially in the first few moves.
+            Our goal is to try to understand a couple different strategies and see how they look as decision-making flowchart.
+        </p>
+    </subsection>
 
     <worksheet xml:id="Intro-Programming-wksht">
 		<title>Exercises</title>
@@ -113,3 +184,5 @@
     </worksheet>
 
 </section>
+
+<!-- NEXT SECTION: PROGRAMMING THE BOT -->
