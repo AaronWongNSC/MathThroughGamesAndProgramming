@@ -169,6 +169,11 @@
             As you can see, there are lots of layers of thinking that can happen in this game, especially in the first few moves.
             Our goal is to try to understand a couple different strategies and see how they look as decision-making flowchart.
         </p>
+        <p>
+            <idx><h>greedy algorithm (Outside-In)</h></idx>
+            The first strategy we will think about is known as the <term>greedy algorithm</term>. The basic idea is that you're going
+            to look at just the two cards on the end and take the larger one. 
+        </p>
     </subsection>
 
     <worksheet xml:id="Intro-Programming-wksht">
