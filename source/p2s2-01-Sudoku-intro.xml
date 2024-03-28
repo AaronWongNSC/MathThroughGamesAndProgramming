@@ -21,7 +21,19 @@
     </observation>
 
     <p>
-        TEXT
+        Sudoku is a classic pen-and-paper puzzle. (A pen-and-paper puzzle is a puzzle that can be given to you on
+        paper and solved using just a pen and your brain.) If you look around, you will be able to find all sorts of
+        puzzle books that contain them, as well as dozens of websites or apps that let you access gigantic libraries
+        of puzzles. 
+    </p>
+    <p>
+        The standard Sudoku grid is a 9x9 square grid that has been broken up into 9 3x3 boxes. A valid Sudoku grid is
+        one in which every square in the grid is filled with one of the digits from 1 to 9 subject to the condition that
+        each digit appears in every row, column, and box exactly once. The diagram below shows a valid Sudoku grid.
+    </p>
+    <p>
+        A typical puzzle starts with only some of the squares filled with digits, and it is up to the player to fill in
+        the remaining digits to get a valid Sudoku grid.
     </p>
 
     <worksheet xml:id="sudoku-intro-wksht">
