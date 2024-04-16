@@ -36,9 +36,9 @@
         <latex-image>
             \begin{tikzpicture}[scale=0.5]
 
-                \draw (0,4) rectangle[fill=yellow] (9,5);
-                \draw (7,0) rectangle[fill=yellow] (8,9);
-                \draw (0,6) rectangle[fill=yellow] (3,9);
+                \draw[fill=yellow] (0,4) rectangle (9,5);
+                \draw[fill=yellow] (7,0) rectangle (8,9);
+                \draw[fill=yellow] (0,6) rectangle (3,9);
 
                 \draw (0,0) grid (9,9);
                 \foreach \x in {0,3,6} {
