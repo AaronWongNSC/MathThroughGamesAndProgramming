@@ -252,6 +252,9 @@
                 \draw[dashed, gray] (6,2.5) -- (0,2.5);
                 \draw[dashed, gray] (4,1.5) -- (0,1.5);
 
+                \draw[dashed, gray] (0.5,0.5) node[anchor=center] {1};
+                \draw[dashed, gray] (0.1,0.1) rectangle (0.9,0.9);
+
             \end{tikzpicture}
         </latex-image>
     </image>
