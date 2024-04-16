@@ -148,8 +148,31 @@
     </p>
     <p>
         Even though the standard Sudoku is completed using numbers, the numbers themselves do not play a role in the
-        puzzle. They are just a collection of distinct symbols. For example, a 
+        puzzle. They are just a collection of distinct symbols. For example, we could use the letters A through I instead
+        of the digits 1 through 9, and the logic will remain intact. (This obversation is not true of Sudoku variants, which
+        sometimes use the value of the numbers as part of the puzzle. We'll see these later.)
     </p>
+    <p>
+        The goal of the next few sections is to introduce some of the logic that can be applied in an attempt to solve the
+        puzzle. In this section, we will start by simply using the process of elimination to solve for specific entries. Consider
+        the following scenario:
+    </p>
+    <image xml:id="sudoku-demo-1" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+                \draw (1.5,6.5) node[anchor=center] {1};
+                \draw (2.5,3.5) node[anchor=center] {1};
+                \draw (6.5,2.5) node[anchor=center] {1};
+                \draw (4.5,1.5) node[anchor=center] {1};
+            \end{tikzpicture}
+        </latex-image>
+    </image>
 
 
     <worksheet xml:id="sudoku-intro-wksht">
