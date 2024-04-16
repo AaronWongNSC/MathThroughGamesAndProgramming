@@ -157,7 +157,7 @@
         puzzle. In this section, we will start by simply using the process of elimination to solve for specific entries. Consider
         the following scenario:
     </p>
-    <image xml:id="sudoku-demo-1" width="75%">
+    <image xml:id="sudoku-logic-1-1" width="75%">
         <latex-image>
             \begin{tikzpicture}[scale=0.5]
                 \draw (0,0) grid (9,9);
