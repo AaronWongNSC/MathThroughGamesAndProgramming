@@ -37,9 +37,12 @@
                 \draw (0,0) grid (9,9);
                 \foreach \x in {0,3,6} {
                     \foreach \y in {0,3,6} {
-                        \draw[thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
                     }
                 }
+                \draw (0.5,8.5) node[anchor=center] {1};
+                \draw (1.5,8.5) node[anchor=center] {7};
+                \draw (2.5,8.5) node[anchor=center] {9};
             \end{tikzpicture}
         </latex-image>
     </image>
