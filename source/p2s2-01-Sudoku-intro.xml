@@ -264,9 +264,10 @@
         two digits eliminate two of the columns, leaving exactly one row and one column where the digit can be placed.
     </p>
     <p>
-        In most situations, the elimination will occur through a combination of row, column, and box values. You will
-        also typically not know which value could be placed before thinking through the logic of the puzzle. These puzzles
-        will require some practice and patience, but over time you will begin to see the values more quickly.
+        In most situations, the elimination will occur through a combination of row, column, and box values. Sometimes, certain
+        positions will be blocked by other numbers. You will also typically not know which value could be placed before thinking
+        through the logic of the puzzle. These puzzles will require some practice and patience, but over time you will begin to
+        see the values more quickly.
     </p>
 
 
@@ -276,11 +277,27 @@
             <title>Placing Through Elimination</title>
             <p>
                 For each of the following exercises, determine the digit that can be placed and where it must be placed.
+                (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)
             </p>
             <exercise>
-                <p>
-                    Exercise
-                </p>
+                <image xml:id="sudoku-elimination-exercise-1" width="75%">
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.5]
+                            \draw (0,0) grid (9,9);
+                            \foreach \x in {0,3,6} {
+                                \foreach \y in {0,3,6} {
+                                    \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                                }
+                            }
+                            \draw (0.5,8.5) node[anchor=center] {9};
+                            \draw (0.5,7.5) node[anchor=center] {8};
+                            \draw (4.5,6.5) node[anchor=center] {1};
+                            \draw (2.5,5.5) node[anchor=center] {1};
+                            \draw (7.5,2.5) node[anchor=center] {1};
+                            \draw (3.5,1.5) node[anchor=center] {1};
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
             </exercise>
         </exercisegroup>
     </worksheet>
