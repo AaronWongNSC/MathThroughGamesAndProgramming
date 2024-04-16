@@ -198,12 +198,14 @@
     </image>
     <p>
         Based on the rules of the game, you should be able to easily identify the missing value in the middle
-        box and in the row and column with 8 out of the 9 entries completed.
+        box and in the row and column with 8 out of the 9 entries completed. The number in row 1 column 2 must be
+        a 4, the number in middle must be a 7, and the number in row 7 column 9 must be a 6. In this case, all the
+        other possibilities were eliminated by their existence in the row, column, or box.
     </p>
     <p> 
         Now consider the following scenario:
     </p>
-    <image xml:id="sudoku-logic-1-1" width="75%">
+    <image xml:id="sudoku-elimination-2-1" width="75%">
         <latex-image>
             \begin{tikzpicture}[scale=0.5]
                 \draw (0,0) grid (9,9);
@@ -220,7 +222,43 @@
         </latex-image>
     </image>
     <p>
-        It is possible to place the 1 in the bottom left box by simply applying the process of elimination.
+        Even though there is much less information in this example, we can still place the 1 in the bottom left box
+        using the process of elimination. We can eliminate the possibility of a 1 in any row or column where a 1
+        already exists. This eliminates all but one of the positions in the box on the bottom left. The following
+        image is a helpful visualization of this idea. The dashed lines are positions where the 1 in the box cannot
+        be located.
+    </p>
+    <image xml:id="sudoku-elimination-2-2" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+                \draw (1.5,6.5) node[anchor=center] {1};
+                \draw (2.5,3.5) node[anchor=center] {1};
+                \draw (6.5,2.5) node[anchor=center] {1};
+                \draw (4.5,1.5) node[anchor=center] {1};
+
+                \draw (1.5,6.5) circle (0.9);
+                \draw (2.5,3.5) circle (0.9);
+                \draw (6.5,2.5) circle (0.9);
+                \draw (4.5,1.5) circle (0.9);
+
+                \draw[dashed, gray] (1.5,6) -- (1.5,0);
+                \draw[dashed, gray] (2.5,3) -- (2.5,0);
+                \draw[dashed, gray] (6,2.5) -- (0,2.5);
+                \draw[dashed, gray] (4,1.5) -- (0,1.5);
+
+            \end{tikzpicture}
+        </latex-image>
+    </image>
+    <p>
+        In fact, whenever there are four of the same digit "looking at" one of the boxes, it must be the case
+        that you can place the digit in that box. Two of the digits eliminate two of the rows, and the other
+        two digits eliminate two of the columns, leaving exactly one row and one column where the digit can be placed.
     </p>
 
 
