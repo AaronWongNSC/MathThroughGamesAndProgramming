@@ -31,10 +31,30 @@
         one in which every square in the grid is filled with one of the digits from 1 to 9 subject to the condition that
         each digit appears in every row, column, and box exactly once. The diagram below shows a valid Sudoku grid.
     </p>
+    <image xml:id="sudoku-demo-1" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+            \end{tikzpicture}
+        </latex-image>
+    </image>
     <p>
         A typical puzzle starts with only some of the squares filled with digits, and it is up to the player to fill in
-        the remaining digits to get a valid Sudoku grid.
+        the remaining digits to get a valid Sudoku grid. A well-constructed puzzle will lead to the ability to complete
+        the grid using logic and without guessing. Solving the puzzle by guessing somewhat defeats the purpose of the
+        puzzle, which is the practice and experience of reasoning and pattern-recognition to reap the reward of a sense
+        of accomplishment.
     </p>
+    <p>
+        Even though the standard Sudoku is completed using numbers, the numbers themselves do not play a role in the
+        puzzle. They are just a collection of distinct symbols. For example, a 
+    </p>
+
 
     <worksheet xml:id="sudoku-intro-wksht">
 		<title>Exercises</title>
