@@ -1,0 +1,32 @@
+<section xml:id="empty-file">
+    <title>Placeholder</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn...
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        Opening Question
+    </observation>
+
+    <p>
+        Text
+    </p>
+
+    <worksheet xml:id="section-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>Title</title>
+            <exercise>
+                <p>Stuff</p>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>
