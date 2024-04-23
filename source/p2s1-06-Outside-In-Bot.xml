@@ -1,0 +1,39 @@
+<section xml:id="outside-in-bot">
+    <title>An Introduction to Python</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn ...
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        <p>
+            What is a social media bot and what do they do? Do you think there are any good uses for bots?
+        </p>
+    </observation>
+
+    <subsection>
+        <title>Accessing Outside-In</title>
+        <p>
+            Replit link
+        </p>
+    </subsection>
+
+    <worksheet xml:id="Intro-Programming-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>STUFF</title>
+            <exercise>
+                <p>
+                    BLAH
+                </p>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>

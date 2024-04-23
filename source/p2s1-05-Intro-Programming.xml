@@ -228,7 +228,7 @@
             compete them against each other and see whether one strategy is better than another!
         </p>
         <p>
-            In fact, this is what we will discuss in the next section. We will first need to translate the spreadsheet
+            In fact, this is what we will discuss in the next section. We will first need to translate the flowchart
             into Python, then we will see how to make the computer play against itself.
         </p>
 
@@ -247,5 +247,3 @@
     </worksheet>
 
 </section>
-
-<!-- NEXT SECTION: PROGRAMMING THE BOT -->
