@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Countdown Games</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="College Mathematics Through Games and Programming">
+<meta property="book:author" content="Aaron Wong">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="College Math Through Games and Programming" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="main.html"><span class="title">College Mathematics Through Games and Programming:</span> <span class="subtitle">Mathematical Decision-Making</span></a></h1>
+<p class="byline">Aaron Wong</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="chapter-two-perfect.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter-two-perfect.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="PN-Position.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+
+\newcommand{\symqueen}{Q}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-intro.html" class="internal"><span class="codenumber">I</span> <span class="title">A Brief Introduction</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-game.html" class="internal"><span class="codenumber">1</span> <span class="title">What is a Game?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="game-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">A Simple Question with a Complicated Answer</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="game-intro.html#game-intro-wksht" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="game-categories.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Organizing the World of Games</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="game-categories.html#game-categories-wksht" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-perfect.html" class="internal"><span class="codenumber">II</span> <span class="title">Games with Perfect Information</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chapter-two-perfect.html" class="internal"><span class="codenumber">2</span> <span class="title">Two Player Games of Perfect Information</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="countdown.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Countdown Games</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="countdown.html#countdown-wksht" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="PN-Position.html" class="internal"><span class="codenumber">2.2</span> <span class="title">P-Positions and N-Positions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="PN-Position.html#PN-Position-wksht" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="More-Games.html" class="internal"><span class="codenumber">2.3</span> <span class="title">A Few More Games</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="More-Games.html#More-Games-6" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Grundy’s Game</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="More-Games.html#More-Games-7" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Wythoff’s Game</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="More-Games.html#More-Games-8" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Simple Circular Nim</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="More-Games.html#More-Games-wksht" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Flowcharts.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Flowcharts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Flowcharts.html#Flowcharts-4" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Introduction to Flowcharts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Flowcharts.html#Flowcharts-5" class="internal"><span class="codenumber">2.4.2</span> <span class="title">A Simple Sorting Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Flowcharts.html#Flowcharts-6" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Labeling Game Trees</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="Flowcharts.html#Flowcharts-wksht" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="Intro-Programming.html" class="internal"><span class="codenumber">2.5</span> <span class="title">An Introduction to Programming</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Intro-Programming.html#Intro-Programming-4" class="internal"><span class="codenumber">2.5.1</span> <span class="title">What is Compupter Programming?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="Intro-Programming.html#Intro-Programming-5" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Outside-In</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="Intro-Programming.html#Intro-Programming-wksht" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter-logic.html" class="internal"><span class="codenumber">3</span> <span class="title">Logical Deduction Puzzles</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sudoku-intro.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to Sudoku</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sudoku-intro.html#sudoku-intro-wksht" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="empty-file.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Placeholder</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="empty-file.html#section-wksht" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="empty-file.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Placeholder</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="empty-file.html#section-wksht" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="empty-file.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Placeholder</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="empty-file.html#section-wksht" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="empty-file.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Placeholder</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="empty-file.html#section-wksht" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-chance.html" class="internal"><span class="codenumber">III</span> <span class="title">One-Player Games of Chance</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chapter-gambling.html" class="internal"><span class="codenumber">4</span> <span class="title">Gambling Games</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-two-players.html" class="internal"><span class="codenumber">IV</span> <span class="title">Two-Player Games</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chapter-zero-sum.html" class="internal"><span class="codenumber">5</span> <span class="title">Zero-Sum Games</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chapter-nonzero-sum.html" class="internal"><span class="codenumber">6</span> <span class="title">Nonzero-Sum Games</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-definitions.html" class="internal"><span class="codenumber">A</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-theorems.html" class="internal"><span class="codenumber">B</span> <span class="title">Theorems</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-games.html" class="internal"><span class="codenumber">C</span> <span class="title">Games</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-6.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="countdown"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Countdown Games</span>
+</h2>
+<article class="objectives goal-like" id="countdown-2"><h3 class="heading"><span class="type">Learning Objectives</span></h3>
+<ul class="disc">
+<li id="countdown-2-1-1"><div class="para" id="countdown-2-1-1-1">You will learn how to play 15-Countdown.</div></li>
+<li id="countdown-2-1-2"><div class="para" id="countdown-2-1-2-1">You will learn how to represent the game state of 15-Countdown using a graph.</div></li>
+</ul></article><article class="observation remark-like" id="countdown-3"><h3 class="heading">
+<span class="type">Opening Discussion</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
+</h3>Have you ever tried to analyze a game to figure out how to play it better? What sorts of things did you do to perform your analyses? Were you able to improve? For the purposes of this discussion, you can use a more expansive concept of a game to include all forms of games rather than the narrow definition we use throughout the course.</article><div class="para" id="countdown-4">This chapter is a study of two-player games with perfect information. This means that both players have all of the information about the game (no hidden information) and that there is no element of chance. The most classic game of this type is probaby chess. Unfortunately, chess is far too complex of a gmae for us to analyze, and most modern analyses of the game rely on sophisticated computer programs to assist them.</div>
+<div class="para" id="countdown-5">In order for us to begin our journey of learning how to analyze these types of games, we are going to need to start with something much more simple. The game we will start with is called the 15-Countdown game.</div>
+<aside class="aside aside-like" id="countdown-6"><div class="para" id="countdown-6-1">The names of many of the games in this course are arbitrary, and you may find that other people call them by other names or play with slightly different rules. These materials will always provide the rules for a game that is used any type of analysis in order to ensure that everyone is on the same page.</div></aside><article class="fact theorem-like" id="game-15-countdown"><h3 class="heading">
+<span class="type">Game</span><span class="space"> </span><span class="codenumber">2.2</span><span class="period">.</span><span class="space"> </span><span class="title">15-Countdown.</span>
+</h3>
+<div class="para" id="game-15-countdown-3-1">15-Countdown is two-player heap game. The game starts with one heap of 15 tokens. Players take turns removing either one, two, or three tokens from the heap. The player who takes the last token in the heap is the winner.</div>
+<figure class="figure figure-like" id="video-15-countdown"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/eM3S74kchoM?&amp;modestbranding=1&amp;rel=0" id="video-15-countdown-2"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3<span class="period">.</span></span><span class="space"> </span>Video instructions for 15-Countdown</figcaption></figure></article><div class="para" id="countdown-8">Whenever you are introduced to a new game, it will be good to play it a few times to help you understand the rules of the game and start to build some intuition. This is best done with a friend, but it’s also possible for you to play against yourself.</div>
+<div class="para" id="countdown-9">One of the first strategic observations of this game is that if there are three or fewer tokens left, then the next player should win the game by taking all of the tokens. This is a rather trivial observation, as it merely represents that you understand the goal of the game and the rules for taking tokens.</div>
+<div class="para" id="countdown-10">But it turns out that this observation helps to lead us to our first non-trivial strategic insight. When there are exactly four tokens left, the next player is guaranteed to lose if their opponent does not make a mistake. (Before reading further, you should see if you can justify this statement for yourself!) We will demonstrate that this is the case by looking at all of the possible decisions that the next player can make, and show that the other player always has a pathway to victory.</div>
+<ul class="disc">
+<li id="countdown-11-1"><div class="para" id="countdown-11-1-1">If the next player takes one token, then there will be three tokens remaining. The other player can take all three tokens to win the game.</div></li>
+<li id="countdown-11-2"><div class="para" id="countdown-11-2-1">If the next player takes two tokens, then there will be two tokens remaining. The other player can take both tokens to win the game.</div></li>
+<li id="countdown-11-3"><div class="para" id="countdown-11-3-1">If the next player takes three tokens, then there will be one token remaining. The other player can take it to win the game.</div></li>
+</ul>
+<div class="para" id="countdown-12">It will be helpful for us to develop some tools to help us to visualize and analyze the games that we’re discussing.</div>
+<article class="definition definition-like" id="def-graph"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Graph.</span>
+</h3>  <div class="para" id="def-graph-5-1">A <dfn class="terminology">graph</dfn> is a collection of <dfn class="terminology">nodes</dfn> (which are typically represented by a dot, an open circle, or a box) and a collection of <dfn class="terminology">directed edges</dfn> (which are typically represented as an arrow) that point from one node to another.</div></article><aside class="aside aside-like" id="countdown-14"></aside><div class="para" id="countdown-15">In our context, each node represents a particular game state, and the edges represent the ways that the game can progress from one state to the next by the player’s actions. Here is a graph that represents the next move when there are just four tokens remaining.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/countdown-4.svg" role="img" class="contained"></div>
+<div class="para" id="countdown-17">The number inside the circle represents the number of tokens remaining, which is enough to define the game state for this analysis. The edges represent different moves we can make. In this case they are unlabeled because it’s easy enough to figure out how many tokens are being taken to get to the other nodes, but in some cases it may be helpful to label the edges with additional information.</div>
+<div class="para" id="countdown-18">From this image, we can easily see that when there are four tokens left, it is possible to get down to one, two, or three tokens remaining. But this graph is incomplete in the sense that it only gives us information for one move. Let’s see what this looks like if we include all the things that can happen next.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/countdown-4-full.svg" role="img" class="contained"></div>
+<div class="para" id="countdown-20">While this is an accurate picture of all of the ways that the game can play out, it’s not a very good picture of how the game would play out between two people who were playing to win. If there are only three tokens left, nobody that is playing well would ever just take two tokens to give their opponent the victory. So instead of building out a full tree, it will be better to draw out a simplified tree where we leave out the moves that are bad. If we simplified this graph and changed the positions of the arrows to make it more legible, it would look like this.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/countdown-4-simple.svg" role="img" class="contained"></div>
+<div class="para" id="countdown-22">Instead of representing how the game might play out, we’ve now got a picture that shows how the game ought to play out (as long as both players are smart and are playing to win). This shows us that if there are only one, two, or three tokens remaining, that the next player should take all of the tokens to leave zero (and win).</div>
+<div class="para" id="countdown-23">The zero node is important to us in our analysis because it represents that the game has ended. We can see this in the graph because there are no arrows that leave it to move us to another game state. Once this state has been reached, there is no more game left to play. We have a special name for these nodes.</div>
+<article class="definition definition-like" id="def-terminal-node"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Terminal Node.</span>
+</h3>  <div class="para" id="def-terminal-node-3-1">A <dfn class="terminology">terminal node</dfn> is a node in a graph that has no edges leaving it.</div></article><div class="para" id="countdown-25"> If the gmae state has reached a terminal node, the game is over. In 15-Countdown, the player who takes the last token is the winner, which means that the player that moved the game to the terminal node is the winner. Another way to think about this is that is supposed to move next has no legal moves (since there are no edges leaving the terminal node), and that is what makes them lose. This is known as the "normal play condition" and stands in contrast to the "misère condition" in which the player who cannot move is the winner.</div>
+<div class="para" id="countdown-26">Let’s take the idea of representing the game using a graph to its most extreme end. Here is the graph that represents a full game of 15-Countdown.</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/countdown-full.svg" role="img" class="contained"></div>
+<div class="para" id="countdown-28">Our goal would be to do some sort of analysis to this to find winning moves similar to what happened with the graph representing just 4 or fewer tokens remaining. The rest of this chapter will investigate different ways of trying to identify winning moves in a game.</div>
+<div class="para" id="countdown-29">It shouldn’t be too much of a surprise that 15-Countdown is just one of many possible games of that type. For example, it’s not hard to imagine starting with 17 tokens instead of just 15. And we can also imagine that the rules may allow you to take away different numbers of tokens. There are infinite numbers of these variants. In order to put them all under one umbrella, we’re going to introduce a game to capture all of them.</div>
+<article class="fact theorem-like" id="game-generalized-countdown"><h3 class="heading">
+<span class="type">Game</span><span class="space"> </span><span class="codenumber">2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized Countdown.</span>
+</h3>
+<div class="para" id="game-generalized-countdown-3-1">The Generalized Countdown game is a generalization of 15-Countdown. Instead of starting with 15 tokens in a single heap, you can start with any number of tokens in a single heap. And instead of being able to take just 1, 2, or 3 tokens, you can pick any numbers of tokens as the legal moves. The winner is the player who takes the last token.</div> <div class="para" id="game-generalized-countdown-3-2">Note: In order to guarantee that a player can always take the last token, you need to include the option of taking 1 token. If you do not want to allow a player to take 1 token, then the end game condition can be altered to be that the player who makes the last legal move is the winner.</div> <div class="para" id="game-generalized-countdown-3-3">For example, you might start with 18 tokens and players can only remove 1, 3, or 6 tokens on their turn.</div> <figure class="figure figure-like" id="video-generalized-countdown"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/eM3S74kchoM?&amp;modestbranding=1&amp;rel=0" id="video-generalized-countdown-2"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.7<span class="period">.</span></span><span class="space"> </span>Video instructions for 15-Countdown</figcaption></figure></article><section class="worksheet" id="countdown-wksht"><h3 class="heading hide-type">
+<span class="type">Worksheet</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span><div class="print-links">
+<a href="countdown-wksht-a4.html" class="a4">A4</a><a href="countdown-wksht-letter.html" class="us">US</a>
+</div>
+</h3>
+<div class="exercisegroup" id="countdown-wksht-2">
+<h4 class="heading"><span class="title">15-Countdown Scenarios.</span></h4>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="countdown-wksht-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="countdown-wksht-2-2-1">Suppose it is your turn and there are 5 tokens remaining. What move would you make and why? (Hint: list your possible moves and then think about how your opponent might respond to each of those situations.)</div></article><article class="exercise exercise-like" id="countdown-wksht-2-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="countdown-wksht-2-3-1">Suppose it is your turn and there are 6 tokens remaining. What move would you make and why? (Hint: You might find it helpful to use your analysis of the 5 token scenario in your analysis.)</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="countdown-wksht-3">
+<h4 class="heading"><span class="title">The Genearlized Countdown Game.</span></h4>
+<div class="exercisegroup-exercises"><article class="exercise exercise-like" id="countdown-wksht-3-2"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="countdown-wksht-3-2-1">Choose your own Generalized Countdown game and draw a graph to represent all possible games.</div></article></div>
+</div>
+<div class="exercisegroup" id="countdown-wksht-4">
+<h4 class="heading"><span class="title">Exploring Nim.</span></h4>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="countdown-wksht-4-3"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="countdown-wksht-4-3-1">We can represent the initial game state of this game as (4, 2, 1). This tells us that the first heap has 4 tokens in it, the second heap has 3 tokens, and the third heap has 1. Using this format, make a list of all possible game states. (Hint: You should have 30 total states.)</div>
+<aside class="aside aside-like" id="countdown-wksht-4-3-2"><div class="para" id="countdown-wksht-4-3-2-1">In math terms, we would call the object (a, b, c) a 3-tuple.</div></aside></article><article class="exercise exercise-like" id="countdown-wksht-4-4"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="countdown-wksht-4-4-1">Although we might technically think of the game states (1, 2, 1) and (2, 1, 1) as being different, they are strategically the same scenario. Using this symmetry to shorten your list of game states. You may find it helpful to list the heaps in order of decreasing size. (Hint: There should only be 19 game states now.)</div></article><article class="exercise exercise-like" id="countdown-wksht-4-5"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="countdown-wksht-4-5-1">Draw a graph that represents all possible games of Nim with the given setup. You may find it helpful to organize your game states so that the total number of tokens decreases as you move in one direction across your page. (Note: No matter how well you organize things, there will be a very large number of arrows and they will cross over each other a lot.)</div></article><article class="exercise exercise-like" id="countdown-wksht-4-6"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para" id="countdown-wksht-4-6-1">Make a list of all of the game states in the Nim game from the previous problem that are one move away from winning. Use this information to draw a simplified graph of this game.</div></article>
+</div>
+</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="chapter-two-perfect.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="PN-Position.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
