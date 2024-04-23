@@ -228,7 +228,7 @@
         image is a helpful visualization of this idea. The dashed lines are positions where the 1 in the box cannot
         be located.
     </p>
-    <image xml:id="sudoku-elimination-2-20000" width="75%">
+    <image xml:id="sudoku-elimination-2-2" width="75%">
         <latex-image>
             \begin{tikzpicture}[scale=0.5]
                 \draw (0,0) grid (9,9);
