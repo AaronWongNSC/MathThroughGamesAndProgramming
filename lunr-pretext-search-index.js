@@ -906,8 +906,8 @@ var ptx_lunr_docs = [
   "url": "outside-in-bot.html",
   "type": "Section",
   "number": "2.6",
-  "title": "An Introduction to Python",
-  "body": " An Introduction to Python     You will learn ...      What is a social media bot and what do they do? Do you think there are any good uses for bots?    Accessing Outside-In  Replit link    Exercises   STUFF  BLAH    "
+  "title": "Making Outside-In Bots",
+  "body": " Making Outside-In Bots     You will learn ...      What is a social media bot and what do they do? Do you think there are any good uses for bots?    Accessing Outside-In  Replit link    Exercises   STUFF  BLAH    "
 },
 {
   "id": "outside-in-bot-2",
