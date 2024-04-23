@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Flowcharts.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter-two-perfect.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Flowcharts.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter-two-perfect.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="outside-in-bot.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\R}{\mathbb R}
@@ -177,6 +177,13 @@ window.MathJax = {
 <li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="Intro-Programming.html#Intro-Programming-wksht" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="outside-in-bot.html" class="internal"><span class="codenumber">2.6</span> <span class="title">An Introduction to Python</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-4" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Accessing Outside-In</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="outside-in-bot.html#Intro-Programming-wksht" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -234,7 +241,8 @@ window.MathJax = {
 <article class="objectives goal-like" id="Intro-Programming-2"><h3 class="heading"><span class="type">Learning Objectives</span></h3>
 <ul class="disc">
 <li id="Intro-Programming-2-1-1"><div class="para" id="Intro-Programming-2-1-1-1">You will learn that programming is getting a computer to follow a flowchart.</div></li>
-<li id="Intro-Programming-2-1-2"><div class="para" id="Intro-Programming-2-1-2-1">You will access and run a program on Replit.</div></li>
+<li id="Intro-Programming-2-1-2"><div class="para" id="Intro-Programming-2-1-2-1">You will learn how to play Outside-In.</div></li>
+<li id="Intro-Programming-2-1-3"><div class="para" id="Intro-Programming-2-1-3-1">You will learn the greedy algorithm for Outside-In.</div></li>
 </ul></article><article class="observation remark-like" id="Intro-Programming-3"><h3 class="heading">
 <span class="type">Opening Discussion</span><span class="space"> </span><span class="codenumber">2.19</span><span class="period">.</span>
 </h3>
@@ -268,7 +276,12 @@ window.MathJax = {
 </ul>
 </div>
 <div class="para" id="Intro-Programming-5-9">As you can see, there are lots of layers of thinking that can happen in this game, especially in the first few moves. Our goal is to try to understand a couple different strategies and see how they look as decision-making flowchart.</div>
-<div class="para" id="Intro-Programming-5-10"> The first strategy we will think about is known as the <dfn class="terminology">greedy algorithm</dfn>. The basic idea is that you’re going to look at just the two cards on the end and take the larger one.</div></section><section class="worksheet" id="Intro-Programming-wksht"><h3 class="heading hide-type">
+<div class="para" id="Intro-Programming-5-10"> The first strategy we will think about is known as the <dfn class="terminology">greedy algorithm</dfn>. The basic idea is that you’re going to look at just the two cards on the end and take the larger one. Here’s how it looks as a flowchart:</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/outside-in-greedy.svg" role="img" class="contained"></div>
+<div class="para" id="Intro-Programming-5-12">Notice that we had to include a step for when the two end cards are the same. For simplicity, we just turned that into a random choice, but it is possible to come up with schemes to do better than this.</div>
+<div class="para" id="Intro-Programming-5-13">The notation here may seem a little strange. Why <span class="process-math">\(L_0\)</span> and <span class="process-math">\(R_0\)</span> for the left-most and right-most cards instead of <span class="process-math">\(L_1\)</span> and <span class="process-math">\(R_1\text{?}\)</span> It turns out that both notations are acceptable, but it is common when programming in Python that numbering starts from 0 instead of 1. There are good reasons for this, but it’s beyond the scope of this course to get into that.</div>
+<aside class="aside aside-like" id="Intro-Programming-5-14"><div class="para" id="Intro-Programming-5-14-1">The reason for starting at 0 has to do with how the numbers are stored in the computer’s memory and thinking about the "first" number that the computer might use to maximize how high it can count.</div></aside><div class="para" id="Intro-Programming-5-15">We can see that this is something that a machine can follow, which means that you could theoretically program this into a computer and have it play with that strategy. If we had multiple strategies, we could compete them against each other and see whether one strategy is better than another!</div>
+<div class="para" id="Intro-Programming-5-16">In fact, this is what we will discuss in the next section. We will first need to translate the flowchart into Python, then we will see how to make the computer play against itself.</div></section><section class="worksheet" id="Intro-Programming-wksht"><h3 class="heading hide-type">
 <span class="type">Worksheet</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="space"> </span><span class="title">Exercises</span><div class="print-links">
 <a href="Intro-Programming-wksht-a4.html" class="a4">A4</a><a href="Intro-Programming-wksht-letter.html" class="us">US</a>
 </div>
@@ -276,10 +289,10 @@ window.MathJax = {
 <div class="exercisegroup" id="Intro-Programming-wksht-2">
 <h4 class="heading"><span class="title">STUFF.</span></h4>
 <div class="exercisegroup-exercises"><article class="exercise exercise-like" id="Intro-Programming-wksht-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="Intro-Programming-wksht-2-2-1">BALH</div></article></div>
+<div class="para" id="Intro-Programming-wksht-2-2-1">What would you do to replace random choice for the greedy algorithm?</div></article></div>
 </div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="Flowcharts.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="Flowcharts.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="outside-in-bot.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
