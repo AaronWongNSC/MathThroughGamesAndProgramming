@@ -10,7 +10,12 @@
             </li>
             <li>
                 <p>
-                    You will access and run a program on Replit.
+                    You will learn how to play Outside-In.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn the greedy algorithm for Outside-In.
                 </p>
             </li>
         </ul>
@@ -172,8 +177,59 @@
         <p>
             <idx><h>greedy algorithm (Outside-In)</h></idx>
             The first strategy we will think about is known as the <term>greedy algorithm</term>. The basic idea is that you're going
-            to look at just the two cards on the end and take the larger one. 
+            to look at just the two cards on the end and take the larger one. Here's how it looks as a flowchart:
         </p>
+        <image xml:id="outside-in-greedy" width="100%">
+            <latex-image>
+                \begin{tikzpicture}[node distance=1cm]
+                    \node (start) [startstop] {Start};
+                    \node (var) [process, below of=start,minimum width=4cm,text width=4cm,yshift=-0.5cm] {\small $L_0$ = left-most card \\ $R_0$ = right-most card};
+                    \node (compare1) [decision, below of=var,yshift=-1.5cm] {Is $L_0 > R_0$?};
+                    \node (left) [process, below of=compare1,yshift=-1.5cm] {Take the card on the left};
+                    \node (compare2) [decision, right of=compare1,xshift=4.5cm] {Is $R_0 > L_0$?};
+                    \node (right) [process, below of=compare2,yshift=-1.5cm] {Take the card on the right};
+                    \node (random) [process, right of=compare2,xshift=4.5cm] {Pick a card at random};
+                    \node (stop) [startstop, below of=random, yshift=-1.5cm] {Stop};
+
+
+                    \draw[-latex] (start) -- (var);
+                    \draw[-latex] (var) -- (compare1);
+                    \draw[-latex] (compare1) -- (left) node[midway,anchor=west] {Yes};
+                    \draw[-latex] (compare1) -- (compare2) node[midway,anchor=south] {No};
+                    \draw[-latex] (compare2) -- (right) node[midway,anchor=west] {Yes};
+                    \draw[-latex] (compare2) -- (random) node[midway,anchor=south] {No};
+                    \draw[-latex] (random) -- (stop);
+                    \draw[-latex] (right) -- (stop);
+                    \draw[-latex] (left) -- ++ (0,-1.5) -| (stop);
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            Notice that we had to include a step for when the two end cards are the same. For simplicity,
+            we just turned that into a random choice, but it is possible to come up with schemes to do better
+            than this.
+        </p>
+        <p>
+            The notation here may seem a little strange. Why <me>L_0</me> and <me>R_0</me> for the left-most
+            and right-most cards instead of <me>L_1</me> and <me>R_1</me>? It turns out that both notations
+            are acceptable, but it is common when programming in Python that numbering starts from 0 instead
+            of 1. There are good reasons for this, but it's beyond the scope of this course to get into that.
+        </p>
+        <aside>
+            The reason for starting at 0 has to do with how the numbers are stored in the computer's
+            memory and thinking about the "first" number that the computer might use to maximize how high it
+            can count.
+        </aside>
+        <p>
+            We can see that this is something that a machine can follow, which means that you could theoretically
+            program this into a computer and have it play with that strategy. If we had multiple strategies, we could
+            compete them against each other and see whether one strategy is better than another!
+        </p>
+        <p>
+            In fact, this is what we will discuss in the next section. We will first need to translate the spreadsheet
+            into Python, then we will see how to make the computer play against itself.
+        </p>
+
     </subsection>
 
     <worksheet xml:id="Intro-Programming-wksht">
@@ -182,7 +238,7 @@
             <title>STUFF</title>
             <exercise>
                 <p>
-                    BALH
+                    What would you do to replace random choice for the greedy algorithm?
                 </p>
             </exercise>
         </exercisegroup>
