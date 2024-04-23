@@ -210,15 +210,17 @@
             than this.
         </p>
         <p>
-            The notation here may seem a little strange. Why <me>L_0</me> and <me>R_0</me> for the left-most
-            and right-most cards instead of <me>L_1</me> and <me>R_1</me>? It turns out that both notations
+            The notation here may seem a little strange. Why <m>L_0</m> and <m>R_0</m> for the left-most
+            and right-most cards instead of <m>L_1</m> and <m>R_1</m>? It turns out that both notations
             are acceptable, but it is common when programming in Python that numbering starts from 0 instead
             of 1. There are good reasons for this, but it's beyond the scope of this course to get into that.
         </p>
         <aside>
-            The reason for starting at 0 has to do with how the numbers are stored in the computer's
-            memory and thinking about the "first" number that the computer might use to maximize how high it
-            can count.
+            <p>
+                The reason for starting at 0 has to do with how the numbers are stored in the computer's
+                memory and thinking about the "first" number that the computer might use to maximize how high it
+                can count.
+            </p>
         </aside>
         <p>
             We can see that this is something that a machine can follow, which means that you could theoretically
