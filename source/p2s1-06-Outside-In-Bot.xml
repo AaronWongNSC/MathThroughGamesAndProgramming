@@ -48,21 +48,47 @@
             The purpose of this node is to define some variables. A variable in programming is just a name that represents a value that we want to reference later.
             In this case, we're defining the two variables that we will want to compare. Here are the two lines of code that accomplish this.
         </p>
-<listing>
-<caption>Defining the variables for the greedy algorithm.</caption>
-<program interactive="no" language="python" line-numbers="yes">
-<input>
+        <listing>
+            <caption>Defining the variables for the greedy algorithm.</caption>
+            <program interactive="no" language="python" line-numbers="yes">
+                <input>
 L0 = Game.left(0)
 R0 = Game.right(0)
-</input>
-</program>
-</listing>
+                </input>
+            </program>
+        </listing>
         <p>
             There is a lot to explain about this code if we were to try to cover all the details about what's happening. Instead, we're going to take a less
             rigorous approach and convey the general idea of what's happening. The <c>L0</c> and <c>R0</c> are the names of the variables that we're creating.
             You should imagine that <c>Game</c> is the way we reference the list of cards, and the <c>.left()</c> and <c>.right()</c> indicate whether we're
             looking at the cards starting from the left side or the right side. The number inside the parentheses tells us the number of cards inward from the
             edge that we need to move. The number <c>0</c> in both of these means that we just want the outermost card.
+        </p>
+        <p>
+            From here, we move on to the first decision:
+        </p>
+        <image xml:id="outside-in-compare1" width="30%">
+            <latex-image>
+                \begin{tikzpicture}[node distance=1cm]
+                    \node (compare1) [decision, yshift=-1.5cm] {Is $L_0 > R_0$?};
+                    \node (left) [process, below of=compare1,yshift=-1.5cm] {Take the card on the left};
+
+                    \draw[-latex] (compare1) -- (left) node[midway,anchor=west] {Yes};
+                    \draw[-latex] (compare1) -- ++ (4,0) node[midway,anchor=south] {No};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            The programming structure that handles decisions is known as an <c>if-then</c> statement or
+            an <c>if-then-else</c> statement. The <c>if</c> part depends on a statement that will either
+            be true or false, and if it is true the program goes to the <c>then</c> part of the code. When
+            there is also an <c>else</c> branch, that is another bit of code that will execute if the statement
+            is false. If there is no <c>else</c> branch, it is the same as saying that the <c>else</c> branch
+            contains no additional code. The following diagram highlights the difference in the pathways for these
+            two structures.
+        </p>
+        <p>
+            Although 
         </p>
     </subsection>
 
