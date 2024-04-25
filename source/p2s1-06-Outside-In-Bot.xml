@@ -46,17 +46,21 @@
         <p>
             <idx><h>variable, programming</h></idx>
             The purpose of this node is to define some variables. A variable in programming is just a name that represents a value that we want to reference later.
-            In this case, we're defining the two variables that we will want to compare.
+            In this case, we're defining the two variables that we will want to compare. Here are the two lines of code that accomplish this.
         </p>
         <listing>
-            <program>
-                <c>
-L0 = game.left(0)
-R0 = game.right(0)
-                </c>
-            </program>
+<cd>
+L0 = Game.left(0)
+R0 = Game.right(0)
+</cd>
         </listing>
-
+        <p>
+            There is a lot to explain about this code if we were to try to cover all the details about what's happening. Instead, we're going to take a less
+            rigorous approach and convey the general idea of what's happening. The <c>L0</c> and <c>R0</c> are the names of the variables that we're creating.
+            You should imagine that <c>Game</c> is the way we reference the list of cards, and the <c>.left()</c> and <c>.right()</c> indicate whether we're
+            looking at the cards starting from the left side or the right side. The number inside the parentheses tells us the number of cards inward from the
+            edge that we need to move. The number <c>0</c> in both of these means that we just want the outermost card.
+        </p>
     </subsection>
 
     <worksheet xml:id="Intro-Programming-wksht">
