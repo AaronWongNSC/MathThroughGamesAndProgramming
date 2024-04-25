@@ -48,10 +48,14 @@
             The purpose of this node is to define some variables. A variable in programming is just a name that represents a value that we want to reference later.
             In this case, we're defining the two variables that we will want to compare.
         </p>
-        <program>
+        <listing>
+            <program>
+                <c>
 L0 = game.left(0)
 R0 = game.right(0)
-        </program>
+                </c>
+            </program>
+        </listing>
 
     </subsection>
 
