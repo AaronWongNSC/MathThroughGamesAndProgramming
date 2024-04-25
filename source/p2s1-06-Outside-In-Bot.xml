@@ -13,15 +13,45 @@
 
     <observation>
         <p>
-            What is a social media bot and what do they do? Do you think there are any good uses for bots?
+            What experience do you have with internet bots? (Two common types of bots are chatbots and social media bots.)
+            What is your understanding of how they work?
         </p>
     </observation>
 
     <subsection>
         <title>Accessing Outside-In</title>
         <p>
-            Replit link
+            Replit link and instructions
         </p>
+    </subsection>
+
+    <subsection>
+        <title>The Greedy Algorithm Program</title>
+
+        <p>
+            In the previous section, we looked at the flowchart that represents the greedy algorithm. We are now going
+            to translate that flowchart into Python code that a computer can follow. As we work through the flowchart,
+            we are going to learn some of the basic concepts of computer programming.
+        </p>
+        <p>
+            After leaving the start node, we immediately come to the following node:
+        </p>
+        <image xml:id="outside-in-greedy" width="30%">
+            <latex-image>
+                \begin{tikzpicture}[node distance=1cm]
+                    \node (var) [process, below of=start,minimum width=4cm,text width=4cm,yshift=-0.5cm] {\small $L_0$ = left-most card \\ $R_0$ = right-most card};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            <idx><h>variable, programming</h></idx>
+            The purpose of this node is to define some variables. A variable in programming is just a name that represents a value that we want to reference later.
+            In this case, we're defining the two variables that we will want to compare.
+        </p>
+        <c>
+            Test
+        </c>
+
     </subsection>
 
     <worksheet xml:id="Intro-Programming-wksht">
