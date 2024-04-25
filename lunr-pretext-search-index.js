@@ -907,7 +907,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.6",
   "title": "Making Outside-In Bots",
-  "body": " Making Outside-In Bots     You will learn ...      What is a social media bot and what do they do? Do you think there are any good uses for bots?    Accessing Outside-In  Replit link    Exercises   STUFF  BLAH    "
+  "body": " Making Outside-In Bots     You will learn ...      What experience do you have with internet bots? (Two common types of bots are chatbots and social media bots.) What is your understanding of how they work?    Accessing Outside-In  Replit link and instructions    The Greedy Algorithm Program  In the previous section, we looked at the flowchart that represents the greedy algorithm. We are now going to translate that flowchart into Python code that a computer can follow. As we work through the flowchart, we are going to learn some of the basic concepts of computer programming.  After leaving the start node, we immediately come to the following node:      variable, programming The purpose of this node is to define some variables. A variable in programming is just a name that represents a value that we want to reference later. In this case, we're defining the two variables that we will want to compare. Here are the two lines of code that accomplish this.   Defining the variables for the greedy algorithm.   L0 = Game.left(0) R0 = Game.right(0)    There is a lot to explain about this code if we were to try to cover all the details about what's happening. Instead, we're going to take a less rigorous approach and convey the general idea of what's happening. The L0 and R0 are the names of the variables that we're creating. You should imagine that Game is the way we reference the list of cards, and the .left() and .right() indicate whether we're looking at the cards starting from the left side or the right side. The number inside the parentheses tells us the number of cards inward from the edge that we need to move. The number 0 in both of these means that we just want the outermost card.    Exercises   STUFF  BLAH    "
 },
 {
   "id": "outside-in-bot-2",
@@ -925,14 +925,23 @@ var ptx_lunr_docs = [
   "type": "Opening Discussion",
   "number": "2.23",
   "title": "",
-  "body": " What is a social media bot and what do they do? Do you think there are any good uses for bots?  "
+  "body": " What experience do you have with internet bots? (Two common types of bots are chatbots and social media bots.) What is your understanding of how they work?  "
+},
+{
+  "id": "outside-in-bot-5-6",
+  "level": "2",
+  "url": "outside-in-bot.html#outside-in-bot-5-6",
+  "type": "Listing",
+  "number": "2.24",
+  "title": "",
+  "body": " Defining the variables for the greedy algorithm.   L0 = Game.left(0) R0 = Game.right(0)   "
 },
 {
   "id": "Intro-Programming-wksht-2-2",
   "level": "2",
   "url": "outside-in-bot.html#Intro-Programming-wksht-2-2",
   "type": "Worksheet Exercise",
-  "number": "2.6.2.1",
+  "number": "2.6.3.1",
   "title": "",
   "body": "BLAH "
 },
