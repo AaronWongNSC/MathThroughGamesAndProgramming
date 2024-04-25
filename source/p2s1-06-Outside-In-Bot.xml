@@ -36,10 +36,10 @@
         <p>
             After leaving the start node, we immediately come to the following node:
         </p>
-        <image xml:id="outside-in-greedy" width="30%">
+        <image xml:id="outside-in-greedy-variables" width="30%">
             <latex-image>
                 \begin{tikzpicture}[node distance=1cm]
-                    \node (var) [process, below of=start,minimum width=4cm,text width=4cm,yshift=-0.5cm] {\small $L_0$ = left-most card \\ $R_0$ = right-most card};
+                    \node (var) [process,minimum width=4cm,text width=4cm,yshift=-0.5cm] {\small $L_0$ = left-most card \\ $R_0$ = right-most card};
                 \end{tikzpicture}
             </latex-image>
         </image>
