@@ -1,0 +1,84 @@
+<section xml:id="make-outside-in-bot">
+    <title>Make Your Own Outside-In Bot</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn how to code your own Outside_in bot.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        <p>
+            SOMETHING...
+        </p>
+    </observation>
+
+    <subsection>
+        <title>Thinking Strategically</title>
+        <p>
+            It's possible to build out the entire game tree from the beginning, and use that to determine the best path. However,
+            at the start of the game, that game tree has around a thousand different nodes, and so it will take you a while to
+            work through all of that, and most people won't want to wait around for an hour or two before they finally get to play
+            the game. But this doesn't mean that there aren't any strategic ideas that you can try.
+        </p>
+        <p>
+            As you play the game, you might start to find yourself trying to think one or two moves into the future. Instead of
+            thinking about the entire game tree, you're thinking about just the next couple nodes from where you are. And (hopefully)
+            you can find a way to navigate those next couple nodes to put you in a good position. You might not be able to guarantee
+            a win, but you might be able to either maximize the number of points you score or minimize the number of points your
+            opponent scores.
+        </p>
+        <p>
+            In some sense, this is what the Greedy Algorithim does. It answers the question, "How can I score as many points as possible
+            on my next turn?" The challenge for the Greedy Algorithim is that it doesn't take into account what the other player might do.
+            Here is an example:
+        </p>
+        <image xml:id="outside-in-game2" width="75%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \foreach \x in {0,...,9}
+                    {
+                        \draw (\x, 0) ++ (-0.35,-0.5) rectangle ++ (0.7,1);
+                    }
+                    \draw (0,0) node[anchor=center] {2};
+                    \draw (1,0) node[anchor=center] {K};
+                    \draw (2,0) node[anchor=center] {.};
+                    \draw (3,0) node[anchor=center] {.};
+                    \draw (4,0) node[anchor=center] {.};
+                    \draw (5,0) node[anchor=center] {.};
+                    \draw (6,0) node[anchor=center] {.};
+                    \draw (7,0) node[anchor=center] {.};
+                    \draw (8,0) node[anchor=center] {2};
+                    \draw (9,0) node[anchor=center] {A};            
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            We have put dots on the innermost cards because we want to focus on just the next move. The Greedy Algorithm
+            would choose to take the 2 (since 2 points is better than 1 point for the Ace). But by doing that, it exposes
+            a King and offers a 13 point card to the opponent.
+        </p>
+        <p>
+            But if you were thinking ahead, you might see that by picking the Ace, you are giving up a point (because you are
+            passing on the 2), but you are also preventing your opponent from getting 13 points. In fact, you are guaranteeing
+            that your opponent can only get 2 points on their next play. You may not know what will happen after that, but it seems
+            reasonable that preventing your opponent from getting the King is a better play than giving them access to it.
+        </p>
+
+        <worksheet xml:id="outside-in-bot-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>STUFF</title>
+            <exercise>
+                <p>
+                    BLAH
+                </p>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>

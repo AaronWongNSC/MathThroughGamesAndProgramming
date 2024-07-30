@@ -65,10 +65,10 @@
         </p>
         <p>
             <idx><h>Replit</h></idx>
-            The materials for this course will be housed at <url href="https://replit.com">Replit</url>. Viewing the files
-            will not require an account, but running them will. (Basic accounts are free at the time of writing.) This will
-            make them accessible to everyone with access to the internet without the hassle of needing to install programs
-            onto their computer.
+            The materials for this course will be housed at <url href="https://github.com">GitHub</url> and you will be able
+            to run them using <url href="https://replit.com">Replit</url>. Viewing the files will not require an account, but
+            running them will. (Basic accounts are free at the time of writing.) This will make them accessible to everyone with
+            access to the internet without the hassle of needing to install programs onto their computer.
         </p>
         <p>
             This is not a course in programming, so there will be many topics and ideas that will be glossed over. The

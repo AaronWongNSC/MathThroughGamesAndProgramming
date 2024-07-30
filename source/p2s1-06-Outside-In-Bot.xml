@@ -1,11 +1,16 @@
 <section xml:id="outside-in-bot">
-    <title>Making Outside-In Bots</title>
+    <title>Programming Outside-In Bots</title>
 
     <objectives>
         <ul>
             <li>
                 <p>
-                    You will learn ...
+                    You will learn how to import code from GitHub to Replit and run it.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn how translate a decision flow chart for Outside-In into Python code.
                 </p>
             </li>
         </ul>
@@ -21,17 +26,72 @@
     <subsection>
         <title>Accessing Outside-In</title>
         <p>
-            Replit link and instructions
+            If you haven't already created a replit account, go to <url href="https://replit.com">Replit.com</url> and do that.
+        </p>
+        <p>
+            Note that you have a limited number of Repls (programs) that you can have on your account at any time. If you need to
+            delete an old Repl to make space, select "Repls" from the left navigation bar and use the three dots next to any of
+            your existing Repls to delete it. Note that you cannot undo this step, so if you don't want to lose that work, you can
+            download it.
+        </p>
+        <p>
+            You can import Outside-In from GitHub using the link. The URL for Outside-In is <url href="https://github.com/AaronWongNSC/OutsideIn">
+            https://github.com/AaronWongNSC/OutsideIn</url>. Replit will ask you for a "Run command" on the next screen. You can type anything
+            you want in there because we're not going to use that feature.
+        </p>
+        <p>
+            To test that everything is working properly, look for the "Shell" tab (bottom half of the screen) and type <c>python single_game.py</c>.
+            You should see the output of a game played by two bots. (If you wanted, you can also try typing <c>python challenge_match.py</c>. This
+            is how we are going to put strategies against each other to see how they fare in the long run.)
         </p>
     </subsection>
 
     <subsection>
-        <title>The Greedy Algorithm Program</title>
+        <title><c>single_game.py</c></title>
+
+        <p>
+            The entire code for running a single game is 11 lines long, and about a third of those lines are just for a comment.
+        </p>
+        <listing>
+            <caption>The single_game.py code</caption>
+            <program interactive="no" language="python" line-numbers="yes">
+                <input>
+'''
+Run a single game of Outside In with the indicated strategies
+'''
+                    
+import outsidein as OI
+                    
+import greedy_strat as strat1
+import random_strat as strat2
+                    
+Game = OI.OutsideIn()
+OI.play(Game, strat1, strat2)
+                </input>
+            </program>
+        </listing>
+        <p>
+            Most of the coding is hidden away so that we can focus on the strategic ideas and not get bogged down in the
+            programming language itself. The only part of this that you will need to think about are Lines 7 and 8. These lines
+            provide the information about the two strategies that are being used against each other. You can see that the game
+            is being played between <c>greedy_strat</c> and <c>random_strat</c>. The <c>random_strat</c> literally just makes
+            a decision at random. The more interesting code to look at is <c>greedy_strat</c>. You can click this file on the
+            left side of the screen to open it.
+        </p>
+        <aside>
+            If you want to look at the code, open the <c>outsidein.py</c> file.
+        </aside>
+
+
+    </subsection>
+
+    <subsection>
+        <title>The Greedy Algorithm</title>
 
         <p>
             In the previous section, we looked at the flowchart that represents the greedy algorithm. We are now going
-            to translate that flowchart into Python code that a computer can follow. As we work through the flowchart,
-            we are going to learn some of the basic concepts of computer programming.
+            to see how that flowchart got translated into Python. As we work through the flowchart, we are going to learn some of
+            the basic concepts of computer programming.
         </p>
         <p>
             After leaving the start node, we immediately come to the following node:
@@ -50,7 +110,7 @@
         </p>
         <listing>
             <caption>Defining the variables for the greedy algorithm.</caption>
-            <program interactive="no" language="python" line-numbers="yes">
+            <program interactive="no" language="python" line-numbers="no">
                 <input>
 L0 = Game.left(0)
 R0 = Game.right(0)
@@ -79,20 +139,83 @@ R0 = Game.right(0)
             </latex-image>
         </image>
         <p>
-            The programming structure that handles decisions is known as an <c>if-then</c> statement or
-            an <c>if-then-else</c> statement. The <c>if</c> part depends on a statement that will either
-            be true or false, and if it is true the program goes to the <c>then</c> part of the code. When
-            there is also an <c>else</c> branch, that is another bit of code that will execute if the statement
-            is false. If there is no <c>else</c> branch, it is the same as saying that the <c>else</c> branch
-            contains no additional code. The following diagram highlights the difference in the pathways for these
-            two structures.
+            The programming structure that handles decisions is known as an <c>if-then</c> statement. The <c>if</c>
+            part depends on a statement that will either be true or false, and if it is true the program goes to the
+            <c>then</c> part of the code.
+        </p>
+        <image xml:id="outside-in-compare1b" width="30%">
+            <latex-image>
+                \begin{tikzpicture}[node distance=1cm]
+                    \node (compare1) [decision, yshift=-1.5cm] {$L_0 > R_0$};
+                    \node (left) [process, below of=compare1,yshift=-1.5cm] {Take the card on the left};
+
+                    \draw[-latex] (compare1) -- (left) node[midway,anchor=west] {True};
+                    \draw[-latex] (compare1) -- ++ (4,0) node[midway,anchor=south] {False};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            You will notice that the way that this node is set up, the answers are "Yes" and "No" instead of "True" and
+            "False". Fortunately, this is easy enough to translate because we have it set up so that if the inequality is
+            "True" then the answer is "Yes". If we wanted to be technically correct, we would replace the node with an
+            assertion (instead of a question), and then the direction you follow will depend on whether that assertion is True or False.
+        </p>
+        <aside>
+            The <c>if-then</c> statement is a simple version of a more general <c>if-then-else</c> statement. The latter
+            allows for more complex decision-making pathways.
+        </aside>
+        <p>
+            Here is how this looks in code:
+        </p>
+        <listing>
+            <caption>The first decision of the Greedy Algorithm</caption>
+            <program interactive="no" language="python" line-numbers="no">
+                <input>
+if L0 > R0:
+    return 'L'
+                </input>
+            </program>
+        </listing>
+        <p>
+            The <c>return 'L'</c> command says to the computer that the decision is to take the left card.
+            This command also automatically jumps to the stop node for us. If you look at the full diagram.
         </p>
         <p>
-            Although 
+            From here, we have another decision to make:
+        </p>
+        <image xml:id="outside-in-compare2" width="30%">
+            <latex-image>
+                \begin{tikzpicture}[node distance=1cm]
+                    \node (compare2) [decision, yshift=-1.5cm] {Is $R_0 > L_0$?};
+                    \node (right) [process, below of=compare2,yshift=-1.5cm] {Take the card on the right};
+                    \node (random) [process, right of=compare2,xshift=4.5cm] {Pick a card at random};
+
+                    \draw[-latex] (compare2) -- (right) node[midway,anchor=west] {Yes};
+                    \draw[-latex] (compare2) -- (random) node[midway,anchor=south] {No};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+        <p>
+            And here is the code that accomplishes this:
+        </p>
+        <listing>
+            <caption>The second decision of the Greedy Algorithm</caption>
+            <program interactive="no" language="python" line-numbers="no">
+                <input>
+if R0 > L0:
+    return 'R'
+
+return random.choice(['L', 'R'])
+                </input>
+            </program>
+        </listing>
+        <p>
+            The first couple lines should feel familiar because it follows the same pattern as before. The last line
+            is new, but all that says is to pick one of the two options at random, which is precisely what the flowchart
+            tells us to do.
         </p>
     </subsection>
-
-    <worksheet xml:id="Intro-Programming-wksht">
+    <worksheet xml:id="outside-in-bot-wksht">
 		<title>Exercises</title>
         <exercisegroup>
             <title>STUFF</title>
