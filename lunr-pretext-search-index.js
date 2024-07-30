@@ -973,6 +973,42 @@ var ptx_lunr_docs = [
   "body": "BLAH "
 },
 {
+  "id": "make-outside-in-bot",
+  "level": "1",
+  "url": "make-outside-in-bot.html",
+  "type": "Section",
+  "number": "2.7",
+  "title": "Make Your Own Outside-In Bot",
+  "body": " Make Your Own Outside-In Bot     You will learn how to code your own Outside_in bot.      SOMETHING...    Thinking Strategically  It's possible to build out the entire game tree from the beginning, and use that to determine the best path. However, at the start of the game, that game tree has around a thousand different nodes, and so it will take you a while to work through all of that, and most people won't want to wait around for an hour or two before they finally get to play the game. But this doesn't mean that there aren't any strategic ideas that you can try.  As you play the game, you might start to find yourself trying to think one or two moves into the future. Instead of thinking about the entire game tree, you're thinking about just the next couple nodes from where you are. And (hopefully) you can find a way to navigate those next couple nodes to put you in a good position. You might not be able to guarantee a win, but you might be able to either maximize the number of points you score or minimize the number of points your opponent scores.  In some sense, this is what the Greedy Algorithim does. It answers the question, \"How can I score as many points as possible on my next turn?\" The challenge for the Greedy Algorithim is that it doesn't take into account what the other player might do. Here is an example:     We have put dots on the innermost cards because we want to focus on just the next move. The Greedy Algorithm would choose to take the 2 (since 2 points is better than 1 point for the Ace). But by doing that, it exposes a King and offers a 13 point card to the opponent.  But if you were thinking ahead, you might see that by picking the Ace, you are giving up a point (because you are passing on the 2), but you are also preventing your opponent from getting 13 points. In fact, you are guaranteeing that your opponent can only get 2 points on their next play. You may not know what will happen after that, but it seems reasonable that preventing your opponent from getting the King is a better play than giving them access to it.    Exercises   STUFF  BLAH    "
+},
+{
+  "id": "make-outside-in-bot-2",
+  "level": "2",
+  "url": "make-outside-in-bot.html#make-outside-in-bot-2",
+  "type": "Learning Objectives",
+  "number": "2.7",
+  "title": "",
+  "body": "   You will learn how to code your own Outside_in bot.    "
+},
+{
+  "id": "make-outside-in-bot-3",
+  "level": "2",
+  "url": "make-outside-in-bot.html#make-outside-in-bot-3",
+  "type": "Opening Discussion",
+  "number": "2.28",
+  "title": "",
+  "body": " SOMETHING...  "
+},
+{
+  "id": "outside-in-bot-wksht-2-2",
+  "level": "2",
+  "url": "make-outside-in-bot.html#outside-in-bot-wksht-2-2",
+  "type": "Worksheet Exercise",
+  "number": "2.7.2.1",
+  "title": "",
+  "body": "BLAH "
+},
+{
   "id": "sudoku-intro",
   "level": "1",
   "url": "sudoku-intro.html",
