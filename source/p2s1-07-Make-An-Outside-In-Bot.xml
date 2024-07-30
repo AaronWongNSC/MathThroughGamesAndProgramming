@@ -68,8 +68,9 @@
             that your opponent can only get 2 points on their next play. You may not know what will happen after that, but it seems
             reasonable that preventing your opponent from getting the King is a better play than giving them access to it.
         </p>
+    </subsection>
 
-        <worksheet xml:id="outside-in-bot-wksht">
+    <worksheet xml:id="outside-in-bot-wksht">
 		<title>Exercises</title>
         <exercisegroup>
             <title>STUFF</title>
