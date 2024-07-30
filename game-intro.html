@@ -113,15 +113,17 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.2.16';
+eBookConfig.runestone_version = '7.3.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.2.16/prefix-runtime.db982e05253ca76b.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.2.16/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.2.16/prefix-runestone.09f7e60697101f2d.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.2.16/prefix-347.f9add1ca35d5ad93.css">
-<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.2.16/prefix-runestone.f64dcc3632d7a0c3.css">
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runtime.740db250e511e1cc.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.9813637ef2f0e0ee.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.f64dcc3632d7a0c3.css">
+<style>
+</style>
 </head>
 <body id="College Math Through Games and Programming" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -212,11 +214,12 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="outside-in-bot.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Making Outside-In Bots</span></a></div>
+<div class="toc-title-box"><a href="outside-in-bot.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Programming Outside-In Bots</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-4" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Accessing Outside-In</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-5" class="internal"><span class="codenumber">2.6.2</span> <span class="title">The Greedy Algorithm Program</span></a></div></li>
-<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="outside-in-bot.html#Intro-Programming-wksht" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-5" class="internal"><span class="codenumber">2.6.2</span> <span class="title"><code class="code-inline tex2jax_ignore">single_game.py</code></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-6" class="internal"><span class="codenumber">2.6.3</span> <span class="title">The Greedy Algorithm</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-wksht" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -274,7 +277,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">A Simple Question with a Complicated Answer</span>
 </h2>
 <article class="objectives goal-like" id="game-intro-2"><h3 class="heading"><span class="type">Learning Objectives</span></h3>
-<ul class="disc">
+<ul class="disc" id="game-intro-2-1">
 <li id="game-intro-2-1-1"><div class="para" id="game-intro-2-1-1-1">You will learn to defininition of a game for the purposes of this course.</div></li>
 <li id="game-intro-2-1-2"><div class="para" id="game-intro-2-1-2-1">You will learn how to determine whether an activity is a game for the purposes of this course.</div></li>
 </ul></article><article class="observation remark-like" id="game-intro-3"><h3 class="heading">
@@ -285,7 +288,7 @@ eBookConfig.enable_chatcodes =  false;
 <aside class="aside aside-like" id="game-intro-7"><div class="para" id="game-intro-7-1">Trying to make universal definitions can lead to debates such as whether a hot dog is a sandwich or whether cereal is a soup.</div></aside><article class="definition definition-like" id="def-game"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Game.</span>
 </h3>  <div class="para" id="def-game-3-1">A <dfn class="terminology">game</dfn> is an activity with a set of well-defined rules, well-defined decision points, and well-defined outcomes.</div></article><div class="para" id="game-intro-9">Mathematicians use the term "well-defined" in formal mathematical contexts to mean that the idea or object can be determined unambiguously. In other words, it can be determined in a manner that everyone can look at it and agree on what it is. The use of that term here is (unfortunately) not quite as precise, as there is still some wiggle room for the concepts. However, for this course, it’s close enough. We will elaborate on the ideas and then just leave the gray areas as gray areas.</div>
-<ul class="disc">
+<ul class="disc" id="game-intro-10">
 <li id="game-intro-10-1"><div class="para" id="game-intro-10-1-1">
 <em class="emphasis">Well-defined rules:</em> The rules are written in a way that makes it absolutely clear how to play the game. Everyone who carefully reads and follows the rules will end up playing the same game.</div></li>
 <li id="game-intro-10-2"><div class="para" id="game-intro-10-2-1">
@@ -294,10 +297,10 @@ eBookConfig.enable_chatcodes =  false;
 <em class="emphasis">Well-defined outcomes:</em> After a decision has been made, it must be clear what happens next, and it must be the same thing would happen to any other player that makes the same decision in an identical situation. This part of the definition is a bit tricky to interpret, and leaves a little bit of room for ambiguity. One thing we want to avoid is the outcome being dependent upon the individual and not the structure of the game. For example, in a game like darts, the outcome of a throw is not a random event like throwing a die. The outcome is not driven by the rules of the game, but by the skill of the individual, which means that the outcomes are not well-defined.</div></li>
 </ul>
 <div class="para" id="game-intro-11">With this in place we can look at a number of games and see whether they meet our definition. Again, things that fall outside of the definition can still be games in the general sense. It’s just that they aren’t the types of games we will be analyzing.</div>
-<ul class="disc">
+<ul class="disc" id="game-intro-12">
 <li id="game-intro-12-1">
 <div class="para" id="game-intro-12-1-1">Chess:</div>
-<ul class="circle">
+<ul class="circle" id="game-intro-12-1-2">
 <li id="game-intro-12-1-2-1"><div class="para" id="p-derived-game-intro-12-1-2-1">Well-defined rules: There is a clear set of rules for how every piece moves and how they interact with each other. There are a few special moves (castling and en passant) that violate the basic pattern of movement, but these special situations are clearly laid out in an unambiguous manner.</div></li>
 <li id="game-intro-12-1-2-2"><div class="para" id="p-derived-game-intro-12-1-2-2">Well-defined decision points: This is a two=player game where the players take turns, and there is a clear set of valid moves for each turn.</div></li>
 <li id="game-intro-12-1-2-3"><div class="para" id="p-derived-game-intro-12-1-2-3">Well-defined outcomes: When a piece is moved to a new position, the game’s structure defines the outcome.</div></li>
@@ -306,7 +309,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li id="game-intro-12-2">
 <div class="para" id="game-intro-12-2-1">Monopoly:</div>
-<ul class="circle">
+<ul class="circle" id="game-intro-12-2-2">
 <li id="game-intro-12-2-2-1"><div class="para" id="p-derived-game-intro-12-2-2-1">Well-defined rules: The game comes with instructions that clearly describe how the game is to be played. However, a lot of people play with various "house rules" (such as collecting money on Free Parking) that deviate from the official rules. As long as everyone can understand and agree with how the rule is meant to be implemented, it continues to have well-defined rules. (On a technical note, we would probably say that they are playing a variant of Monopoly instead of just Monopoly.)</div></li>
 <li id="game-intro-12-2-2-2"><div class="para" id="p-derived-game-intro-12-2-2-2">Well-defined decision points: If we ignore the auction phase of the game, the game proceeds in an organized manner, with players taking their turns in a specific order, and having a clear set of options in front of them at any moment. But the existence of the auction potentially violates this. If the auction requires players to bid with no specific order (first to call out a number owns the bid), the auction phase lacks clear decision points. If the auction is run by taking turns bidding, then there are clear decision points.</div></li>
 <li id="game-intro-12-2-2-3"><div class="para" id="p-derived-game-intro-12-2-2-3">Well-defined outcomes: When a player lands on a space, there is a clear outcome based on the rules of the game.</div></li>
@@ -315,7 +318,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li id="game-intro-12-3">
 <div class="para" id="game-intro-12-3-1">Sudoku: This one is a bit tricky. In this course, we will consider certain types of logic puzzles to be games, so we have to be a little bit flexible in how we interpret the conditions.</div>
-<ul class="circle">
+<ul class="circle" id="game-intro-12-3-2">
 <li id="game-intro-12-3-2-1"><div class="para" id="p-derived-game-intro-12-3-2-1">Well-defined rules: The game is played by a person writing numbers into the squares of the puzzle. There is a clear set of rules for what those numbers could be.</div></li>
 <li id="game-intro-12-3-2-2"><div class="para" id="p-derived-game-intro-12-3-2-2">Well-defined decision points: The decision points for a Sudoku are when the player commits a certain value to a certain position on the grid. In this sense, the game is played by a clear sequence of moves as the player slowly fills out the grid.</div></li>
 <li id="game-intro-12-3-2-3"><div class="para" id="p-derived-game-intro-12-3-2-3">Well-defined outcomes: A particular entry may be valid or invalid, depending on whether the player has made a mistake. The player’s lack of knowledge of their move is part of the game. As the grid is filled out more completely, the player "loses" if they find that they cannot legally write a digit into some position of the grid. But the player "wins" if they fill out the entire grid and all the rules are satisfied.</div></li>

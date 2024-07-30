@@ -113,15 +113,17 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.2.16';
+eBookConfig.runestone_version = '7.3.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.2.16/prefix-runtime.db982e05253ca76b.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.2.16/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.2.16/prefix-runestone.09f7e60697101f2d.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.2.16/prefix-347.f9add1ca35d5ad93.css">
-<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.2.16/prefix-runestone.f64dcc3632d7a0c3.css">
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runtime.740db250e511e1cc.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.9813637ef2f0e0ee.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.f64dcc3632d7a0c3.css">
+<style>
+</style>
 </head>
 <body id="College Math Through Games and Programming" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -212,11 +214,12 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="outside-in-bot.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Making Outside-In Bots</span></a></div>
+<div class="toc-title-box"><a href="outside-in-bot.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Programming Outside-In Bots</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-4" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Accessing Outside-In</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-5" class="internal"><span class="codenumber">2.6.2</span> <span class="title">The Greedy Algorithm Program</span></a></div></li>
-<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="outside-in-bot.html#Intro-Programming-wksht" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-5" class="internal"><span class="codenumber">2.6.2</span> <span class="title"><code class="code-inline tex2jax_ignore">single_game.py</code></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-6" class="internal"><span class="codenumber">2.6.3</span> <span class="title">The Greedy Algorithm</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-wksht" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -274,7 +277,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Countdown Games</span>
 </h2>
 <article class="objectives goal-like" id="countdown-2"><h3 class="heading"><span class="type">Learning Objectives</span></h3>
-<ul class="disc">
+<ul class="disc" id="countdown-2-1">
 <li id="countdown-2-1-1"><div class="para" id="countdown-2-1-1-1">You will learn how to play 15-Countdown.</div></li>
 <li id="countdown-2-1-2"><div class="para" id="countdown-2-1-2-1">You will learn how to represent the game state of 15-Countdown using a graph.</div></li>
 </ul></article><article class="observation remark-like" id="countdown-3"><h3 class="heading">
@@ -289,7 +292,7 @@ eBookConfig.enable_chatcodes =  false;
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3<span class="period">.</span></span><span class="space"> </span>Video instructions for 15-Countdown</figcaption></figure></article><div class="para" id="countdown-8">Whenever you are introduced to a new game, it will be good to play it a few times to help you understand the rules of the game and start to build some intuition. This is best done with a friend, but it’s also possible for you to play against yourself.</div>
 <div class="para" id="countdown-9">One of the first strategic observations of this game is that if there are three or fewer tokens left, then the next player should win the game by taking all of the tokens. This is a rather trivial observation, as it merely represents that you understand the goal of the game and the rules for taking tokens.</div>
 <div class="para" id="countdown-10">But it turns out that this observation helps to lead us to our first non-trivial strategic insight. When there are exactly four tokens left, the next player is guaranteed to lose if their opponent does not make a mistake. (Before reading further, you should see if you can justify this statement for yourself!) We will demonstrate that this is the case by looking at all of the possible decisions that the next player can make, and show that the other player always has a pathway to victory.</div>
-<ul class="disc">
+<ul class="disc" id="countdown-11">
 <li id="countdown-11-1"><div class="para" id="countdown-11-1-1">If the next player takes one token, then there will be three tokens remaining. The other player can take all three tokens to win the game.</div></li>
 <li id="countdown-11-2"><div class="para" id="countdown-11-2-1">If the next player takes two tokens, then there will be two tokens remaining. The other player can take both tokens to win the game.</div></li>
 <li id="countdown-11-3"><div class="para" id="countdown-11-3-1">If the next player takes three tokens, then there will be one token remaining. The other player can take it to win the game.</div></li>

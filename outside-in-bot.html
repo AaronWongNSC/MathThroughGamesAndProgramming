@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Making Outside-In Bots</title>
+<title>Programming Outside-In Bots</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -113,15 +113,17 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.2.16';
+eBookConfig.runestone_version = '7.3.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.2.16/prefix-runtime.db982e05253ca76b.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.2.16/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.2.16/prefix-runestone.09f7e60697101f2d.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.2.16/prefix-347.f9add1ca35d5ad93.css">
-<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.2.16/prefix-runestone.f64dcc3632d7a0c3.css">
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runtime.740db250e511e1cc.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.8328b60515045466.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.9813637ef2f0e0ee.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-347.f9add1ca35d5ad93.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/7.3.3/prefix-runestone.f64dcc3632d7a0c3.css">
+<style>
+</style>
 </head>
 <body id="College Math Through Games and Programming" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -212,11 +214,12 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="outside-in-bot.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Making Outside-In Bots</span></a></div>
+<div class="toc-title-box"><a href="outside-in-bot.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Programming Outside-In Bots</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-4" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Accessing Outside-In</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-5" class="internal"><span class="codenumber">2.6.2</span> <span class="title">The Greedy Algorithm Program</span></a></div></li>
-<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="outside-in-bot.html#Intro-Programming-wksht" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-5" class="internal"><span class="codenumber">2.6.2</span> <span class="title"><code class="code-inline tex2jax_ignore">single_game.py</code></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-6" class="internal"><span class="codenumber">2.6.3</span> <span class="title">The Greedy Algorithm</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="outside-in-bot.html#outside-in-bot-wksht" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -271,34 +274,76 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="outside-in-bot"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.6</span><span class="space"> </span><span class="title">Making Outside-In Bots</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.6</span><span class="space"> </span><span class="title">Programming Outside-In Bots</span>
 </h2>
 <article class="objectives goal-like" id="outside-in-bot-2"><h3 class="heading"><span class="type">Learning Objectives</span></h3>
-<ul class="disc"><li id="outside-in-bot-2-1-1"><div class="para" id="outside-in-bot-2-1-1-1">You will learn ...</div></li></ul></article><article class="observation remark-like" id="outside-in-bot-3"><h3 class="heading">
+<ul class="disc" id="outside-in-bot-2-1">
+<li id="outside-in-bot-2-1-1"><div class="para" id="outside-in-bot-2-1-1-1">You will learn how to import code from GitHub to Replit and run it.</div></li>
+<li id="outside-in-bot-2-1-2"><div class="para" id="outside-in-bot-2-1-2-1">You will learn how translate a decision flow chart for Outside-In into Python code.</div></li>
+</ul></article><article class="observation remark-like" id="outside-in-bot-3"><h3 class="heading">
 <span class="type">Opening Discussion</span><span class="space"> </span><span class="codenumber">2.23</span><span class="period">.</span>
 </h3>
 <div class="para" id="outside-in-bot-3-1">What experience do you have with internet bots? (Two common types of bots are chatbots and social media bots.) What is your understanding of how they work?</div></article><section class="subsection" id="outside-in-bot-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="space"> </span><span class="title">Accessing Outside-In</span>
 </h3>
-<div class="para" id="outside-in-bot-4-2">Replit link and instructions</div></section><section class="subsection" id="outside-in-bot-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="space"> </span><span class="title">The Greedy Algorithm Program</span>
+<div class="para" id="outside-in-bot-4-2">If you haven’t already created a replit account, go to <a class="external" href="https://replit.com" target="_blank">Replit.com</a><details class="ptx-footnote" aria-live="polite" id="outside-in-bot-4-2-2"><summary class="ptx-footnote__number" title="Footnote 2.5"><sup> 5 </sup></summary><div class="ptx-footnote__contents" id="outside-in-bot-4-2-2"><code class="code-inline tex2jax_ignore">replit.com</code></div></details> and do that.</div>
+<div class="para" id="outside-in-bot-4-3">Note that you have a limited number of Repls (programs) that you can have on your account at any time. If you need to delete an old Repl to make space, select "Repls" from the left navigation bar and use the three dots next to any of your existing Repls to delete it. Note that you cannot undo this step, so if you don’t want to lose that work, you can download it.</div>
+<div class="para" id="outside-in-bot-4-4">You can import Outside-In from GitHub using the link. The URL for Outside-In is <a class="external" href="https://github.com/AaronWongNSC/OutsideIn" target="_blank">https://github.com/AaronWongNSC/OutsideIn</a><details class="ptx-footnote" aria-live="polite" id="outside-in-bot-4-4-2"><summary class="ptx-footnote__number" title="Footnote 2.6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="outside-in-bot-4-4-2"><code class="code-inline tex2jax_ignore">github.com/AaronWongNSC/OutsideIn</code></div></details>. Replit will ask you for a "Run command" on the next screen. You can type anything you want in there because we’re not going to use that feature.</div>
+<div class="para" id="outside-in-bot-4-5">To test that everything is working properly, look for the "Shell" tab (bottom half of the screen) and type <code class="code-inline tex2jax_ignore">python single_game.py</code>. You should see the output of a game played by two bots. (If you wanted, you can also try typing <code class="code-inline tex2jax_ignore">python challenge_match.py</code>. This is how we are going to put strategies against each other to see how they fare in the long run.)</div></section><section class="subsection" id="outside-in-bot-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="space"> </span><span class="title"><code class="code-inline tex2jax_ignore">single_game.py</code></span>
 </h3>
-<div class="para" id="outside-in-bot-5-2">In the previous section, we looked at the flowchart that represents the greedy algorithm. We are now going to translate that flowchart into Python code that a computer can follow. As we work through the flowchart, we are going to learn some of the basic concepts of computer programming.</div>
-<div class="para" id="outside-in-bot-5-3">After leaving the start node, we immediately come to the following node:</div>
+<div class="para" id="outside-in-bot-5-2">The entire code for running a single game is 11 lines long, and about a third of those lines are just for a comment.</div>
+<figure class="listing figure-like" id="outside-in-bot-5-3"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">'''
+Run a single game of Outside In with the indicated strategies
+'''
+                    
+import outsidein as OI
+                    
+import greedy_strat as strat1
+import random_strat as strat2
+                    
+Game = OI.OutsideIn()
+OI.play(Game, strat1, strat2)
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.24<span class="period">.</span></span><span class="space"> </span>The single_game.py code</figcaption></figure><div class="para" id="outside-in-bot-5-4">Most of the coding is hidden away so that we can focus on the strategic ideas and not get bogged down in the programming language itself. The only part of this that you will need to think about are Lines 7 and 8. These lines provide the information about the two strategies that are being used against each other. You can see that the game is being played between <code class="code-inline tex2jax_ignore">greedy_strat</code> and <code class="code-inline tex2jax_ignore">random_strat</code>. The <code class="code-inline tex2jax_ignore">random_strat</code> literally just makes a decision at random. The more interesting code to look at is <code class="code-inline tex2jax_ignore">greedy_strat</code>. You can click this file on the left side of the screen to open it.</div>
+<aside class="aside aside-like" id="outside-in-bot-5-5"></aside></section><section class="subsection" id="outside-in-bot-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="space"> </span><span class="title">The Greedy Algorithm</span>
+</h3>
+<div class="para" id="outside-in-bot-6-2">In the previous section, we looked at the flowchart that represents the greedy algorithm. We are now going to see how that flowchart got translated into Python. As we work through the flowchart, we are going to learn some of the basic concepts of computer programming.</div>
+<div class="para" id="outside-in-bot-6-3">After leaving the start node, we immediately come to the following node:</div>
 <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/outside-in-greedy-variables.svg" role="img" class="contained"></div>
-<div class="para" id="outside-in-bot-5-5"> The purpose of this node is to define some variables. A variable in programming is just a name that represents a value that we want to reference later. In this case, we’re defining the two variables that we will want to compare. Here are the two lines of code that accomplish this.</div>
-<figure class="listing figure-like" id="outside-in-bot-5-6"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program line-numbers"><code class="language-py">L0 = Game.left(0)
+<div class="para" id="outside-in-bot-6-5"> The purpose of this node is to define some variables. A variable in programming is just a name that represents a value that we want to reference later. In this case, we’re defining the two variables that we will want to compare. Here are the two lines of code that accomplish this.</div>
+<figure class="listing figure-like" id="outside-in-bot-6-6"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">L0 = Game.left(0)
 R0 = Game.right(0)
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.24<span class="period">.</span></span><span class="space"> </span>Defining the variables for the greedy algorithm.</figcaption></figure><div class="para" id="outside-in-bot-5-7">There is a lot to explain about this code if we were to try to cover all the details about what’s happening. Instead, we’re going to take a less rigorous approach and convey the general idea of what’s happening. The <code class="code-inline tex2jax_ignore">L0</code> and <code class="code-inline tex2jax_ignore">R0</code> are the names of the variables that we’re creating. You should imagine that <code class="code-inline tex2jax_ignore">Game</code> is the way we reference the list of cards, and the <code class="code-inline tex2jax_ignore">.left()</code> and <code class="code-inline tex2jax_ignore">.right()</code> indicate whether we’re looking at the cards starting from the left side or the right side. The number inside the parentheses tells us the number of cards inward from the edge that we need to move. The number <code class="code-inline tex2jax_ignore">0</code> in both of these means that we just want the outermost card.</div></section><section class="worksheet" id="Intro-Programming-wksht"><h3 class="heading hide-type">
-<span class="type">Worksheet</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="space"> </span><span class="title">Exercises</span><div class="print-links">
-<a href="Intro-Programming-wksht-a4.html" class="a4">A4</a><a href="Intro-Programming-wksht-letter.html" class="us">US</a>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.25<span class="period">.</span></span><span class="space"> </span>Defining the variables for the greedy algorithm.</figcaption></figure><div class="para" id="outside-in-bot-6-7">There is a lot to explain about this code if we were to try to cover all the details about what’s happening. Instead, we’re going to take a less rigorous approach and convey the general idea of what’s happening. The <code class="code-inline tex2jax_ignore">L0</code> and <code class="code-inline tex2jax_ignore">R0</code> are the names of the variables that we’re creating. You should imagine that <code class="code-inline tex2jax_ignore">Game</code> is the way we reference the list of cards, and the <code class="code-inline tex2jax_ignore">.left()</code> and <code class="code-inline tex2jax_ignore">.right()</code> indicate whether we’re looking at the cards starting from the left side or the right side. The number inside the parentheses tells us the number of cards inward from the edge that we need to move. The number <code class="code-inline tex2jax_ignore">0</code> in both of these means that we just want the outermost card.</div>
+<div class="para" id="outside-in-bot-6-8">From here, we move on to the first decision:</div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/outside-in-compare1.svg" role="img" class="contained"></div>
+<div class="para" id="outside-in-bot-6-10">The programming structure that handles decisions is known as an <code class="code-inline tex2jax_ignore">if-then</code> statement. The <code class="code-inline tex2jax_ignore">if</code> part depends on a statement that will either be true or false, and if it is true the program goes to the <code class="code-inline tex2jax_ignore">then</code> part of the code.</div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/outside-in-compare1b.svg" role="img" class="contained"></div>
+<div class="para" id="outside-in-bot-6-12">You will notice that the way that this node is set up, the answers are "Yes" and "No" instead of "True" and "False". Fortunately, this is easy enough to translate because we have it set up so that if the inequality is "True" then the answer is "Yes". If we wanted to be technically correct, we would replace the node with an assertion (instead of a question), and then the direction you follow will depend on whether that assertion is True or False.</div>
+<aside class="aside aside-like" id="outside-in-bot-6-13"></aside><div class="para" id="outside-in-bot-6-14">Here is how this looks in code:</div>
+<figure class="listing figure-like" id="outside-in-bot-6-15"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">if L0 &gt; R0:
+    return 'L'
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.26<span class="period">.</span></span><span class="space"> </span>The first decision of the Greedy Algorithm</figcaption></figure><div class="para" id="outside-in-bot-6-16">The <code class="code-inline tex2jax_ignore">return 'L'</code> command says to the computer that the decision is to take the left card. This command also automatically jumps to the stop node for us. If you look at the full diagram.</div>
+<div class="para" id="outside-in-bot-6-17">From here, we have another decision to make:</div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/outside-in-compare2.svg" role="img" class="contained"></div>
+<div class="para" id="outside-in-bot-6-19">And here is the code that accomplishes this:</div>
+<figure class="listing figure-like" id="outside-in-bot-6-20"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">if R0 &gt; L0:
+    return 'R'
+
+return random.choice(['L', 'R'])
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.27<span class="period">.</span></span><span class="space"> </span>The second decision of the Greedy Algorithm</figcaption></figure><div class="para" id="outside-in-bot-6-21">The first couple lines should feel familiar because it follows the same pattern as before. The last line is new, but all that says is to pick one of the two options at random, which is precisely what the flowchart tells us to do.</div></section><section class="worksheet" id="outside-in-bot-wksht"><h3 class="heading hide-type">
+<span class="type">Worksheet</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="space"> </span><span class="title">Exercises</span><div class="print-links">
+<a href="outside-in-bot-wksht-a4.html" class="a4">A4</a><a href="outside-in-bot-wksht-letter.html" class="us">US</a>
 </div>
 </h3>
-<div class="exercisegroup" id="Intro-Programming-wksht-2">
+<div class="exercisegroup" id="outside-in-bot-wksht-2">
 <h4 class="heading"><span class="title">STUFF.</span></h4>
-<div class="exercisegroup-exercises"><article class="exercise exercise-like" id="Intro-Programming-wksht-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="Intro-Programming-wksht-2-2-1">BLAH</div></article></div>
+<div class="exercisegroup-exercises"><article class="exercise exercise-like" id="outside-in-bot-wksht-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="outside-in-bot-wksht-2-2-1">BLAH</div></article></div>
 </div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Intro-Programming.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
