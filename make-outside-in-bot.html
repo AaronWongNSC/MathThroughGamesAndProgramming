@@ -226,7 +226,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="make-outside-in-bot.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Make Your Own Outside-In Bot</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="make-outside-in-bot.html#make-outside-in-bot-4" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Thinking Strategically</span></a></div></li>
-<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="make-outside-in-bot.html#outside-in-bot-wksht" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="make-outside-in-bot.html#make-outside-in-bot-wksht" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -236,11 +236,17 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sudoku-intro.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to Sudoku</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sudoku-intro.html#sudoku-intro-wksht" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sudoku-intro.html#sudoku-intro-20" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Naming Conventions</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sudoku-intro.html#sudoku-intro-wksht" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="empty-file.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Placeholder</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="empty-file.html#section-wksht" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sudoku-markings.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Sudoku Markings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sudoku-markings.html#sudoku-markings-5" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Center Markings</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sudoku-markings.html#sudoku-markings-wksht" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="empty-file.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Placeholder</span></a></div>
@@ -295,15 +301,15 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="make-outside-in-bot-4-4">In some sense, this is what the Greedy Algorithim does. It answers the question, "How can I score as many points as possible on my next turn?" The challenge for the Greedy Algorithim is that it doesn’t take into account what the other player might do. Here is an example:</div>
 <div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/outside-in-game2.svg" role="img" class="contained"></div>
 <div class="para" id="make-outside-in-bot-4-6">We have put dots on the innermost cards because we want to focus on just the next move. The Greedy Algorithm would choose to take the 2 (since 2 points is better than 1 point for the Ace). But by doing that, it exposes a King and offers a 13 point card to the opponent.</div>
-<div class="para" id="make-outside-in-bot-4-7">But if you were thinking ahead, you might see that by picking the Ace, you are giving up a point (because you are passing on the 2), but you are also preventing your opponent from getting 13 points. In fact, you are guaranteeing that your opponent can only get 2 points on their next play. You may not know what will happen after that, but it seems reasonable that preventing your opponent from getting the King is a better play than giving them access to it.</div></section><section class="worksheet" id="outside-in-bot-wksht"><h3 class="heading hide-type">
+<div class="para" id="make-outside-in-bot-4-7">But if you were thinking ahead, you might see that by picking the Ace, you are giving up a point (because you are passing on the 2), but you are also preventing your opponent from getting 13 points. In fact, you are guaranteeing that your opponent can only get 2 points on their next play. You may not know what will happen after that, but it seems reasonable that preventing your opponent from getting the King is a better play than giving them access to it.</div></section><section class="worksheet" id="make-outside-in-bot-wksht"><h3 class="heading hide-type">
 <span class="type">Worksheet</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="space"> </span><span class="title">Exercises</span><div class="print-links">
-<a href="outside-in-bot-wksht-a4.html" class="a4">A4</a><a href="outside-in-bot-wksht-letter.html" class="us">US</a>
+<a href="make-outside-in-bot-wksht-a4.html" class="a4">A4</a><a href="make-outside-in-bot-wksht-letter.html" class="us">US</a>
 </div>
 </h3>
-<div class="exercisegroup" id="outside-in-bot-wksht-2">
+<div class="exercisegroup" id="make-outside-in-bot-wksht-2">
 <h4 class="heading"><span class="title">STUFF.</span></h4>
-<div class="exercisegroup-exercises"><article class="exercise exercise-like" id="outside-in-bot-wksht-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="outside-in-bot-wksht-2-2-1">BLAH</div></article></div>
+<div class="exercisegroup-exercises"><article class="exercise exercise-like" id="make-outside-in-bot-wksht-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="make-outside-in-bot-wksht-2-2-1">BLAH</div></article></div>
 </div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="outside-in-bot.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

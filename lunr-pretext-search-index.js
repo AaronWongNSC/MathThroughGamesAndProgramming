@@ -1000,9 +1000,9 @@ var ptx_lunr_docs = [
   "body": " SOMETHING...  "
 },
 {
-  "id": "outside-in-bot-wksht-2-2",
+  "id": "make-outside-in-bot-wksht-2-2",
   "level": "2",
-  "url": "make-outside-in-bot.html#outside-in-bot-wksht-2-2",
+  "url": "make-outside-in-bot.html#make-outside-in-bot-wksht-2-2",
   "type": "Worksheet Exercise",
   "number": "2.7.2.1",
   "title": "",
@@ -1015,7 +1015,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Introduction to Sudoku",
-  "body": " Introduction to Sudoku     You will learn how to play Sudoku.    You will learn the basic strategies for placing numbers in the grid without guessing.     What is your experience with logic puzzles?  Sudoku is a classic pen-and-paper puzzle. (A pen-and-paper puzzle is a puzzle that can be given to you on paper and solved using just a pen, paper, and your brain.) If you look around, you will be able to find all sorts of puzzle books that contain them, as well as dozens of websites or apps that let you access gigantic libraries of puzzles.  The standard Sudoku grid is a 9x9 square grid that has been broken up into 9 3x3 boxes. A valid Sudoku grid is one in which every square in the grid is filled with one of the digits from 1 to 9 subject to the condition that each digit appears in every row, column, and box exactly once. The diagram below shows a valid Sudoku grid with a row, column, and box highlighted to help you verify that the condition has been met.     A typical puzzle starts with only some of the squares filled with digits, and it is up to the player to fill in the remaining digits to get a valid Sudoku grid. A well-constructed puzzle will lead to the ability to complete the grid using logic and without guessing. Solving the puzzle by guessing somewhat defeats the purpose of the puzzle, which is the practice and experience of reasoning and pattern-recognition to reap the reward of a sense of accomplishment.  The goal of the next few sections is to introduce some of the logic that can be applied in an attempt to solve the puzzle. In this section, we will start by simply using the process of elimination to solve for specific entries. Here is a very simple application:     Based on the rules of the game, you should be able to easily identify the missing value in the middle box and in the row and column with 8 out of the 9 entries completed. The number in row 1 column 2 must be a 4, the number in middle must be a 7, and the number in row 7 column 9 must be a 6. In this case, all the other possibilities were eliminated by their existence in the row, column, or box.  Now consider the following scenario:     Even though there is much less information in this example, we can still place the 1 in the bottom left box using the process of elimination. We can eliminate the possibility of a 1 in any row or column where a 1 already exists. This eliminates all but one of the positions in the box on the bottom left. The following image is a helpful visualization of this idea. The dashed lines are positions where the 1 in the box cannot be located.     In fact, whenever there are four of the same digit \"looking at\" one of the boxes, it must be the case that you can place the digit in that box. Two of the digits eliminate two of the rows, and the other two digits eliminate two of the columns, leaving exactly one row and one column where the digit can be placed.  In most situations, the elimination will occur through a combination of row, column, and box values. Sometimes, certain positions will be blocked by other numbers. You will also typically not know which value could be placed before thinking through the logic of the puzzle. These puzzles will require some practice and patience, but over time you will begin to see the values more quickly.   Exercises   Placing Through Elimination  For each of the following exercises, determine the digit that can be placed and where it must be placed. (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)       "
+  "body": " Introduction to Sudoku     You will learn how to play Sudoku.    You will learn the basic strategies for placing numbers in the grid without guessing.     What is your experience with logic puzzles?  Sudoku is a classic pen-and-paper puzzle. (A pen-and-paper puzzle is a puzzle that can be given to you on paper and solved using just a pen, paper, and your brain.) If you look around, you will be able to find all sorts of puzzle books that contain them, as well as dozens of websites or apps that let you access gigantic libraries of puzzles.  The reason for studying Sudokus in this class is to help to develop deeper experiences with logical reasoning and formal deduction. Some people try to solve Sudokus through a combination of logic and guessing. But our goal will be to solve the puzzles without guessing. All of our \"moves\" must follow from pure logic. The benefit of this exercise isn't that you learn how to solve Sudokus per se, but that you would start to develop experience with and patience for the logical part of your brain. Like any other muscle in your body, exercise can make it stronger.  The standard Sudoku grid is a 9x9 square grid that has been broken up into 9 3x3 boxes. A valid Sudoku grid is one in which every square in the grid is filled with one of the digits from 1 to 9 subject to the condition that each digit appears in every row, column, and box exactly once. The diagram below shows a valid Sudoku grid with a row, column, and box highlighted to help you verify that the condition has been met.     A typical puzzle starts with only some of the squares filled with digits, and it is up to the player to fill in the remaining digits to get a valid Sudoku grid. A well-constructed puzzle will lead to the ability to complete the grid using logic and without guessing. Solving the puzzle by guessing somewhat defeats the purpose of the puzzle, which is the practice and experience of reasoning and pattern-recognition to reap the reward of a sense of accomplishment.  The goal of the next few sections is to introduce some of the logic that can be applied in an attempt to solve the puzzle. In this section, we will start by simply using the process of elimination to solve for specific entries. Here is a very simple application:     Based on the rules of the game, you should be able to easily identify the missing value in the middle box and in the row and column with 8 out of the 9 entries completed. The number in row 1 column 2 must be a 4, the number in middle must be a 7, and the number in row 7 column 9 must be a 6. In this case, all the other possibilities were eliminated by their existence in the row, column, or box.   naked single This is an example of a naked single . This is when a value can be immediately determined by eliminating all other possible values by using the values in row, column, and box. Typically, naked singles are a little more challenging to discover because you have to consider multiple means of elimination. Consider the following grid:     Now consider the following scenario:     Even though there is much less information in this example, we can still place the 1 in the bottom left box using the process of elimination. We can eliminate the possibility of a 1 in any row or column where a 1 already exists. This eliminates all but one of the positions in the box on the bottom left. The following image is a helpful visualization of this idea. The dashed lines are positions where the 1 in the box cannot be located.     In fact, whenever there are four of the same digit \"looking at\" one of the boxes, it must be the case that you can place the digit in that box. Two of the digits eliminate two of the rows, and the other two digits eliminate two of the columns, leaving exactly one row and one column where the digit can be placed.  In most situations, the elimination will occur through a combination of row, column, and box values. Sometimes, certain positions will be blocked by other numbers. You will also typically not know which value could be placed before thinking through the logic of the puzzle. These puzzles will require some practice and patience, but over time you will begin to see the values more quickly.   Naming Conventions  In order to communicate about the different positions in a Sudoku grid, there must be an agreed-upon convention. Fortunately, the naming convention is intuitive enough that most people understand it without explanation. But for the sake of completeness, we're going to be explicit about this.  This is so intuitive that we have already used parts of these conventions without telling you!  The rows are numbered from 1 to 9 from top-to-bottom, and the columns are numbered from 1 to 9 from left-to-right. The boxes are numbered from 1 to 9 going left-to-right and top-to-bottom (like reading a book). Here is a diagram that captures all of this information:     The positions of specific squares in the grid is usually given in row-column format, such as row 3, column 5. The shorthand notation for that would be r3c5.  There is a parallel between positions in the Sudoku grid and points on a plane. You might remember that every point in the plane can be described using two numbers, written as . It would be possible to reduce the row-column notation to just two numbers (so r3c5 becomes or maybe just 35), but that comes at the expense of clarity. It is rare that notation is introduced simply for the purpose of having notation. It's usually done with the goal of helping to communicate ideas more clearly (which is also one of the reasons points on the plane are described the way they are).    Exercises   Placing Through Elimination  For each of the following exercises, determine the digit that can be placed and where it must be placed. (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)       "
 },
 {
   "id": "sudoku-intro-2",
@@ -1036,49 +1036,58 @@ var ptx_lunr_docs = [
   "body": "What is your experience with logic puzzles? "
 },
 {
+  "id": "sudoku-intro-12",
+  "level": "2",
+  "url": "sudoku-intro.html#sudoku-intro-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "naked single "
+},
+{
   "id": "sudoku-intro-wksht-2-3",
   "level": "2",
   "url": "sudoku-intro.html#sudoku-intro-wksht-2-3",
   "type": "Worksheet Exercise",
-  "number": "3.1.1",
+  "number": "3.1.2.1",
   "title": "",
   "body": "  "
 },
 {
-  "id": "empty-file",
+  "id": "sudoku-markings",
   "level": "1",
-  "url": "empty-file.html",
+  "url": "sudoku-markings.html",
   "type": "Section",
   "number": "3.2",
-  "title": "Placeholder",
-  "body": " Placeholder     You will learn...     Opening Question  Text   Exercises   Title  Stuff    "
+  "title": "Sudoku Markings",
+  "body": " Sudoku Markings     You will learn how to use markings to indicate information about the possible solutions to a Sudoku.    You will learn how to draw inferences in a Sudoku without needing to know the exact position of a digit.     CAREFUL LOGIC\/REASONING VS. FAST\/INTUITIVE REASONING  In the previous section, we saw that there are times when you can determine the exact location of a digit based on the immediate positions of other digits on the page. We can consider that to be \"first level\" reasoning. But some Sudokus require you to use multiple levels of inference. But before we talk about that, we need to introduce two useful notations.   Center Markings  Consider the Sudoku grid below:     In the first row, we can see that all the numbers except for 8 and 9 are present. This means that the empty squares at the right side must be either an 8 or a 9. Similarly, the empty squares in column 1 must be either an 8 or a 9. And for box 6, the missing values are 6 and 7.  Even though we don't know exactly which number goes where, we have been able to    Exercises   Placing Through Elimination  For each of the following exercises, determine the digit that can be placed and where it must be placed. (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)       "
 },
 {
-  "id": "empty-file-2",
+  "id": "sudoku-markings-2",
   "level": "2",
-  "url": "empty-file.html#empty-file-2",
+  "url": "sudoku-markings.html#sudoku-markings-2",
   "type": "Learning Objectives",
   "number": "3.2",
   "title": "",
-  "body": "   You will learn...    "
+  "body": "   You will learn how to use markings to indicate information about the possible solutions to a Sudoku.    You will learn how to draw inferences in a Sudoku without needing to know the exact position of a digit.    "
 },
 {
-  "id": "empty-file-3",
+  "id": "sudoku-markings-3",
   "level": "2",
-  "url": "empty-file.html#empty-file-3",
+  "url": "sudoku-markings.html#sudoku-markings-3",
   "type": "Opening Discussion",
   "number": "3.2",
   "title": "",
-  "body": "Opening Question "
+  "body": "CAREFUL LOGIC\/REASONING VS. FAST\/INTUITIVE REASONING "
 },
 {
-  "id": "section-wksht-2-2",
+  "id": "sudoku-markings-wksht-2-3",
   "level": "2",
-  "url": "empty-file.html#section-wksht-2-2",
+  "url": "sudoku-markings.html#sudoku-markings-wksht-2-3",
   "type": "Worksheet Exercise",
-  "number": "3.2.1",
+  "number": "3.2.2.1",
   "title": "",
-  "body": "Stuff "
+  "body": "  "
 },
 {
   "id": "empty-file",
