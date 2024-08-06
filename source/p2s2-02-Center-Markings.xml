@@ -1,0 +1,263 @@
+<section xml:id="center-markings">
+    <title>Center Markings</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn how to use center markings to indicate information about the possible solutions to a Sudoku.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn how to draw inferences from center markings.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        CAREFUL LOGIC/REASONING VS. FAST/INTUITIVE REASONING
+    </observation>
+
+    <p>
+        In the previous section, we saw that there are times when you can determine the exact location of a digit based on the
+        immediate positions of other digits on the page. We can consider that to be "first level" reasoning. But some Sudokus
+        require you to use multiple levels of inference. But before we talk about that, we need to introduce some notation.
+    </p>
+
+    <p>
+        Consider the Sudoku grid below:
+    </p>
+    <image xml:id="center-markings-1" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+                \draw (0.5,8.5) node[anchor=center] {1};
+                \draw (1.5,8.5) node[anchor=center] {2};
+                \draw (2.5,8.5) node[anchor=center] {3};
+                \draw (3.5,8.5) node[anchor=center] {4};
+                \draw (4.5,8.5) node[anchor=center] {5};
+                \draw (5.5,8.5) node[anchor=center] {6};
+                \draw (6.5,8.5) node[anchor=center] {7};
+                \draw (7.5,8.5) node[anchor=center] {};
+                \draw (8.5,8.5) node[anchor=center] {};
+
+                \draw (0.5,7.5) node[anchor=center] {4};
+                \draw (0.5,6.5) node[anchor=center] {5};
+                \draw (0.5,5.5) node[anchor=center] {6};
+                \draw (0.5,4.5) node[anchor=center] {2};
+                \draw (0.5,3.5) node[anchor=center] {3};
+                \draw (0.5,2.5) node[anchor=center] {7};
+
+                \draw (6.5,5.5) node[anchor=center] {1};
+                \draw (7.5,5.5) node[anchor=center] {2};
+                \draw (8.5,5.5) node[anchor=center] {3};
+
+                \draw (6.5,4.5) node[anchor=center] {8};
+                \draw (7.5,4.5) node[anchor=center] {4};
+                \draw (8.5,4.5) node[anchor=center] {};
+
+                \draw (6.5,3.5) node[anchor=center] {9};
+                \draw (7.5,3.5) node[anchor=center] {5};
+                \draw (8.5,3.5) node[anchor=center] {};
+
+            \end{tikzpicture}
+        </latex-image>
+    </image>
+    <p>
+        In the first row, we can see that all the numbers except for 8 and 9 are present. This means that
+        the empty squares at the right side must be either an 8 or a 9. Similarly, the empty squares in
+        column 1 must be either an 8 or a 9. And for box 6, the missing values are 6 and 7.
+    </p>
+    <p>
+        <idx><h>center markings</h></idx>
+        Even though we don't know exactly which number goes where, we have been able to narrow the options
+        considerably and create an exhaustive list of possibilities for those positions. When you generate
+        such lists of values, it is helpful to be able to write it down in a way that you can reference later.
+        The technique for this is known as <term>center markings</term>, and all you do is write down all the
+        possibilities in the middle of the square, being sure to write it small so that you can visually spot
+        that it's different very quickly and easily. Here's how that looks for the grid above.
+    </p>
+    <image xml:id="center-markings-2" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+                \draw (0.5,8.5) node[anchor=center] {1};
+                \draw (1.5,8.5) node[anchor=center] {2};
+                \draw (2.5,8.5) node[anchor=center] {3};
+                \draw (3.5,8.5) node[anchor=center] {4};
+                \draw (4.5,8.5) node[anchor=center] {5};
+                \draw (5.5,8.5) node[anchor=center] {6};
+                \draw (6.5,8.5) node[anchor=center] {7};
+                \draw (7.5,8.5) node[anchor=center] {\tiny 89};
+                \draw (8.5,8.5) node[anchor=center] {\tiny 89};
+
+                \draw (0.5,7.5) node[anchor=center] {4};
+                \draw (0.5,6.5) node[anchor=center] {5};
+                \draw (0.5,5.5) node[anchor=center] {6};
+                \draw (0.5,4.5) node[anchor=center] {2};
+                \draw (0.5,3.5) node[anchor=center] {3};
+                \draw (0.5,2.5) node[anchor=center] {7};
+                \draw (0.5,1.5) node[anchor=center] {\tiny 89};
+                \draw (0.5,0.5) node[anchor=center] {\tiny 89};
+
+                \draw (6.5,5.5) node[anchor=center] {1};
+                \draw (7.5,5.5) node[anchor=center] {2};
+                \draw (8.5,5.5) node[anchor=center] {3};
+
+                \draw (6.5,4.5) node[anchor=center] {8};
+                \draw (7.5,4.5) node[anchor=center] {4};
+                \draw (8.5,4.5) node[anchor=center] {\tiny 67};
+
+                \draw (6.5,3.5) node[anchor=center] {9};
+                \draw (7.5,3.5) node[anchor=center] {5};
+                \draw (8.5,3.5) node[anchor=center] {\tiny 67};
+
+            \end{tikzpicture}
+        </latex-image>
+    </image>
+    <p>
+        This notation works best when you've reduced the number of possibilities to just two or three, though there
+        can be times that insights can be generated from listing more possibilities. The value of this notation is that
+        it allows you to more easily determine when you can solve that position because it helps you to remember that
+        you've already eliminated the other possibilities. Otherwise, you would likely have to go back and check them
+        all again to feel confident that you're correct.
+    </p>
+    <p>
+        Center markings have other useful properties. For example, if you have the same two center markings in a row,
+        column, or box, then you can use that information to eliminate possibilities elsewhere in that row, column, or box.
+        Try to determine the value in row 1 column 1 of the following grid:
+    </p>
+    <image xml:id="center-markings-3" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+                \draw (0.5,8.5) node[anchor=center] {};
+                \draw (1.5,8.5) node[anchor=center] {};
+                \draw (2.5,8.5) node[anchor=center] {};
+                \draw (3.5,8.5) node[anchor=center] {7};
+                \draw (4.5,8.5) node[anchor=center] {};
+                \draw (5.5,8.5) node[anchor=center] {};
+                \draw (6.5,8.5) node[anchor=center] {4};
+                \draw (7.5,8.5) node[anchor=center] {\tiny 89};
+                \draw (8.5,8.5) node[anchor=center] {\tiny 89};
+
+                \draw (0.5,7.5) node[anchor=center] {};
+                \draw (0.5,6.5) node[anchor=center] {};
+                \draw (0.5,5.5) node[anchor=center] {3};
+                \draw (0.5,4.5) node[anchor=center] {};
+                \draw (0.5,3.5) node[anchor=center] {};
+                \draw (0.5,2.5) node[anchor=center] {};
+                \draw (0.5,1.5) node[anchor=center] {6};
+                \draw (0.5,0.5) node[anchor=center] {};
+
+                \draw (1.5,7.5) node[anchor=center] {\tiny 12};
+                \draw (2.5,6.5) node[anchor=center] {\tiny 12};
+
+            \end{tikzpicture}
+        </latex-image>
+    </image>
+    <p>
+        Let's focus on the pair of center markings in box 1. (This would often be referred to as a "12-pair", which is 
+        read as "one-two pair.") The conclusion we can draw is that none of the other values in that box can be either a
+        1 or a 2. If we were to put a 1 somewhere else in the box, it would eliminate 1 as a possibility from both of those
+        positions, and that would say that they must both be a 2, which would violate the rules. So this eliminates 1 and 2
+        as possible values for the top left corner.
+    </p>
+    <p>
+        Using the same logic, but applied to row 1, we can see that the top left corner cannot be either an 8 or a 9 because
+        of the 89-pair at the right side of that row. From here, we can also use row and column logic to eliminate 3, 4, 6, and
+        7 as possibilities. And so we have a naked single 5 in the top left corner.
+    </p>
+    <p>
+        Pairs (and triples, quadruples, quintuiples...) can be combined with other elements of Sudoku logic when solving a puzzle.
+        In the grid below, see if you can place the digit 1 in box 1.
+    </p>
+    <image xml:id="center-markings-4" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+                \draw (0.5,8.5) node[anchor=center] {};
+                \draw (1.5,8.5) node[anchor=center] {};
+                \draw (2.5,8.5) node[anchor=center] {};
+                \draw (3.5,8.5) node[anchor=center] {};
+                \draw (4.5,8.5) node[anchor=center] {};
+                \draw (5.5,8.5) node[anchor=center] {};
+                \draw (6.5,8.5) node[anchor=center] {\tiny 123};
+                \draw (7.5,8.5) node[anchor=center] {\tiny 123};
+                \draw (8.5,8.5) node[anchor=center] {\tiny 123};
+
+                \draw (3.5,7.5) node[anchor=center] {\tiny 12};
+                \draw (4.5,7.5) node[anchor=center] {\tiny 12};
+
+                \draw (0.5,6.5) node[anchor=center] {9};
+
+                \draw (2.5,5.5) node[anchor=center] {1};
+
+            \end{tikzpicture}
+        </latex-image>
+    </image>
+    <p>
+        Hopefully, you were able to identify that the 1 belongs in row 3 column 2. The 123-triple in box 3 eliminates
+        the 1 from row 1 (since it must be in one of those three positions), and the 12-pair in box 2 eliminates the 1
+        from row 2. This reduces us to looking at columns 2 and 3 in box 1 since the 9 is occupying column 1. And the
+        last step is to eliminate column 3 because there is a 1 in column 3 of box 4.
+    </p>
+
+    <worksheet xml:id="center-markings-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>Failed logic problems</title>
+            <p>
+                For each of the following exercises, determine the digit that can be placed and where it must be placed.
+                (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)
+            </p>
+            <exercise>
+                <image xml:id="sudoku-elimination-exercise-2a" width="75%">
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.5]
+                            \draw (0,0) grid (9,9);
+                            \foreach \x in {0,3,6} {
+                                \foreach \y in {0,3,6} {
+                                    \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                                }
+                            }
+                            \draw (0.5,8.5) node[anchor=center] {9};
+                            \draw (0.5,7.5) node[anchor=center] {8};
+                            \draw (4.5,6.5) node[anchor=center] {1};
+                            \draw (2.5,5.5) node[anchor=center] {1};
+                            \draw (7.5,2.5) node[anchor=center] {1};
+                            \draw (3.5,1.5) node[anchor=center] {1};
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>

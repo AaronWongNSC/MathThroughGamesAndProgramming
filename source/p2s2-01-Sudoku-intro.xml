@@ -33,11 +33,26 @@
         isn't that you learn how to solve Sudokus per se, but that you would start to develop experience with and patience for
         the logical part of your brain. Like any other muscle in your body, exercise can make it stronger.
     </p>
+    <fact xml:id="game-sudoku-classic">
+        <title>Classic Sudoku</title>
+        <idx><h>Classic Sudoku</h></idx>
+        <statement>
+            <p>
+                Classic Sudoku is a logic puzzle where the goal is to place the digits 1-9 into a 9x9 grid so that each digit appears
+                exactly once in every row, column, and 3x3 box formed by dividing the entire region into thirds in both the horizontal
+                and vertical directions.
+            </p>
+        </statement>
+        <figure xml:id="video-sudoku-classic">
+            <title>Classic Sudoku Video Instructions</title>
+            <video youtube="eM3S74kchoM">
+            </video>
+            <caption>Video instructions for Classic Sudoku</caption>
+        </figure>
+    </fact>
     <p>
-        The standard Sudoku grid is a 9x9 square grid that has been broken up into 9 3x3 boxes. A valid Sudoku grid is
-        one in which every square in the grid is filled with one of the digits from 1 to 9 subject to the condition that
-        each digit appears in every row, column, and box exactly once. The diagram below shows a valid Sudoku grid with
-        a row, column, and box highlighted to help you verify that the condition has been met.
+        A valid Sudoku grid is one that satsifies the solve conditions of the puzzle. The diagram below shows a valid Classic Sudoku grid with
+        a row, column, and box highlighted to help you verify that the condition that each digit appears once under each condition have been met.
     </p>
     <image xml:id="sudoku-demo-1" width="75%">
         <latex-image>
@@ -247,7 +262,7 @@
                 \draw (0.5,7.5) node[anchor=center] {};
 
 
-                \draw (0.5,7.5) node[anchor=center] {7};
+                \draw (1.5,7.5) node[anchor=center] {7};
                 \draw (1.5,6.5) node[anchor=center] {8};
                 \draw (2.5,6.5) node[anchor=center] {9};
 

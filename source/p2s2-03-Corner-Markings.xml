@@ -1,0 +1,173 @@
+<section xml:id="corner-markings">
+    <title>Corner Markings</title>
+
+    <objectives>
+        <ul>
+            <li>
+                <p>
+                    You will learn how to use corner markings to indicate information about the possible solutions to a Sudoku.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You will learn how to draw inferences from corner markings.
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+    <observation>
+        ???
+    </observation>
+
+    <p>
+        In the previous section, we saw that center markings are useful when you are able to eliminate most of the possibilities
+        at a particular position. Sometimes, we want to focus our attention on a particular digit. This section will explore this
+        notation and its logic. (Note: Different people may use this notation slightly differently, with different "rules" for how
+        they might apply it than what is presented here. Ultimately, it doesn't matter. The point is to practice logic, and the
+        way the notation is presented here is logical.)
+    </p>
+    <p>
+        <idx><h>Snyder notation</h></idx>
+        <idx><h>corner markings</h></idx>
+
+        <term>Corner markings</term> (also called <term>Snyder notation</term>) can be used to indicate "box-level" logic for some
+        digit. The idea is that it's sometimes possible to eliminate most of the possible locations for a digit within a box, which
+        then opens up further avenues of logic. You first start by identifying the possible locations for the digit within a box.
+        Every possible location for that digit is indicated by writing that digit in small font in one of the corners of the square
+        for each position. You can sometimes use this information to help you make further inferences.
+    </p>
+    <p>
+        A common use for corner markings is a dual-purpose box and row/column indicator. Consider the following situation:
+    </p>
+    <image xml:id="corner-markings-1a" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+                \draw (0.5,8.5) node[anchor=center] {9};
+                \draw (1.5,8.5) node[anchor=center] {8};
+                \draw (2.5,8.5) node[anchor=center] {};
+                \draw (3.5,8.5) node[anchor=center] {};
+                \draw (4.5,8.5) node[anchor=center] {};
+                \draw (5.5,8.5) node[anchor=center] {};
+                \draw (6.5,8.5) node[anchor=center] {};
+                \draw (7.5,8.5) node[anchor=center] {};
+                \draw (8.5,8.5) node[anchor=center] {};
+
+                \draw (0.5,7.5) node[anchor=center] {};
+                \draw (1.5,7.5) node[anchor=center] {};
+                \draw (2.5,7.5) node[anchor=center] {};
+                \draw (3.5,7.5) node[anchor=center] {1};
+                \draw (4.5,7.5) node[anchor=center] {};
+                \draw (5.5,7.5) node[anchor=center] {};
+                \draw (6.5,7.5) node[anchor=center] {};
+                \draw (7.5,7.5) node[anchor=center] {};
+                \draw (8.5,7.5) node[anchor=center] {};
+
+                \draw (0.5,6.5) node[anchor=center] {};
+                \draw (1.5,6.5) node[anchor=center] {};
+                \draw (2.5,6.5) node[anchor=center] {};
+                \draw (3.5,6.5) node[anchor=center] {};
+                \draw (4.5,6.5) node[anchor=center] {};
+                \draw (5.5,6.5) node[anchor=center] {};
+                \draw (6.5,6.5) node[anchor=center] {7};
+                \draw (7.5,6.5) node[anchor=center] {8};
+                \draw (8.5,6.5) node[anchor=center] {9};
+
+                \end{tikzpicture}
+        </latex-image>
+    </image>
+    <p>
+        Think about the possible positions for 1 in box 3. We can see that there is no room for it in row 3, and the 1 in
+        box 2 eliminiates all of row 2. Therefore, 1 must be in row 1 of box 3. So we can write a small 1 in each of those
+        three boxes.
+    </p>
+    <p>
+        But we can actually go further with this and place the 1 in box 1. Since the corner markings in box 3 are all in row 1,
+        we know that no matter what the final solution of the puzzle looks like, the 1 in row 1 will be somewhere in box 3. In
+        particular, this means that there cannot be a 1 in row 1 of box 1. And since the 1 in row 2 is already found in box 2,
+        this means that the 1 in box 1 must be in row 3, where there is only one possibility. The next grid attempts to visualize
+        this logic.
+    </p>
+    <image xml:id="corner-markings-1b" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+                \draw (0.5,8.5) node[anchor=center] {};
+                \draw (1.5,8.5) node[anchor=center] {};
+                \draw (2.5,8.5) node[anchor=center] {};
+                \draw (3.5,8.5) node[anchor=center] {};
+                \draw (4.5,8.5) node[anchor=center] {};
+                \draw (5.5,8.5) node[anchor=center] {};
+                \draw (6.2,8.8) node[anchor=center] {\tiny 1};
+                \draw (7.2,8.8) node[anchor=center] {};
+                \draw (8.2,8.8) node[anchor=center] {};
+
+                \draw (0.5,7.5) node[anchor=center] {};
+                \draw (1.5,7.5) node[anchor=center] {};
+                \draw (2.5,7.5) node[anchor=center] {};
+                \draw (3.5,7.5) node[anchor=center] {1};
+                \draw (4.5,7.5) node[anchor=center] {};
+                \draw (5.5,7.5) node[anchor=center] {};
+                \draw (6.5,7.5) node[anchor=center] {};
+                \draw (7.5,7.5) node[anchor=center] {};
+                \draw (8.5,7.5) node[anchor=center] {};
+
+                \draw (0.5,6.5) node[anchor=center] {6};
+                \draw (1.5,6.5) node[anchor=center] {5};
+                \draw (2.5,6.5) node[anchor=center] {};
+                \draw (3.5,6.5) node[anchor=center] {};
+                \draw (4.5,6.5) node[anchor=center] {};
+                \draw (5.5,6.5) node[anchor=center] {};
+                \draw (6.5,6.5) node[anchor=center] {7};
+                \draw (7.5,6.5) node[anchor=center] {8};
+                \draw (8.5,6.5) node[anchor=center] {9};
+
+                \end{tikzpicture}
+        </latex-image>
+    </image>
+
+    <worksheet xml:id="corner-markings-wksht">
+		<title>Exercises</title>
+        <exercisegroup>
+            <title>Failed logic problems</title>
+            <p>
+                For each of the following exercises, determine the digit that can be placed and where it must be placed.
+                (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)
+            </p>
+            <exercise>
+                <image xml:id="sudoku-elimination-exercise-2b" width="75%">
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.5]
+                            \draw (0,0) grid (9,9);
+                            \foreach \x in {0,3,6} {
+                                \foreach \y in {0,3,6} {
+                                    \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                                }
+                            }
+                            \draw (0.5,8.5) node[anchor=center] {9};
+                            \draw (0.5,7.5) node[anchor=center] {8};
+                            \draw (4.5,6.5) node[anchor=center] {1};
+                            \draw (2.5,5.5) node[anchor=center] {1};
+                            \draw (7.5,2.5) node[anchor=center] {1};
+                            \draw (3.5,1.5) node[anchor=center] {1};
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </exercise>
+        </exercisegroup>
+    </worksheet>
+
+</section>

@@ -37,8 +37,8 @@
       <chapter xml:id="chapter-logic" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title>Logical Deduction Puzzles</title>
         <xi:include href="p2s2-01-Sudoku-intro.xml" />
-        <xi:include href="p2s2-02-Markings.xml" />
-        <xi:include href="empty.xml" /> <!-- Thinking in Pairs -->
+        <xi:include href="p2s2-02-Center-Markings.xml" />
+        <xi:include href="p2s2-03-Corner-Markings.xml" />
         <xi:include href="empty.xml" /> <!-- SET -->
         <xi:include href="empty.xml" /> <!-- Variants -->
       </chapter>
