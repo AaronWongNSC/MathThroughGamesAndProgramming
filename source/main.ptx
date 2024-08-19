@@ -39,7 +39,7 @@
         <xi:include href="p2s2-01-Sudoku-intro.xml" />
         <xi:include href="p2s2-02-Center-Markings.xml" />
         <xi:include href="p2s2-03-Corner-Markings.xml" />
-        <xi:include href="empty.xml" /> <!-- SET -->
+        <xi:include href="p2s2-04-XWings.xml" /> <!-- SET -->
         <xi:include href="empty.xml" /> <!-- Variants -->
       </chapter>
 
