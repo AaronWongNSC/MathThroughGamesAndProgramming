@@ -1,5 +1,5 @@
-<section xml:id="corner-markings">
-    <title>Corner Markings</title>
+<section xml:id="xwings">
+    <title>X-Wings</title>
 
     <objectives>
         <ul>
@@ -21,14 +21,21 @@
     </observation>
 
     <p>
-        <idx><h>Index</h></idx>
-        <idx><h>corner markings</h></idx>
-
+        When solving Sudokus, there are certain patterns of logic that seem to come up repeatedly. As puzzle solvers started
+        to recognize those patterns, they began to give them names. The value of the name is that it becomes a type of shortcut
+        for identifying situations in which that particular pattern arises, and it also allows the underlying logic to be
+        condensed down into its most basic form.
     </p>
     <p>
-        A common use for corner markings is a dual-purpose box and row/column indicator. Consider the following situation:
+        <idx><h>X-Wing</h></idx>
+
+        One of the more basic patterns is known as an <term>X-Wing</term>. The reason for this name will become apparent as we
+        work through the logic. X-Wings arise in situations where a digit's positions have been restricted to just two possibilities
+        inside of multiple boxes. More specifically, they arise when those positions are geometrically related to each other. Consider
+        the following puzzle.
+
     </p>
-    <image xml:id="corner-markings-1a" width="75%">
+    <image xml:id="xwing-1a" width="75%">
         <latex-image>
             \begin{tikzpicture}[scale=0.5]
 
@@ -51,41 +58,96 @@
                 \draw (0.5,7.5) node[anchor=center] {};
                 \draw (1.5,7.5) node[anchor=center] {};
                 \draw (2.5,7.5) node[anchor=center] {};
-                \draw (3.5,7.5) node[anchor=center] {1};
+                \draw (3.5,7.5) node[anchor=center] {};
                 \draw (4.5,7.5) node[anchor=center] {};
                 \draw (5.5,7.5) node[anchor=center] {};
                 \draw (6.5,7.5) node[anchor=center] {};
                 \draw (7.5,7.5) node[anchor=center] {};
                 \draw (8.5,7.5) node[anchor=center] {};
 
-                \draw (0.5,6.5) node[anchor=center] {6};
-                \draw (1.5,6.5) node[anchor=center] {5};
+                \draw (0.5,6.5) node[anchor=center] {};
+                \draw (1.5,6.5) node[anchor=center] {};
                 \draw (2.5,6.5) node[anchor=center] {};
                 \draw (3.5,6.5) node[anchor=center] {};
                 \draw (4.5,6.5) node[anchor=center] {};
                 \draw (5.5,6.5) node[anchor=center] {};
-                \draw (6.5,6.5) node[anchor=center] {7};
-                \draw (7.5,6.5) node[anchor=center] {8};
+                \draw (6.5,6.5) node[anchor=center] {};
+                \draw (7.5,6.5) node[anchor=center] {};
                 \draw (8.5,6.5) node[anchor=center] {9};
+                \draw (6.25,6.75) node[anchor=center] {\tiny 1};
+                \draw (7.25,6.75) node[anchor=center] {\tiny 1};
+
+                \draw (0.5,5.5) node[anchor=center] {};
+                \draw (1.5,5.5) node[anchor=center] {};
+                \draw (2.5,5.5) node[anchor=center] {};
+                \draw (3.5,5.5) node[anchor=center] {};
+                \draw (4.5,5.5) node[anchor=center] {};
+                \draw (5.5,5.5) node[anchor=center] {};
+                \draw (6.5,5.5) node[anchor=center] {};
+                \draw (7.5,5.5) node[anchor=center] {};
+                \draw (8.5,5.5) node[anchor=center] {};
+
+                \draw (0.5,4.5) node[anchor=center] {};
+                \draw (1.5,4.5) node[anchor=center] {};
+                \draw (2.5,4.5) node[anchor=center] {};
+                \draw (3.5,4.5) node[anchor=center] {};
+                \draw (4.5,4.5) node[anchor=center] {};
+                \draw (5.5,4.5) node[anchor=center] {};
+                \draw (6.5,4.5) node[anchor=center] {};
+                \draw (7.5,4.5) node[anchor=center] {};
+                \draw (8.5,4.5) node[anchor=center] {};
+
+                \draw (0.5,3.5) node[anchor=center] {};
+                \draw (1.5,3.5) node[anchor=center] {};
+                \draw (2.5,3.5) node[anchor=center] {};
+                \draw (3.5,3.5) node[anchor=center] {};
+                \draw (4.5,3.5) node[anchor=center] {};
+                \draw (5.5,3.5) node[anchor=center] {};
+                \draw (6.5,3.5) node[anchor=center] {};
+                \draw (7.5,3.5) node[anchor=center] {};
+                \draw (8.5,3.5) node[anchor=center] {8};
+                \draw (6.25,3.75) node[anchor=center] {\tiny 1};
+                \draw (7.25,3.75) node[anchor=center] {\tiny 1};
 
                 \end{tikzpicture}
         </latex-image>
     </image>
     <p>
-        Think about the possible positions for 1 in box 3. We can see that there is no room for it in row 3, and the 1 in
-        box 2 eliminiates all of row 2. Therefore, 1 must be in row 1 of box 3. So we can write a small 1 in each of those
-        three boxes.
+        Let's think about the possible positions for 1 in box 9. At first, it may seem as though there is not a lot of information
+        available to work with in that box. In order to see the logic, we need to take a step back and think about the interaction between
+        boxes 3 and 6. In box 3, we know that 1 must either be in column 7 or column 8. Similarly, box 6 tells us that 1 must also either
+        be in column 7 or column 8. The repetition of those columns should seem important, even if you're not quite sure why.
     </p>
     <p>
-        But we can actually go further with this and place the 1 in box 1. Since the corner markings in box 3 are all in row 1,
-        we know that no matter what the final solution of the puzzle looks like, the 1 in row 1 will be somewhere in box 3. In
-        particular, this means that there cannot be a 1 in row 1 of box 1. And since the 1 in row 2 is already found in box 2,
-        this means that the 1 in box 1 must be in row 3, where there is only one possibility. The next grid attempts to visualize
-        this logic.
+        The trick is to follow the box and column logic an extra step. Suppose we knew for certain that the 1 in box 3 was in column 7.
+        What would we be able to conclude about the 1 in box 6? Since it's now impossible for the 1 in box 6 to be in column 7, we know
+        it must be in column 8. And so we have placed the 1 in both of columns 7 and 8. This means that the 1 in box 9 must appear in
+        column 9.
     </p>
-    <image xml:id="corner-markings-1b" width="75%">
+    <p>
+        But what would happen if we knew for certain that the 1 in box 3 was in column 8, instead? In this situation, the 1 in box 6
+        would have to be in column 7, which places the 1 in both of columns 7 and 8 again. And so we again conclude that the 1 in box 9
+        must be in column 9.
+    </p>
+    <p>
+        What this means is that regardless of where the 1s appear in boxes 3 and 6, we must have that the 1 in box 9 is in column 9. It's important
+        to remember that we don't actually know where the 1s in boxes 3 and 6 are located. We just know that it is in one of two possible
+        configurations, and in both cases, it pushes the 1 in box 9 into column 9.
+    </p>
+    <p>
+        Let's represent this logic visually. In the first situation, the 1s are in r3c7 and r6c8. We'll draw a line connecting those two positions.
+        In the second situation, the 1s are in r3c8 and r6c7, and we'll draw the line connecting them. You will notice that the resulting diagram
+        has a large X in it, and that is the reason this is called an X-Wing. (Also, the Sudoku community enjoys the Star Wars reference.) The shaded
+        parts of the diagram below show positions that cannot be a 1 based on the X-Wing. (Notice that we also know that the 1 is restricted in row 3
+        and row 6, but that's not due to the X-Wing logic. That's due to the corner markings.)
+    </p>
+    <image xml:id="xwing-1b" width="75%">
         <latex-image>
             \begin{tikzpicture}[scale=0.5]
+
+                \draw[fill=lightgray] (6,0) rectangle (8,9);
+                \draw[fill=blue!50!white] (6,3) rectangle (8,4);
+                \draw[fill=blue!50!white] (6,6) rectangle (8,7);
 
                 \draw (0,0) grid (9,9);
                 \foreach \x in {0,3,6} {
@@ -99,51 +161,111 @@
                 \draw (3.5,8.5) node[anchor=center] {};
                 \draw (4.5,8.5) node[anchor=center] {};
                 \draw (5.5,8.5) node[anchor=center] {};
-                \draw (6.25,8.75) node[anchor=center, blue] {\tiny 1};
-                \draw (7.25,8.75) node[anchor=center, blue] {\tiny 1};
-                \draw (8.25,8.75) node[anchor=center, blue] {\tiny 1};
+                \draw (6.5,8.5) node[anchor=center] {};
+                \draw (7.5,8.5) node[anchor=center] {};
+                \draw (8.5,8.5) node[anchor=center] {};
 
                 \draw (0.5,7.5) node[anchor=center] {};
                 \draw (1.5,7.5) node[anchor=center] {};
                 \draw (2.5,7.5) node[anchor=center] {};
-                \draw (3.5,7.5) node[anchor=center] {1};
+                \draw (3.5,7.5) node[anchor=center] {};
                 \draw (4.5,7.5) node[anchor=center] {};
                 \draw (5.5,7.5) node[anchor=center] {};
                 \draw (6.5,7.5) node[anchor=center] {};
                 \draw (7.5,7.5) node[anchor=center] {};
                 \draw (8.5,7.5) node[anchor=center] {};
 
-                \draw (0.5,6.5) node[anchor=center] {6};
-                \draw (1.5,6.5) node[anchor=center] {5};
-                \draw (2.5,6.5) node[anchor=center, blue] {1};
+                \draw (0.5,6.5) node[anchor=center] {};
+                \draw (1.5,6.5) node[anchor=center] {};
+                \draw (2.5,6.5) node[anchor=center] {};
                 \draw (3.5,6.5) node[anchor=center] {};
                 \draw (4.5,6.5) node[anchor=center] {};
                 \draw (5.5,6.5) node[anchor=center] {};
-                \draw (6.5,6.5) node[anchor=center] {7};
-                \draw (7.5,6.5) node[anchor=center] {8};
+                \draw (6.5,6.5) node[anchor=center] {};
+                \draw (7.5,6.5) node[anchor=center] {};
                 \draw (8.5,6.5) node[anchor=center] {9};
+                \draw (6.25,6.75) node[anchor=center] {\tiny 1};
+                \draw (7.25,6.75) node[anchor=center] {\tiny 1};
 
-                \draw (3.5,7.5) circle (0.4);
-                \draw[dashed] (3.9,7.5) -- (9,7.5);
-                \draw[dashed] (3.1,7.5) -- (0,7.5);
+                \draw (0.5,5.5) node[anchor=center] {};
+                \draw (1.5,5.5) node[anchor=center] {};
+                \draw (2.5,5.5) node[anchor=center] {};
+                \draw (3.5,5.5) node[anchor=center] {};
+                \draw (4.5,5.5) node[anchor=center] {};
+                \draw (5.5,5.5) node[anchor=center] {};
+                \draw (6.5,5.5) node[anchor=center] {};
+                \draw (7.5,5.5) node[anchor=center] {};
+                \draw (8.5,5.5) node[anchor=center] {};
 
-                \draw (6.1,8.1) rectangle (8.9, 8.9);
-                \draw[dashed] (6.1,8.5) -- (0,8.5);
+                \draw (0.5,4.5) node[anchor=center] {};
+                \draw (1.5,4.5) node[anchor=center] {};
+                \draw (2.5,4.5) node[anchor=center] {};
+                \draw (3.5,4.5) node[anchor=center] {};
+                \draw (4.5,4.5) node[anchor=center] {};
+                \draw (5.5,4.5) node[anchor=center] {};
+                \draw (6.5,4.5) node[anchor=center] {};
+                \draw (7.5,4.5) node[anchor=center] {};
+                \draw (8.5,4.5) node[anchor=center] {};
 
-                \draw[blue] (2.1,6.1) rectangle (2.9,6.9);
+                \draw (0.5,3.5) node[anchor=center] {};
+                \draw (1.5,3.5) node[anchor=center] {};
+                \draw (2.5,3.5) node[anchor=center] {};
+                \draw (3.5,3.5) node[anchor=center] {};
+                \draw (4.5,3.5) node[anchor=center] {};
+                \draw (5.5,3.5) node[anchor=center] {};
+                \draw (6.5,3.5) node[anchor=center] {};
+                \draw (7.5,3.5) node[anchor=center] {};
+                \draw (8.5,3.5) node[anchor=center] {8};
+                \draw (6.25,3.75) node[anchor=center] {\tiny 1};
+                \draw (7.25,3.75) node[anchor=center] {\tiny 1};
 
-                \end{tikzpicture}
+                \draw[ultra thick, blue] (6.5, 6.5) -- (7.5, 3.5);
+                \draw[ultra thick, blue] (7.5, 6.5) -- (6.5, 3.5);
+            \end{tikzpicture}
         </latex-image>
     </image>
     <p>
-        This is the multi-layered reasoning that makes Sudoku puzzles compelling to solve. It becomes more about
-        unwinding layers of complexity and discovering elegant connections than it is about brute force. The goal is often
-        not just to solve the puzzle, but to do it in a way that is intellectually satisfying. And the ability to see many
-        layers of reasoning coming together simultaneously to help you reach a conclusion is a part of the challenge of the
-        puzzle.
+        X-Wings are not limited to adjacent columns. As long as the position of a digit is locked
+        into the same two positions in two rows or columns, an X-Wing is created. Here is an example of an X-Wing on 1s that
+        basically spans the entire puzzle. Using the same logic as before, we know that there cannot be any 1s in any of the shaded
+        boxes. Notice that the pairs are related vertically, which makes the X-Wing logic horizontal.
+    </p>
+    <image xml:id="xwing-2" width="75%">
+        <latex-image>
+            \begin{tikzpicture}[scale=0.5]
+
+                \draw[fill=lightgray] (0,1) rectangle (9,2);
+                \draw[fill=lightgray] (0,7) rectangle (9,8);
+
+                \draw[fill=blue!50!white] (1,1) rectangle (2,2);
+                \draw[fill=blue!50!white] (7,1) rectangle (8,2);
+                \draw[fill=blue!50!white] (1,7) rectangle (2,8);
+                \draw[fill=blue!50!white] (7,7) rectangle (8,8);
+
+                \draw (0,0) grid (9,9);
+                \foreach \x in {0,3,6} {
+                    \foreach \y in {0,3,6} {
+                        \draw[very thick] (\x, \y) rectangle (\x + 3, \y + 3);
+                    }
+                }
+
+                \draw[ultra thick, blue] (1.5, 1.5) -- (7.5, 7.5);
+                \draw[ultra thick, blue] (1.5, 7.5) -- (7.5, 1.5);
+
+                \draw (1.5,1.5) node[anchor=center] {\tiny 12};
+                \draw (1.5,7.5) node[anchor=center] {\tiny 12};
+                \draw (7.5,1.5) node[anchor=center] {\tiny 13};
+                \draw (7.5,7.5) node[anchor=center] {\tiny 13};
+
+
+            \end{tikzpicture}
+        </latex-image>
+    </image>
+    <p>
+        Ambiguous/unsolvable situations
     </p>
 
-    <worksheet xml:id="corner-markings-wksht">
+    <worksheet xml:id="xwing-wksht">
 		<title>Exercises</title>
         <exercisegroup>
             <title>Failed logic problems</title>
@@ -152,7 +274,7 @@
                 (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)
             </p>
             <exercise>
-                <image xml:id="sudoku-elimination-exercise-2b" width="75%">
+                <image xml:id="xwing-exercise-2b" width="75%">
                     <latex-image>
                         \begin{tikzpicture}[scale=0.5]
                             \draw (0,0) grid (9,9);
