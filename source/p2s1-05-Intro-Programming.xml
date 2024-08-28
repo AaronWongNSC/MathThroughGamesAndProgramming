@@ -81,157 +81,65 @@
         </p>
     </subsection>
     <subsection>
-        <title>Outside-In</title>
+        <title>If-Then Statements</title>
         <p>
-            We are going to use a game-playing bot as our basic programming model. In order to do this, we need to introduce
-            the game that our bot is going to play.
-        </p>
-        <fact xml:id="game-outside-in">
-            <title>Outside-In</title>
-            <idx><h>Outside-In</h></idx>
-            <statement>
-                <p>
-                    Outside-In is a two-player game. The game is played with with a standard deck of cards. The cards are shuffled
-                    and an even number of cards are laid out in a row. (A recommended number of cards is 10.) Players take turns
-                    drawing a single card from either end of the row. The player's score is the sum of the values of all the cards
-                    they collect during the game, where aces are worth 1, number cards are worth the number, jacks are worth 11,
-                    queens are worth 12, and kings are worth 13. The player with the most points wins the game.
-                </p>
-                <p>
-                    Note that this game can also be played with domino tiles (with value equal to the number of dots) or any other
-                    objects that can be given a definite value.
-                </p>
-            </statement>
-            <figure xml:id="video-outside-in">
-                <title>Outside-In Video Instructions</title>
-                <video youtube="eM3S74kchoM">
-                </video>
-                <caption>Video instructions for Outside-In</caption>
-            </figure>
-        </fact>
-        <p>
-            After the cards are dealt, this is a game of complete information. Both players can see exactly what options are available
-            at any given moment, and a game tree can be drawn out to analyze the game. That analysis would be slightly different than
-            what we've done previously, as this game is not symmetric and the outcome depends on past decisions. But the idea of mapping
-            out the possible decisions and seeing which ones lead to winning positions can still be applied. The problem is that every
-            new combination and arrangement of cards will require a new game tree analysis, and there are too many possible games for
-            us to analyze them all.
+            <idx><h>control flow (programming)</h></idx>
+            <idx><h>flow of control (programming)</h></idx>
+            <idx><h>if-then statement (programming)</h></idx>
+            Within the world of computer programming is the concept of "control flow" (or "flow of control"). This is basically
+            the idea of how the computer navigates the flowcharts. Although there are mutiple structures that can be used to
+            accomplish this (for example, loops and subroutines), we are going to focus on the if-then statement. This is the basic
+            mechanism for "choice" in a program.
         </p>
         <p>
-            Instead of using a game tree to make decisions, we're going to use a decision-making flowchart. The idea is to try to
-            think strategically about the decisions you're going to make. And the way to start understanding this is to think about
-            what you're thinking about when it's your turn.
+            If we look at flowchart, there are some places where the program just runs through a sequence of steps. When process A is completed,
+            the computer moves straight to process B. This is shown in the flowchart below:
         </p>
-        <p>
-            Suppose you are playing a game with 10 cards and you are the first player. Here is what you see:
-        </p>
-        <image xml:id="outside-in-game1" width="75%">
+        <image xml:id="flow-through-flowchart" width="50%">
             <latex-image>
-                \begin{tikzpicture}
-                    \foreach \x in {0,...,9}
-                    {
-                        \draw (\x, 0) ++ (-0.35,-0.5) rectangle ++ (0.7,1);
-                    }
-                    \draw (0,0) node[anchor=center] {4};
-                    \draw (1,0) node[anchor=center] {8};
-                    \draw (2,0) node[anchor=center] {3};
-                    \draw (3,0) node[anchor=center] {5};
-                    \draw (4,0) node[anchor=center] {2};
-                    \draw (5,0) node[anchor=center] {4};
-                    \draw (6,0) node[anchor=center] {7};
-                    \draw (7,0) node[anchor=center] {K};
-                    \draw (8,0) node[anchor=center] {Q};
-                    \draw (9,0) node[anchor=center] {5};            
+                \begin{tikzpicture}[node distance=5cm]
+
+                    \node (A) [process] {Process A};
+                    \node (B) [process, right of=A] {Process B};
+                    \draw[-latex] (A) -- (B);
                 \end{tikzpicture}
             </latex-image>
         </image>
         <p>
-            You must either take the 4 on the left or the 5 on the right. But which one will you take? More importantly,
-            what are you thinking about as you try to make your decision? There is no single answer to this question, and here
-            are some possibilities:
-            <ul>
-                <li>
-                    <p>
-                        You might notice that the 5 on the right is better than the 4 on the left, so that might lead you to
-                        take the 5.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        However, you might also notice that by taking the 5, you open up the Queen for your opponent to take,
-                        and so maybe it's better to play defensively and take the 4 to prevent them from getting the 5.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        But you might further recognize that if you take the 5, your opponent might take the Queen, giving you
-                        access to take the King. (But they may not take the queen, in which case your scheme doesn't work.)
-                    </p>
-                </li>
-            </ul>
+            However, there are places in a flowchart where there is a branch. This is related to some sort of decision mechanism. In
+            the previous section, we they were framed as Yes/No decisions, but in the programming world these are framed as True/False
+            statements. The statement is a declaration, like "The number is even" or "There are at least 5 objects in the collection".
+            The computer determines whether the declaration is true or false, and then proceeds along the flowchart based on that
+            determination. Here's how that looks:
         </p>
-        <p>
-            As you can see, there are lots of layers of thinking that can happen in this game, especially in the first few moves.
-            Our goal is to try to understand a couple different strategies and see how they look as decision-making flowchart.
-        </p>
-        <p>
-            <idx><h>greedy algorithm (Outside-In)</h></idx>
-            The first strategy we will think about is known as the <term>greedy algorithm</term>. The basic idea is that you're going
-            to look at just the two cards on the end and take the larger one. Here's how it looks as a flowchart:
-        </p>
-        <image xml:id="outside-in-greedy" width="100%">
+        <image xml:id="branching-flowchart" width="50%">
             <latex-image>
-                \begin{tikzpicture}[node distance=1cm]
-                    \node (start) [startstop] {Start};
-                    \node (var) [process, below of=start,minimum width=4cm,text width=4cm,yshift=-0.5cm] {\small $L_0$ = left-most card \\ $R_0$ = right-most card};
-                    \node (compare1) [decision, below of=var,yshift=-1.5cm] {Is $L_0 > R_0$?};
-                    \node (left) [process, below of=compare1,yshift=-1.5cm] {Take the card on the left};
-                    \node (compare2) [decision, right of=compare1,xshift=4.5cm] {Is $R_0 > L_0$?};
-                    \node (right) [process, below of=compare2,yshift=-1.5cm] {Take the card on the right};
-                    \node (random) [process, right of=compare2,xshift=4.5cm] {Pick a card at random};
-                    \node (stop) [startstop, below of=random, yshift=-1.5cm] {Stop};
-
-
-                    \draw[-latex] (start) -- (var);
-                    \draw[-latex] (var) -- (compare1);
-                    \draw[-latex] (compare1) -- (left) node[midway,anchor=west] {Yes};
-                    \draw[-latex] (compare1) -- (compare2) node[midway,anchor=south] {No};
-                    \draw[-latex] (compare2) -- (right) node[midway,anchor=west] {Yes};
-                    \draw[-latex] (compare2) -- (random) node[midway,anchor=south] {No};
-                    \draw[-latex] (random) -- (stop);
-                    \draw[-latex] (right) -- (stop);
-                    \draw[-latex] (left) -- ++ (0,-1.5) -| (stop);
+                \begin{tikzpicture}[node distance=5cm]
+                    \node (statement) [decision] {Statement};
+                    \node (A) [process, right of=statement] {Process A};
+                    \node (B) [process, below of=statement,yshift=2cm] {Process B};
+                    \draw[-latex] (statement) -- (A) node[midway,anchor=south] {True};
+                    \draw[-latex] (statement) -- (B) node[midway,anchor=west] {False};
                 \end{tikzpicture}
             </latex-image>
         </image>
         <p>
-            Notice that we had to include a step for when the two end cards are the same. For simplicity,
-            we just turned that into a random choice, but it is possible to come up with schemes to do better
-            than this.
+            There are other branching schemes that lead to more than two pathways, such as if-then-else and switch statements, but
+            we're not going to worry about those. For our purposes, we can just think of them as combinations of if-then statements.
         </p>
-        <p>
-            The notation here may seem a little strange. Why <m>L_0</m> and <m>R_0</m> for the left-most
-            and right-most cards instead of <m>L_1</m> and <m>R_1</m>? It turns out that both notations
-            are acceptable, but it is common when programming in Python that numbering starts from 0 instead
-            of 1. There are good reasons for this, but it's beyond the scope of this course to get into that.
-        </p>
-        <aside>
-            <p>
-                The reason for starting at 0 has to do with how the numbers are stored in the computer's
-                memory and thinking about the "first" number that the computer might use to maximize how high it
-                can count.
-            </p>
-        </aside>
-        <p>
-            We can see that this is something that a machine can follow, which means that you could theoretically
-            program this into a computer and have it play with that strategy. If we had multiple strategies, we could
-            compete them against each other and see whether one strategy is better than another!
-        </p>
-        <p>
-            In fact, this is what we will discuss in the next section. We will first need to translate the flowchart
-            into Python, then we will see how to make the computer play against itself.
-        </p>
+    </subsection>
+    <subsection>
+        <title>Programming in Python</title>
 
+        <p>
+            After understanding how to follow a flowchart (more generally, understanding flow control), the next challenge of
+            programming is understanding the programming syntax, which is how we actually write the code for the computer to follow. Since
+            we will be reading code more than we will be writing it in this class, the focus is on understanding how the given code works
+            and not on giving you a problem to solve and leaving you to figure out how to code it.
+        </p>
+        <p>
+            Let's take another look at the code for labeling a game tree:
+        </p>
     </subsection>
 
     <worksheet xml:id="Intro-Programming-wksht">
