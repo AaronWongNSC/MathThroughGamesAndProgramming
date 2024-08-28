@@ -1114,7 +1114,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Corner Markings",
-  "body": " Corner Markings     You will learn how to use corner markings to indicate information about the possible solutions to a Sudoku.    You will learn how to draw inferences from corner markings.     ???  In the previous section, we saw that center markings are useful when you are able to eliminate most of the possibilities at a particular position. Sometimes, we want to focus our attention on a particular digit. This section will explore this notation and its logic. (Note: Different people may use this notation slightly differently, with different \"rules\" for how they might apply it than what is presented here. Ultimately, it doesn't matter. The point is to practice logic, and the way the notation is presented here is logical.)   Snyder notation  corner markings  Corner markings (also called Snyder notation ) can be used to indicate \"box-level\" logic for some digit. The idea is that it's sometimes possible to eliminate most of the possible locations for a digit within a box, which then opens up further avenues of logic. You first start by identifying the possible locations for the digit within a box. Every possible location for that digit is indicated by writing that digit in small font in one of the corners of the square for each position. You can sometimes use this information to help you make further inferences.  A common use for corner markings is a dual-purpose box and row\/column indicator. Consider the following situation:     Think about the possible positions for 1 in box 3. We can see that there is no room for it in row 3, and the 1 in box 2 eliminiates all of row 2. Therefore, 1 must be in row 1 of box 3. So we can write a small 1 in each of those three boxes.  But we can actually go further with this and place the 1 in box 1. Since the corner markings in box 3 are all in row 1, we know that no matter what the final solution of the puzzle looks like, the 1 in row 1 will be somewhere in box 3. In particular, this means that there cannot be a 1 in row 1 of box 1. And since the 1 in row 2 is already found in box 2, this means that the 1 in box 1 must be in row 3, where there is only one possibility. The next grid attempts to visualize this logic.     This is the multi-layered type of reasoning that makes Sudoku puzzles compelling to solve. It becomes more about unwinding layers of complexity and ...   Exercises   Failed logic problems  For each of the following exercises, determine the digit that can be placed and where it must be placed. (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)       "
+  "body": " Corner Markings     You will learn how to use corner markings to indicate information about the possible solutions to a Sudoku.    You will learn how to draw inferences from corner markings.     ???  In the previous section, we saw that center markings are useful when you are able to eliminate most of the possibilities at a particular position. Sometimes, we want to focus our attention on a particular digit. This section will explore this notation and its logic. (Note: Different people may use this notation slightly differently, with different \"rules\" for how they might apply it than what is presented here. Ultimately, it doesn't matter. The point is to practice logic, and the way the notation is presented here is logical.)   Snyder notation  corner markings  Corner markings (also called Snyder notation ) can be used to indicate \"box-level\" logic for some digit. The idea is that it's sometimes possible to eliminate most of the possible locations for a digit within a box, which then opens up further avenues of logic. You first start by identifying the possible locations for the digit within a box. Every possible location for that digit is indicated by writing that digit in small font in one of the corners of the square for each position. You can sometimes use this information to help you make further inferences.  A common use for corner markings is a dual-purpose box and row\/column indicator. Consider the following situation:     Think about the possible positions for 1 in box 3. We can see that there is no room for it in row 3, and the 1 in box 2 eliminiates all of row 2. Therefore, 1 must be in row 1 of box 3. So we can write a small 1 in each of those three boxes.  But we can actually go further with this and place the 1 in box 1. Since the corner markings in box 3 are all in row 1, we know that no matter what the final solution of the puzzle looks like, the 1 in row 1 will be somewhere in box 3. In particular, this means that there cannot be a 1 in row 1 of box 1. And since the 1 in row 2 is already found in box 2, this means that the 1 in box 1 must be in row 3, where there is only one possibility. The next grid attempts to visualize this logic.     This is the multi-layered reasoning that makes Sudoku puzzles compelling to solve. It becomes more about unwinding layers of complexity and discovering elegant connections than it is about brute force. The goal is often not just to solve the puzzle, but to do it in a way that is intellectually satisfying. And the ability to see many layers of reasoning coming together simultaneously to help you reach a conclusion is a part of the challenge of the puzzle.  Converting corner markings to center markings   Exercises   Failed logic problems  For each of the following exercises, determine the digit that can be placed and where it must be placed. (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)       "
 },
 {
   "id": "corner-markings-2",
@@ -1153,40 +1153,49 @@ var ptx_lunr_docs = [
   "body": "  "
 },
 {
-  "id": "empty-file",
+  "id": "xwings",
   "level": "1",
-  "url": "empty-file.html",
+  "url": "xwings.html",
   "type": "Section",
   "number": "3.4",
-  "title": "Placeholder",
-  "body": " Placeholder     You will learn...     Opening Question  Text   Exercises   Title  Stuff    "
+  "title": "X-Wings",
+  "body": " X-Wings     You will learn how to apply the logic of X-Wings to draw valid inferences in a Sudoku.    You will be able to identify the \"deadly pattern\" that leads to puzzles that have multiple solutions.     ???  When solving Sudokus, there are certain patterns of logic that seem to come up repeatedly. As puzzle solvers started to recognize those patterns, they began to give them names. The value of the name is that it becomes a type of shortcut for identifying situations in which that particular pattern arises, and it also allows the underlying logic to be condensed down into its most basic form.   X-Wing One of the more basic patterns is known as an X-Wing . The reason for this name will become apparent as we work through the logic. X-Wings arise in situations where a digit's positions have been restricted to just two possibilities inside of multiple boxes. More specifically, they arise when those positions are geometrically related to each other. Consider the following puzzle.     Let's think about the possible positions for 1 in box 9. At first, it may seem as though there is not a lot of information available to work with in that box. In order to see the logic, we need to take a step back and think about the interaction between boxes 3 and 6. In box 3, we know that 1 must either be in column 7 or column 8. Similarly, box 6 tells us that 1 must also either be in column 7 or column 8. The repetition of those columns should seem important, even if you're not quite sure why.  The trick is to follow the box and column logic an extra step. Suppose we knew for certain that the 1 in box 3 was in column 7. What would we be able to conclude about the 1 in box 6? Since it's now impossible for the 1 in box 6 to be in column 7, we know it must be in column 8. And so we have placed the 1 in both of columns 7 and 8. This means that the 1 in box 9 must appear in column 9.  But what would happen if we knew for certain that the 1 in box 3 was in column 8, instead? In this situation, the 1 in box 6 would have to be in column 7, which places the 1 in both of columns 7 and 8 again. And so we again conclude that the 1 in box 9 must be in column 9.  What this means is that regardless of where the 1s appear in boxes 3 and 6, we must have that the 1 in box 9 is in column 9. It's important to remember that we don't actually know where the 1s in boxes 3 and 6 are located. We just know that it is in one of two possible configurations, and in both cases, it pushes the 1 in box 9 into column 9.  Let's represent this logic visually. In the first situation, the 1s are in r3c7 and r6c8. We'll draw a line connecting those two positions. In the second situation, the 1s are in r3c8 and r6c7, and we'll draw the line connecting them. You will notice that the resulting diagram has a large X in it, and that is the reason this is called an X-Wing. (Also, the Sudoku community enjoys the Star Wars reference.) The shaded parts of the diagram below show positions that cannot be a 1 based on the X-Wing. (Notice that we also know that the 1 is restricted in row 3 and row 6, but that's not due to the X-Wing logic. That's due to the corner markings.)     X-Wings are not limited to adjacent columns. As long as the position of a digit is locked into the same two positions in two rows or columns, an X-Wing is created. Here is an example of an X-Wing on 1s that basically spans the entire puzzle. Using the same logic as before, we know that there cannot be any 1s in any of the shaded boxes. Notice that the pairs are related vertically, which makes the X-Wing logic horizontal.      Exercises   Failed logic problems  For each of the following exercises, determine the digit that can be placed and where it must be placed. (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)       "
 },
 {
-  "id": "empty-file-2",
+  "id": "xwings-2",
   "level": "2",
-  "url": "empty-file.html#empty-file-2",
+  "url": "xwings.html#xwings-2",
   "type": "Learning Objectives",
   "number": "3.4",
   "title": "",
-  "body": "   You will learn...    "
+  "body": "   You will learn how to apply the logic of X-Wings to draw valid inferences in a Sudoku.    You will be able to identify the \"deadly pattern\" that leads to puzzles that have multiple solutions.    "
 },
 {
-  "id": "empty-file-3",
+  "id": "xwings-3",
   "level": "2",
-  "url": "empty-file.html#empty-file-3",
+  "url": "xwings.html#xwings-3",
   "type": "Opening Discussion",
   "number": "3.6",
   "title": "",
-  "body": "Opening Question "
+  "body": "??? "
 },
 {
-  "id": "section-wksht-2-2",
+  "id": "xwings-5",
   "level": "2",
-  "url": "empty-file.html#section-wksht-2-2",
+  "url": "xwings.html#xwings-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "X-Wing "
+},
+{
+  "id": "xwing-wksht-2-3",
+  "level": "2",
+  "url": "xwings.html#xwing-wksht-2-3",
   "type": "Worksheet Exercise",
   "number": "3.4.1",
   "title": "",
-  "body": "Stuff "
+  "body": "  "
 },
 {
   "id": "empty-file",
