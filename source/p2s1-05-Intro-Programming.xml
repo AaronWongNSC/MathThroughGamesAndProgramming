@@ -140,6 +140,14 @@
         <p>
             Let's take another look at the code for labeling a game tree:
         </p>
+        <image xml:id="label-trees-p2s1-05" width="60%">
+            <latex-image>
+                \begin{tikzpicture}
+    \draw (0,0) -- (1,1);
+\end{tikzpicture}
+
+            </latex-image>
+        </image>
     </subsection>
 
     <worksheet xml:id="Intro-Programming-wksht">
