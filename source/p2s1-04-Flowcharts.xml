@@ -1,4 +1,4 @@
-<section xml:id="Flowcharts">
+<section xml:id="Flowcharts"  xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Flowcharts</title>
 
     <objectives>
@@ -272,35 +272,7 @@
         </p>
         <image xml:id="label-trees-p2s1-04" width="60%">
             <latex-image>
-                \begin{tikzpicture}[node distance=1cm]
-
-                    \node (start) [startstop] {Start};
-                    \node (terminal) [process, below of=start,yshift=-1cm] {Label all terminal nodes as P-positions};
-                
-                    \node (find) [process, right of=terminal,xshift=3cm] {Find a node whose moves are all labeled};
-                
-                    \node (check) [decision, below of=find,yshift=-2cm] {Can you move to a P-position from that node?};
-                
-                    \node (p) [process, below of=check,yshift=-2cm] {Label the node a P-position};
-                
-                    \node (n) [process, left of=p,xshift=-3cm] {Label the node an N-position};
-                
-                    \node (done) [decision, below of=p,yshift=-2cm] {Are all the nodes labeled?};
-                
-                    \node (stop) [startstop, below of=done,yshift=-1.5cm] {Stop};
-                
-                    \draw[-latex] (start) -- (terminal);
-                    \draw[-latex] (terminal) -- (find);
-                    \draw[-latex] (find) -- (check);
-                    \draw[-latex] (check) -- (p) node[midway,anchor=west] {No};
-                    \draw[-latex] (check) -- ++ (-4,0) node[midway,anchor=south] {Yes} -- (n);
-                    \draw[-latex] (p) -- (done);
-                    \draw(n) -- ++ (0,-1) -- ++ (4,0);
-                    \draw[-latex] (done) -- (stop) node[midway,anchor=west] {Yes};
-                    \draw[-latex] (done) -- ++ (4,0) node[midway,anchor=south] {No} -- ++ (0,9) -- (find);
-                
-                
-                \end{tikzpicture}
+                <xi:include parse="text" href="./teximg/label-trees.tex"/>
             </latex-image>
         </image>
         <p>

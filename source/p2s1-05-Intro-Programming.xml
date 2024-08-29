@@ -1,4 +1,4 @@
-<section xml:id="Intro-Programming">
+<section xml:id="Intro-Programming" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>An Introduction to Programming</title>
 
     <objectives>
@@ -138,14 +138,44 @@
             and not on giving you a problem to solve and leaving you to figure out how to code it.
         </p>
         <p>
+            We're going to oversimplify and talk about just two types of processes. The first is assigning a value to a variable. This code
+            has the following form:
+        </p>
+        <listing>
+            <caption>Assigning a Value to a Variable</caption>
+            <program interactive="no" language="python" line-numbers="no">
+                <input>
+variable = value
+                </input>
+            </program>
+        </listing>
+        <p>
+            The <c>variable</c> part just refers to the name of the variable, so it can be something generic like <c>x</c> or something
+            descriptive like <c>theNumberOfTiles</c>. The important thing from the computer's point of view is that there are no spaces
+            and that it starts with a letter. (There are other restrictions, like not using special symbols and things like that,
+            but unless you're trying make things complicated, you're unlikely to violate them.) In Python, variables are case-sensitive,
+            meaning that <c>theVariable</c> and <c>thevariable</c> are two different variables.
+        </p>
+        <aside>
+            <idx><h>camel case</h></idx>
+            The practice of naming variables using capital letters at the start of each word like <c>theNumberOfTiles</c> is known as
+            <term>camel case</term>.
+        </aside>
+        <p>
+            The other type of process that we have is a subroutine. This is a command that runs a more complex piece of code. This is where
+            most of the hard work of programming is done, which also means that this is the part we're going to gloss over the most in this
+            class. For the things we do, we'll use descriptive names for our processes so that you can have an intuitive sense of what's
+            happening without needing to .....
+        </p>
+        <aside>
+            Subroutines can either be functions or methods, depending on the context. But that distinction doesn't matter at this level.
+        </aside>
+        <p>
             Let's take another look at the code for labeling a game tree:
         </p>
         <image xml:id="label-trees-p2s1-05" width="60%">
             <latex-image>
-                \begin{tikzpicture}
-    \draw (0,0) -- (1,1);
-\end{tikzpicture}
-
+                <xi:include parse="text" href="./teximg/label-trees.tex"/>
             </latex-image>
         </image>
     </subsection>
