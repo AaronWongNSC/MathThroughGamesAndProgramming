@@ -844,7 +844,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.5",
   "title": "An Introduction to Programming",
-  "body": " An Introduction to Programming     You will learn that programming is getting a computer to follow a flowchart.    You will learn how to play Outside-In.    You will learn the greedy algorithm for Outside-In.      The following video is from the first lecture of a course in computer programming (CS 50) at Harvard from 2018. Watch the whole thing. (6 minutes, 17 seconds)   peanut-butter-jelly    CS50 2018 - Lecture 1 - Peanut Butter and Jelly   What was the point of the demonstration?    What is Compupter Programming?  Computer programming is basically the process of giving the computer instructions to follow in order to complete a specific task. People can spend multiple years trying to become proficient at programming, and so it is far beyond the scope of this class to teach you how to program. That said, the underlying logic of computer programming is within reach, and it's something that we have already started to investigate in the previous section.   programming language  Python Each of the flowcharts we created is a set of instructions to be followed in odrer to complete a specific task. The only gap between understanding those flowcharts and computer programming is understanding how to get the computer to follow the flowchart. The specific way that this is done is through something called a programming language , which is basically a translation tool that runs between humans and computers. While there are many languages that are available, we will use Python because it is among the easier languages to use when getting started in programming.  There are a number of ways to get access to Python. If you wanted to download a version of it to your computer, you can find a number of packages that will do it for you (for example, Anaconda Python is popular for data science). If you do this, you will need to understand enough about your computer to navigate the process. Alternatively, you can use a online Python interpreter, which handles all of that for you. And this is the route that we will recommend.   Replit The materials for this course will be housed at GitHub and you will be able to run them using Replit . Viewing the files will not require an account, but running them will. (Basic accounts are free at the time of writing.) This will make them accessible to everyone with access to the internet without the hassle of needing to install programs onto their computer.  This is not a course in programming, so there will be many topics and ideas that will be glossed over. The primary goal is for you to understand the large-scale structures of programming without getting lost in the details. If you already have programming experience, you may find it interesting to look through the files to get a deeper understanding of how things are set up, but this is not necessary to be successful in the course. (One of the goals was to make the high level code as human-readable as possible, so you will find that there are a lot of unnecessary functions that clutter things up. None of the code is meant to be taken as an example of coding best practices!)    Outside-In  We are going to use a game-playing bot as our basic programming model. In order to do this, we need to introduce the game that our bot is going to play.   Outside-In  Outside-In   Outside-In is a two-player game. The game is played with with a standard deck of cards. The cards are shuffled and an even number of cards are laid out in a row. (A recommended number of cards is 10.) Players take turns drawing a single card from either end of the row. The player's score is the sum of the values of all the cards they collect during the game, where aces are worth 1, number cards are worth the number, jacks are worth 11, queens are worth 12, and kings are worth 13. The player with the most points wins the game.  Note that this game can also be played with domino tiles (with value equal to the number of dots) or any other objects that can be given a definite value.    Outside-In Video Instructions    Video instructions for Outside-In    After the cards are dealt, this is a game of complete information. Both players can see exactly what options are available at any given moment, and a game tree can be drawn out to analyze the game. That analysis would be slightly different than what we've done previously, as this game is not symmetric and the outcome depends on past decisions. But the idea of mapping out the possible decisions and seeing which ones lead to winning positions can still be applied. The problem is that every new combination and arrangement of cards will require a new game tree analysis, and there are too many possible games for us to analyze them all.  Instead of using a game tree to make decisions, we're going to use a decision-making flowchart. The idea is to try to think strategically about the decisions you're going to make. And the way to start understanding this is to think about what you're thinking about when it's your turn.  Suppose you are playing a game with 10 cards and you are the first player. Here is what you see:     You must either take the 4 on the left or the 5 on the right. But which one will you take? More importantly, what are you thinking about as you try to make your decision? There is no single answer to this question, and here are some possibilities:   You might notice that the 5 on the right is better than the 4 on the left, so that might lead you to take the 5.    However, you might also notice that by taking the 5, you open up the Queen for your opponent to take, and so maybe it's better to play defensively and take the 4 to prevent them from getting the 5.    But you might further recognize that if you take the 5, your opponent might take the Queen, giving you access to take the King. (But they may not take the queen, in which case your scheme doesn't work.)     As you can see, there are lots of layers of thinking that can happen in this game, especially in the first few moves. Our goal is to try to understand a couple different strategies and see how they look as decision-making flowchart.   greedy algorithm (Outside-In) The first strategy we will think about is known as the greedy algorithm . The basic idea is that you're going to look at just the two cards on the end and take the larger one. Here's how it looks as a flowchart:     Notice that we had to include a step for when the two end cards are the same. For simplicity, we just turned that into a random choice, but it is possible to come up with schemes to do better than this.  The notation here may seem a little strange. Why and for the left-most and right-most cards instead of and ? It turns out that both notations are acceptable, but it is common when programming in Python that numbering starts from 0 instead of 1. There are good reasons for this, but it's beyond the scope of this course to get into that.   The reason for starting at 0 has to do with how the numbers are stored in the computer's memory and thinking about the \"first\" number that the computer might use to maximize how high it can count.   We can see that this is something that a machine can follow, which means that you could theoretically program this into a computer and have it play with that strategy. If we had multiple strategies, we could compete them against each other and see whether one strategy is better than another!  In fact, this is what we will discuss in the next section. We will first need to translate the flowchart into Python, then we will see how to make the computer play against itself.    Exercises   STUFF  What would you do to replace random choice for the greedy algorithm?    "
+  "body": " An Introduction to Programming     You will learn that programming is getting a computer to follow a flowchart.      The following video is from the first lecture of a course in computer programming (CS 50) at Harvard from 2018. Watch the whole thing. (6 minutes, 17 seconds)   peanut-butter-jelly    CS50 2018 - Lecture 1 - Peanut Butter and Jelly   What was the point of the demonstration?    What is Compupter Programming?  Computer programming is basically the process of giving the computer instructions to follow in order to complete a specific task. People can spend multiple years trying to become proficient at programming, and so it is far beyond the scope of this class to teach you how to program. That said, the underlying logic of computer programming is within reach, and it's something that we have already started to investigate in the previous section.   programming language  Python Each of the flowcharts we created is a set of instructions to be followed in odrer to complete a specific task. The only gap between understanding those flowcharts and computer programming is understanding how to get the computer to follow the flowchart. The specific way that this is done is through something called a programming language , which is basically a translation tool that runs between humans and computers. While there are many languages that are available, we will use Python because it is among the easier languages to use when getting started in programming.  There are a number of ways to get access to Python. If you wanted to download a version of it to your computer, you can find a number of packages that will do it for you (for example, Anaconda Python is popular for data science). If you do this, you will need to understand enough about your computer to navigate the process. Alternatively, you can use a online Python interpreter, which handles all of that for you. And this is the route that we will recommend.   Replit The materials for this course will be housed at GitHub and you will be able to run them using Replit . Viewing the files will not require an account, but running them will. (Basic accounts are free at the time of writing.) This will make them accessible to everyone with access to the internet without the hassle of needing to install programs onto their computer.  This is not a course in programming, so there will be many topics and ideas that will be glossed over. The primary goal is for you to understand the large-scale structures of programming without getting lost in the details. If you already have programming experience, you may find it interesting to look through the files to get a deeper understanding of how things are set up, but this is not necessary to be successful in the course. (One of the goals was to make the high level code as human-readable as possible, so you will find that there are a lot of unnecessary functions that clutter things up. None of the code is meant to be taken as an example of coding best practices!)    Subroutines  If we look at flowchart, there are some places where the program just runs through a sequence of steps. When process A is completed, the computer moves straight to process B. This is shown in the flowchart below:     In programming, these processes can represent any of a large number of commands, both simple and complicated. We will see some examples of this in the next section. But for now, we're going to focus on the concepts.   subroutine A process might be a single command, such as multiplying a number by 2. However, a process can also be a complex sequence of steps, including making decisions. These more complex commands are often called subroutines . Here are a couple processes for making a sandwich:     As we saw in the video, each of those commands is a complicated sequence of steps, including opening the jar, using a knife properly, and closing the jar when finished. But at least at this level, you can understand what the goal is, even if the details are not fully known or understood.    If-Then Statements   control flow (programming)  flow of control (programming)  if-then statement (programming) Within the world of computer programming is the concept of \"control flow\" (or \"flow of control\"). This is basically the idea of how the computer navigates the flowcharts. Although there are mutiple structures that can be used to accomplish this (for example, loops and subroutines), we are going to focus on the if-then statement. This is the basic mechanism for \"choice\" in a program.  However, there are places in a flowchart where there is a branch. This is related to some sort of decision mechanism. In the previous section, we they were framed as Yes\/No decisions, but in the programming world these are framed as True\/False statements. The statement is a declaration, like \"The number is even\" or \"There are at least 5 objects in the collection\". The computer determines whether the declaration is true or false, and then proceeds along the flowchart based on that determination. Here's how that looks:     There are other branching schemes that lead to more than two pathways, such as if-then-else and switch statements, but we're not going to worry about those. For our purposes, we can just think of them as combinations of if-then statements.   Test   Programming in Python  After understanding how to follow a flowchart (more generally, understanding flow control), the next challenge of programming is understanding the programming syntax, which is how we actually write the code for the computer to follow. Since we will be reading code more than we will be writing it in this class, the focus is on understanding how the given code works and not on giving you a problem to solve and leaving you to figure out how to code it.  We're going to oversimplify and talk about just two types of processes. The first is assigning a value to a variable. This code has the following form:   Assigning a Value to a Variable   variable = value    The variable part just refers to the name of the variable, so it can be something generic like x or something descriptive like theNumberOfTiles . The important thing from the computer's point of view is that there are no spaces and that it starts with a letter. (There are other restrictions, like not using special symbols and things like that, but unless you're trying make things complicated, you're unlikely to violate them.) In Python, variables are case-sensitive, meaning that theVariable and thevariable are two different variables.    camel case The practice of naming variables using capital letters at the start of each word like theNumberOfTiles is known as camel case .    subroutine The other type of process that we have is a subroutine . This is a command that runs a more complex piece of code. This is where most of the hard work of programming is done, which also means that this is the part we're going to gloss over the most in this class. For the things we do, we'll use descriptive names for our processes so that you can have an intuitive sense of what's happening without needing to go through the details.  Subroutines will often look like an instruction on its own line, and it will always have parentheses. Here is an example:   Running a Subroutine   doSomethingInteresting()    As you can see, this function does something interesting. Obviously, in practice we will be using names that are relevant to the type of program that we are writing.   parameters (programming) Some subroutines will be given input variables known as parameters , which are values that help the subroutine perform the appropriate task. These parameters will always be inside of parentheses,   Subroutines can either be functions or methods, depending on the context. But that distinction doesn't matter at this level.   It is possible to do both actions at once. That is, you can assign the value of a variable using a subroutine.    Exercises   STUFF  What would you do to replace random choice for the greedy algorithm?    "
 },
 {
   "id": "Intro-Programming-2",
@@ -853,7 +853,7 @@ var ptx_lunr_docs = [
   "type": "Learning Objectives",
   "number": "2.5",
   "title": "",
-  "body": "   You will learn that programming is getting a computer to follow a flowchart.    You will learn how to play Outside-In.    You will learn the greedy algorithm for Outside-In.    "
+  "body": "   You will learn that programming is getting a computer to follow a flowchart.    "
 },
 {
   "id": "Intro-Programming-3",
@@ -874,139 +874,67 @@ var ptx_lunr_docs = [
   "body": "programming language Python "
 },
 {
-  "id": "game-outside-in",
+  "id": "Intro-Programming-5-5",
   "level": "2",
-  "url": "Intro-Programming.html#game-outside-in",
-  "type": "Game",
-  "number": "2.21",
-  "title": "Outside-In.",
-  "body": " Outside-In  Outside-In   Outside-In is a two-player game. The game is played with with a standard deck of cards. The cards are shuffled and an even number of cards are laid out in a row. (A recommended number of cards is 10.) Players take turns drawing a single card from either end of the row. The player's score is the sum of the values of all the cards they collect during the game, where aces are worth 1, number cards are worth the number, jacks are worth 11, queens are worth 12, and kings are worth 13. The player with the most points wins the game.  Note that this game can also be played with domino tiles (with value equal to the number of dots) or any other objects that can be given a definite value.    Outside-In Video Instructions    Video instructions for Outside-In   "
-},
-{
-  "id": "Intro-Programming-5-10",
-  "level": "2",
-  "url": "Intro-Programming.html#Intro-Programming-5-10",
+  "url": "Intro-Programming.html#Intro-Programming-5-5",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "greedy algorithm "
+  "body": "subroutines "
+},
+{
+  "id": "Intro-Programming-8-4",
+  "level": "2",
+  "url": "Intro-Programming.html#Intro-Programming-8-4",
+  "type": "Listing",
+  "number": "2.21",
+  "title": "",
+  "body": " Assigning a Value to a Variable   variable = value   "
+},
+{
+  "id": "Intro-Programming-8-6-1",
+  "level": "2",
+  "url": "Intro-Programming.html#Intro-Programming-8-6-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "camel case "
+},
+{
+  "id": "Intro-Programming-8-7",
+  "level": "2",
+  "url": "Intro-Programming.html#Intro-Programming-8-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "subroutine "
+},
+{
+  "id": "Intro-Programming-8-9",
+  "level": "2",
+  "url": "Intro-Programming.html#Intro-Programming-8-9",
+  "type": "Listing",
+  "number": "2.22",
+  "title": "",
+  "body": " Running a Subroutine   doSomethingInteresting()   "
+},
+{
+  "id": "Intro-Programming-8-11",
+  "level": "2",
+  "url": "Intro-Programming.html#Intro-Programming-8-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "parameters "
 },
 {
   "id": "Intro-Programming-wksht-2-2",
   "level": "2",
   "url": "Intro-Programming.html#Intro-Programming-wksht-2-2",
   "type": "Worksheet Exercise",
-  "number": "2.5.3.1",
+  "number": "2.5.5.1",
   "title": "",
   "body": "What would you do to replace random choice for the greedy algorithm? "
-},
-{
-  "id": "outside-in-bot",
-  "level": "1",
-  "url": "outside-in-bot.html",
-  "type": "Section",
-  "number": "2.6",
-  "title": "Programming Outside-In Bots",
-  "body": " Programming Outside-In Bots     You will learn how to import code from GitHub to Replit and run it.    You will learn how translate a decision flow chart for Outside-In into Python code.      What experience do you have with internet bots? (Two common types of bots are chatbots and social media bots.) What is your understanding of how they work?    Accessing Outside-In  If you haven't already created a replit account, go to Replit.com and do that.  Note that you have a limited number of Repls (programs) that you can have on your account at any time. If you need to delete an old Repl to make space, select \"Repls\" from the left navigation bar and use the three dots next to any of your existing Repls to delete it. Note that you cannot undo this step, so if you don't want to lose that work, you can download it.  You can import Outside-In from GitHub using the link. The URL for Outside-In is https:\/\/github.com\/AaronWongNSC\/OutsideIn . Replit will ask you for a \"Run command\" on the next screen. You can type anything you want in there because we're not going to use that feature.  To test that everything is working properly, look for the \"Shell\" tab (bottom half of the screen) and type python single_game.py . You should see the output of a game played by two bots. (If you wanted, you can also try typing python challenge_match.py . This is how we are going to put strategies against each other to see how they fare in the long run.)    single_game.py  The entire code for running a single game is 11 lines long, and about a third of those lines are just for a comment.   The single_game.py code   ''' Run a single game of Outside In with the indicated strategies ''' import outsidein as OI import greedy_strat as strat1 import random_strat as strat2 Game = OI.OutsideIn() OI.play(Game, strat1, strat2)    Most of the coding is hidden away so that we can focus on the strategic ideas and not get bogged down in the programming language itself. The only part of this that you will need to think about are Lines 7 and 8. These lines provide the information about the two strategies that are being used against each other. You can see that the game is being played between greedy_strat and random_strat . The random_strat literally just makes a decision at random. The more interesting code to look at is greedy_strat . You can click this file on the left side of the screen to open it.  If you want to look at the code, open the outsidein.py file.    The Greedy Algorithm  In the previous section, we looked at the flowchart that represents the greedy algorithm. We are now going to see how that flowchart got translated into Python. As we work through the flowchart, we are going to learn some of the basic concepts of computer programming.  After leaving the start node, we immediately come to the following node:      variable, programming The purpose of this node is to define some variables. A variable in programming is just a name that represents a value that we want to reference later. In this case, we're defining the two variables that we will want to compare. Here are the two lines of code that accomplish this.   Defining the variables for the greedy algorithm.   L0 = Game.left(0) R0 = Game.right(0)    There is a lot to explain about this code if we were to try to cover all the details about what's happening. Instead, we're going to take a less rigorous approach and convey the general idea of what's happening. The L0 and R0 are the names of the variables that we're creating. You should imagine that Game is the way we reference the list of cards, and the .left() and .right() indicate whether we're looking at the cards starting from the left side or the right side. The number inside the parentheses tells us the number of cards inward from the edge that we need to move. The number 0 in both of these means that we just want the outermost card.  From here, we move on to the first decision:     The programming structure that handles decisions is known as an if-then statement. The if part depends on a statement that will either be true or false, and if it is true the program goes to the then part of the code.     You will notice that the way that this node is set up, the answers are \"Yes\" and \"No\" instead of \"True\" and \"False\". Fortunately, this is easy enough to translate because we have it set up so that if the inequality is \"True\" then the answer is \"Yes\". If we wanted to be technically correct, we would replace the node with an assertion (instead of a question), and then the direction you follow will depend on whether that assertion is True or False.  The if-then statement is a simple version of a more general if-then-else statement. The latter allows for more complex decision-making pathways.  Here is how this looks in code:   The first decision of the Greedy Algorithm   if L0 > R0: return 'L'    The return 'L' command says to the computer that the decision is to take the left card. This command also automatically jumps to the stop node for us. If you look at the full diagram.  From here, we have another decision to make:     And here is the code that accomplishes this:   The second decision of the Greedy Algorithm   if R0 > L0: return 'R' return random.choice(['L', 'R'])    The first couple lines should feel familiar because it follows the same pattern as before. The last line is new, but all that says is to pick one of the two options at random, which is precisely what the flowchart tells us to do.    Exercises   STUFF  BLAH    "
-},
-{
-  "id": "outside-in-bot-2",
-  "level": "2",
-  "url": "outside-in-bot.html#outside-in-bot-2",
-  "type": "Learning Objectives",
-  "number": "2.6",
-  "title": "",
-  "body": "   You will learn how to import code from GitHub to Replit and run it.    You will learn how translate a decision flow chart for Outside-In into Python code.    "
-},
-{
-  "id": "outside-in-bot-3",
-  "level": "2",
-  "url": "outside-in-bot.html#outside-in-bot-3",
-  "type": "Opening Discussion",
-  "number": "2.23",
-  "title": "",
-  "body": " What experience do you have with internet bots? (Two common types of bots are chatbots and social media bots.) What is your understanding of how they work?  "
-},
-{
-  "id": "outside-in-bot-5-3",
-  "level": "2",
-  "url": "outside-in-bot.html#outside-in-bot-5-3",
-  "type": "Listing",
-  "number": "2.24",
-  "title": "",
-  "body": " The single_game.py code   ''' Run a single game of Outside In with the indicated strategies ''' import outsidein as OI import greedy_strat as strat1 import random_strat as strat2 Game = OI.OutsideIn() OI.play(Game, strat1, strat2)   "
-},
-{
-  "id": "outside-in-bot-6-6",
-  "level": "2",
-  "url": "outside-in-bot.html#outside-in-bot-6-6",
-  "type": "Listing",
-  "number": "2.25",
-  "title": "",
-  "body": " Defining the variables for the greedy algorithm.   L0 = Game.left(0) R0 = Game.right(0)   "
-},
-{
-  "id": "outside-in-bot-6-15",
-  "level": "2",
-  "url": "outside-in-bot.html#outside-in-bot-6-15",
-  "type": "Listing",
-  "number": "2.26",
-  "title": "",
-  "body": " The first decision of the Greedy Algorithm   if L0 > R0: return 'L'   "
-},
-{
-  "id": "outside-in-bot-6-20",
-  "level": "2",
-  "url": "outside-in-bot.html#outside-in-bot-6-20",
-  "type": "Listing",
-  "number": "2.27",
-  "title": "",
-  "body": " The second decision of the Greedy Algorithm   if R0 > L0: return 'R' return random.choice(['L', 'R'])   "
-},
-{
-  "id": "outside-in-bot-wksht-2-2",
-  "level": "2",
-  "url": "outside-in-bot.html#outside-in-bot-wksht-2-2",
-  "type": "Worksheet Exercise",
-  "number": "2.6.4.1",
-  "title": "",
-  "body": "BLAH "
-},
-{
-  "id": "make-outside-in-bot",
-  "level": "1",
-  "url": "make-outside-in-bot.html",
-  "type": "Section",
-  "number": "2.7",
-  "title": "Make Your Own Outside-In Bot",
-  "body": " Make Your Own Outside-In Bot     You will learn how to code your own Outside_in bot.      SOMETHING...    Thinking Strategically  It's possible to build out the entire game tree from the beginning, and use that to determine the best path. However, at the start of the game, that game tree has around a thousand different nodes, and so it will take you a while to work through all of that, and most people won't want to wait around for an hour or two before they finally get to play the game. But this doesn't mean that there aren't any strategic ideas that you can try.  As you play the game, you might start to find yourself trying to think one or two moves into the future. Instead of thinking about the entire game tree, you're thinking about just the next couple nodes from where you are. And (hopefully) you can find a way to navigate those next couple nodes to put you in a good position. You might not be able to guarantee a win, but you might be able to either maximize the number of points you score or minimize the number of points your opponent scores.  In some sense, this is what the Greedy Algorithim does. It answers the question, \"How can I score as many points as possible on my next turn?\" The challenge for the Greedy Algorithim is that it doesn't take into account what the other player might do. Here is an example:     We have put dots on the innermost cards because we want to focus on just the next move. The Greedy Algorithm would choose to take the 2 (since 2 points is better than 1 point for the Ace). But by doing that, it exposes a King and offers a 13 point card to the opponent.  But if you were thinking ahead, you might see that by picking the Ace, you are giving up a point (because you are passing on the 2), but you are also preventing your opponent from getting 13 points. In fact, you are guaranteeing that your opponent can only get 2 points on their next play. You may not know what will happen after that, but it seems reasonable that preventing your opponent from getting the King is a better play than giving them access to it.    Exercises   STUFF  BLAH    "
-},
-{
-  "id": "make-outside-in-bot-2",
-  "level": "2",
-  "url": "make-outside-in-bot.html#make-outside-in-bot-2",
-  "type": "Learning Objectives",
-  "number": "2.7",
-  "title": "",
-  "body": "   You will learn how to code your own Outside_in bot.    "
-},
-{
-  "id": "make-outside-in-bot-3",
-  "level": "2",
-  "url": "make-outside-in-bot.html#make-outside-in-bot-3",
-  "type": "Opening Discussion",
-  "number": "2.28",
-  "title": "",
-  "body": " SOMETHING...  "
-},
-{
-  "id": "make-outside-in-bot-wksht-2-2",
-  "level": "2",
-  "url": "make-outside-in-bot.html#make-outside-in-bot-wksht-2-2",
-  "type": "Worksheet Exercise",
-  "number": "2.7.2.1",
-  "title": "",
-  "body": "BLAH "
 },
 {
   "id": "sudoku-intro",
@@ -1159,7 +1087,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "X-Wings",
-  "body": " X-Wings     You will learn how to apply the logic of X-Wings to draw valid inferences in a Sudoku.    You will be able to identify the \"deadly pattern\" that leads to puzzles that have multiple solutions.     ???  When solving Sudokus, there are certain patterns of logic that seem to come up repeatedly. As puzzle solvers started to recognize those patterns, they began to give them names. The value of the name is that it becomes a type of shortcut for identifying situations in which that particular pattern arises, and it also allows the underlying logic to be condensed down into its most basic form.   X-Wing One of the more basic patterns is known as an X-Wing . The reason for this name will become apparent as we work through the logic. X-Wings arise in situations where a digit's positions have been restricted to just two possibilities inside of multiple boxes. More specifically, they arise when those positions are geometrically related to each other. Consider the following puzzle.     Let's think about the possible positions for 1 in box 9. At first, it may seem as though there is not a lot of information available to work with in that box. In order to see the logic, we need to take a step back and think about the interaction between boxes 3 and 6. In box 3, we know that 1 must either be in column 7 or column 8. Similarly, box 6 tells us that 1 must also either be in column 7 or column 8. The repetition of those columns should seem important, even if you're not quite sure why.  The trick is to follow the box and column logic an extra step. Suppose we knew for certain that the 1 in box 3 was in column 7. What would we be able to conclude about the 1 in box 6? Since it's now impossible for the 1 in box 6 to be in column 7, we know it must be in column 8. And so we have placed the 1 in both of columns 7 and 8. This means that the 1 in box 9 must appear in column 9.  But what would happen if we knew for certain that the 1 in box 3 was in column 8, instead? In this situation, the 1 in box 6 would have to be in column 7, which places the 1 in both of columns 7 and 8 again. And so we again conclude that the 1 in box 9 must be in column 9.  What this means is that regardless of where the 1s appear in boxes 3 and 6, we must have that the 1 in box 9 is in column 9. It's important to remember that we don't actually know where the 1s in boxes 3 and 6 are located. We just know that it is in one of two possible configurations, and in both cases, it pushes the 1 in box 9 into column 9.  Let's represent this logic visually. In the first situation, the 1s are in r3c7 and r6c8. We'll draw a line connecting those two positions. In the second situation, the 1s are in r3c8 and r6c7, and we'll draw the line connecting them. You will notice that the resulting diagram has a large X in it, and that is the reason this is called an X-Wing. (Also, the Sudoku community enjoys the Star Wars reference.) The shaded parts of the diagram below show positions that cannot be a 1 based on the X-Wing. (Notice that we also know that the 1 is restricted in row 3 and row 6, but that's not due to the X-Wing logic. That's due to the corner markings.)     X-Wings are not limited to adjacent columns. As long as the position of a digit is locked into the same two positions in two rows or columns, an X-Wing is created. Here is an example of an X-Wing on 1s that basically spans the entire puzzle. Using the same logic as before, we know that there cannot be any 1s in any of the shaded boxes. Notice that the pairs are related vertically, which makes the X-Wing logic horizontal.      Exercises   Failed logic problems  For each of the following exercises, determine the digit that can be placed and where it must be placed. (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)       "
+  "body": " X-Wings     You will learn how to apply the logic of X-Wings to draw valid inferences in a Sudoku.    You will be able to identify the \"deadly pattern\" that leads to puzzles that have multiple solutions.     ???  When solving Sudokus, there are certain patterns of logic that seem to come up repeatedly. As puzzle solvers started to recognize those patterns, they began to give them names. The value of the name is that it becomes a type of shortcut for identifying situations in which that particular pattern arises, and it also allows the underlying logic to be condensed down into its most basic form.   X-Wing One of the more basic patterns is known as an X-Wing . The reason for this name will become apparent as we work through the logic. X-Wings arise in situations where a digit's positions have been restricted to just two possibilities inside of multiple boxes. More specifically, they arise when those positions are geometrically related to each other. Consider the following puzzle.     Let's think about the possible positions for 1 in box 9. At first, it may seem as though there is not a lot of information available to work with in that box. In order to see the logic, we need to take a step back and think about the interaction between boxes 3 and 6. In box 3, we know that 1 must either be in column 7 or column 8. Similarly, box 6 tells us that 1 must also either be in column 7 or column 8. The repetition of those columns should seem important, even if you're not quite sure why.  The trick is to follow the box and column logic an extra step. Suppose we knew for certain that the 1 in box 3 was in column 7. What would we be able to conclude about the 1 in box 6? Since it's now impossible for the 1 in box 6 to be in column 7, we know it must be in column 8. And so we have placed the 1 in both of columns 7 and 8. This means that the 1 in box 9 must appear in column 9.  But what would happen if we knew for certain that the 1 in box 3 was in column 8, instead? In this situation, the 1 in box 6 would have to be in column 7, which places the 1 in both of columns 7 and 8 again. And so we again conclude that the 1 in box 9 must be in column 9.  What this means is that regardless of where the 1s appear in boxes 3 and 6, we must have that the 1 in box 9 is in column 9. It's important to remember that we don't actually know where the 1s in boxes 3 and 6 are located. We just know that it is in one of two possible configurations, and in both cases, it pushes the 1 in box 9 into column 9.  Let's represent this logic visually. In the first situation, the 1s are in r3c7 and r6c8. We'll draw a line connecting those two positions. In the second situation, the 1s are in r3c8 and r6c7, and we'll draw the line connecting them. You will notice that the resulting diagram has a large X in it, and that is the reason this is called an X-Wing. (Also, the Sudoku community enjoys the Star Wars reference.) The shaded parts of the diagram below show positions that cannot be a 1 based on the X-Wing. (Notice that we also know that the 1 is restricted in row 3 and row 6, but that's not due to the X-Wing logic. That's due to the corner markings.)     X-Wings are not limited to adjacent columns. As long as the position of a digit is locked into the same two positions in two rows or columns, an X-Wing is created. Here is an example of an X-Wing on 1s that basically spans the entire puzzle. Using the same logic as before, we know that there cannot be any 1s in any of the shaded boxes. Notice that the pairs are related vertically, which makes the X-Wing logic horizontal.     Ambiguous\/unsolvable situations   Exercises   Failed logic problems  For each of the following exercises, determine the digit that can be placed and where it must be placed. (Hint: Beware of distractors! Not every digit placed will be relevant to your conclusion!)       "
 },
 {
   "id": "xwings-2",
