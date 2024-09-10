@@ -30,8 +30,7 @@
         <xi:include href="p2s1-03-More-Games.xml" />
         <xi:include href="p2s1-04-Flowcharts.xml" />
         <xi:include href="p2s1-05-Intro-Programming.xml" />
-        <xi:include href="p2s1-06-Outside-In-Bot.xml" />
-        <xi:include href="p2s1-07-Make-An-Outside-In-Bot.xml" />
+        <xi:include href="p2s1-05-Intro-Python.xml" />
       </chapter>
 
       <chapter xml:id="chapter-logic" xmlns:xi="http://www.w3.org/2001/XInclude">
